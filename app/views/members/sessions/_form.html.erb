@@ -1,0 +1,45 @@
+<%=form_with url: "LogIn.asp?showmenu=1&lang=fr",html: {name:"LoginForm"} do |form|%>
+         <table border="0" cellpadding="5" cellspacing="0" align="center">
+           <tr>
+             <td>
+			<b>Adresse de courrier électronique</b>
+             </td>
+             <td nowrap>
+               <%=form.email_field "txtEmail", id: "txtEmail", maxlength:100, size:14, style:"width: 170px;"%>
+               <!--input type="text" name="txtUser" id="txtUser" maxlength=100 size=14 style="width: 170px;"-->
+                
+                    <a href="PasswReminder.asp?showmenu=1&lang=fr"><small>Oublié</small></a>
+                
+             </td>
+           </tr>
+      
+           <tr>
+             <td>
+                
+                    <b>Mot de passe</b>
+                
+             </td>
+             <td nowrap>
+               <%=form.password_field "txtPassw", id: "txtPassw", maxlength:50, size: 14, style:"width: 170px;"%>
+                
+					<a href="PasswReminder.asp?showmenu=1&lang=fr"><small>Oublié</small></a>
+				
+             </td>
+           </tr>
+         </table>
+         <br>
+         <input type="hidden" name="hidProc" id="hidProc" value="1">
+        
+			<%=form.check_box "chbSavePassw", {id: "chbSavePassw"}, "1","0"%>
+			<label for="chbSavePassw">
+			
+			 Sauvegarder le mot de passe dans les Cookies<br>
+			 <!--font size="1">(Vous pouvez changer cette option plus tard à partir de votre<br>Page de Membre)</font-->
+			 <br>
+			
+			</label>
+		
+		 <br>
+		 <input type="submit" value="LogIn" id=submit8 name=submit8>
+		
+      <%end%>

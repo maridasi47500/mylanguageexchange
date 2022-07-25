@@ -1,0 +1,191 @@
+<%=form_with url: "/SignUp.asp?showmenu=1&lang=fr", html: {name: "SignUpForm"} do |form|%>
+         <table class="TblInputForm" width="100%" border="0" cellpadding="1" cellspacing="1">
+
+           <tr class="SectionHead">
+             <td colspan="5">Langues
+             </td>
+           </tr>
+
+           <tr ID="NLRow">
+             <td><font color="red"><b>*</b></font><b>Votre langue maternelle:</b></td>
+             <td colspan="4">
+                <script>$(document).ready(function() {    $(".select-suggestselX3").select2();});</script>
+<%=form.select "selX3", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX3", size:"1",class:"select-suggestselX3"}%>
+
+                  <span ID="NLf"> <a href="" onclick="InsertNLa(); return false;"><img src="images/add.gif" border="0" alt="Inscrire une langue maternelle supplémentaire" WIDTH="16" HEIGHT="16"></a></span>
+             </td>
+           </tr>
+
+           <tr ID="PLRow">
+             <td><font color="red"><b>*</b></font><b>La langue que vous voulez pratiquer:</b></td>
+             <td colspan="4">
+                <script>$(document).ready(function() {    $(".select-suggestselX6").select2();});</script>
+<%=form.select "selX6", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX6", size:"1",class:"select-suggestselX6"}%>
+
+                  <span ID="PLf"> <a href="" onclick="InsertPLa(); return false;"><img src="images/add.gif" border="0" alt="Inscrire une langue à pratiquer supplémentaire" WIDTH="16" HEIGHT="16"></a></span>
+             </td>
+           </tr>
+
+           <tr class="SectionHead">
+             <td colspan="2">Type de pratique désiré
+             </td>
+           </tr>
+
+					<tr>
+					 <td><b>courriel</b></td>
+					 <td align=left>
+<%=form.check_box 'selX4', {class: 'Toggle', id: 'selX4'}, "true", "false"%>
+
+<label for='selX4'></label></td>
+					</tr>
+					<tr>
+					 <td><b>chat classique</b></td>
+					 <td align=left>
+<%=form.check_box 'selIsWantTextChat', {class: 'Toggle', id: 'selIsWantTextChat'}, "true", "false"%>
+<label for='selIsWantTextChat'></label></td>
+					</tr>
+					<tr>
+					 <td><b>chat vocal</b></td>
+					 <td align=left>
+<%=form.check_box 'selX13', {class: 'Toggle', id: 'selX13'}, "true", "false"%>
+
+<label for='selX13'></label></td>
+					 </td>
+					</tr>
+					<tr>
+					 <td><b>en personne</b></td>
+					 <td align=left>
+<%=form.check_box 'selIsWantFace', {class: 'Toggle', id: 'selIsWantFace'}, "true", "false"%>
+
+<label for='selIsWantFace'></label></td>
+					</tr>
+					<tr>
+
+						<td colspan=2>
+				<a href='' onclick='EmailNoPartnerPopUp(); return false;' title='Aide pop-up'>Si je ne désire pas être contacté</a><br><br>
+						</td>
+					</tr>
+
+			<tr class="SectionHead">
+             <td colspan="2">&nbsp;
+             </td>
+           </tr>
+
+           <tr>
+             <td>Je suis un professeur et je cherche une autre classe pour faire un échange avec mes étudiants. </td>
+             <td valign="top" colspan="3">
+<%=form.select'selIsClass',[["oui","true"],["non","false"]],{include_blank: ""}, {id: 'selIsClass'}%>
+				 <span ID="nStudents">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<font color="red"><b>*</b></font><b>Quantité des étudiants:</b>
+					&nbsp;<input type='number' name="txtNStudents" id="txtNStudents" value="" width="4" style="width: 80px;" maxlength="3" min="0" max="130" step="1">
+				 </span>
+			 </td>
+           </tr>
+ 
+           <tr>
+             <td colspan="5">
+               <br>
+               <IMG name="renewSession" ID="renewSession" SRC="RenewSession.asp" width=1 height=1>
+               <font color="red"><b>*</b></font><b>Description:</b> Parlez-nous un peu de vous - vos goûts et vos intérêts, pourquoi vous désirez apprendre cette langue, etc. :-) Ecrivez dans la langue de votre choix.
+               <small><font color=black>(N'écrivez pas vos adresses de correspondance.)</font></small><br>
+               <%=form.text_area "txaDescr", wrap: "VIRTUAL",id: "txaDescr", rows:"5", cols: "44", style: "width:99%;"%>
+<br>
+             </td>
+           </tr>
+
+           <tr class="SectionHead">
+             <td colspan="5">Pour entrer sur le site
+             </td>
+           </tr>
+
+		  <%=form.hidden_field :hidsUID, id: "hidsUID" %>
+           <!--tr>
+             <td>
+               <font color="red"><b>*</b></font><b>Nom d'usager:</b>
+               <a href='' title='pop up aide' onclick='UserIDPopUp(); return false;'>Qu'est-ce que c'est?</a>
+             </td>
+             <td colspan="4">
+               <%= form.text_field "txtUID", id: "txtUID", width: "15", style: "width: 150px;", maxlength: "60"%>
+&nbsp;
+             </td>
+           </tr-->
+
+		   
+           <tr>
+             <td><font color="red"><b>*</b></font><b>Mot de passe (4 à 12 caractères):</b></td>
+             <td colspan="4">
+<%=form.password_field "pasPassw", id: "pasPassw", size: "15", maxlength: "15", required: true%>
+</td>
+           </tr>
+
+           <tr>
+             <td><font color="red"><b>*</b></font><b>Re-tapez votre mot de passe:</b></td>
+             <td colspan="4">
+<%=form.password_field "pasPassw_2", id: "pasPassw_2", size: "15", maxlength: "15", required: true%>
+</td>
+           </tr>
+
+           <tr>
+             <td>Truc pour vous rappeler de votre mot de passe:</td>
+             <td colspan="4">
+<%=form.text_field "txtPasswRem", id: "txtPasswRem", width: "15", style: "width: 150px;", maxlength: "80"%>
+
+</td>
+           </tr>
+		   
+
+           <tr>
+             <td><font color="red"><b>*</b></font><b>Adresse de courrier électronique:</b><br>
+                <A href='' onclick='PrivacyPopUp(); return false;'>Politique sur la protection de la vie privée</A> -
+                <a href='' onclick='EmailWhyPopUp(); return false;'>Pourquoi</a> - 
+                <a href='' onclick='HiddenEmailPopUp(); return false;'>Protégée</a>             
+             </td> 
+             <td colspan="3" valign="top">
+<%=form.email_field "txtEmail", id: "txtEmail", width: "15", style: "width: 150px;", maxlength: "80"%>
+</td>
+           </tr>
+
+           <tr>
+             <td>
+               <font color="red"><b>*</b></font><b>Re-tapez votre adresse de courrier électronique:</b><br>
+               <a href='' onclick='EmailWhiteListPopUp(); return false;' title='Ajuster vos filtres de courrier indésirable - pop up aide'>Veuillez ajuster vos filtres de courrier indésirable</a>
+             </td>
+             <td colspan="3" valign="top">
+<%=form.email_field "txtEmail2", id: "txtEmail2", width: "15", style: "width: 150px;", maxlength: "80"%>
+
+</td>
+           </tr>
+
+           <tr class="SectionHead">
+             <td colspan="5">&nbsp;&nbsp;<br>
+             </td>
+           </tr>
+
+           <tr>
+             <td colspan="5">
+         <input type="hidden" value="" name="hidFN" id="hidFN">
+         <input type="hidden" value="" name="hidLN" id="hidLN">
+         <input type="hidden" value="" name="hidAge" id="hidAge">
+         <input type="hidden" value="" name="hidUTime" id="hidUTime">
+         <input type="hidden" value="" name="hidTimeZ" id="hidTimeZ">
+         <input type="hidden" value="" name="hidHP" id="hidHP">
+         <input type="hidden" value="" name="hidCL1" id="hidCL1">
+         <input type="hidden" value="" name="hidCL2" id="hidCL2">
+         <input type="hidden" value="" name="hidCL3" id="hidCL3">
+         <input type="hidden" value="" name="hidCountry" id="hidCountry">
+         <input type="hidden" value="" name="hidLoc" id="hidLoc">
+         <input type="hidden" value="" name="hidGender" id="hidGender">
+         <input type="hidden" value="" name="hidMemberAgree" id="hidMemberAgree">
+         <input type="hidden" value="true" name="hidWantNews" id="hidWantNews">
+         <input type="hidden" value="true" name="hidWantAds" id="hidWantAds">
+ 
+         <input type="hidden" value="False" name="hidEditPro" id="hidEditPro">  
+         <input type="hidden" value="1" name="hidProc" id="hidProc">  
+         
+           <input type="submit" value="Soumettre" id="submit1" name="submit1">
+         
+         <input type="hidden" value="1" name="showmenu" id="showmenu">
+             </td>
+           </tr>
+         </table>
+       <%end%>
