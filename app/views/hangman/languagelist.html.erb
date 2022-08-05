@@ -9,7 +9,7 @@
 	<h3><a href="Hangman.asp">Hangman Games Home</a>
 
 	
-	  &gt; French
+	  &gt; <%=@language.name%>
 	</h3>
 
     <table class="TblListMenu" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -21,35 +21,15 @@
       <tr>
         <td>
     
-          </td></tr><tr>
+          </td></tr>
+      <%@types.each do |type|%>
+      <tr>
             <td>
-				<a href="HmanList.asp?x3=22&amp;Cat1=1" title="FrenchPopular Expression - Slang, expressions, sayings, etc. used in everyday life">Popular Expression</a> <small>(873)</small> - Slang, expressions, sayings, etc. used in everyday life  <br>
+				<a href="<%=hmanlist_path(x3: @language.try(:id),Cat1: type.id)%>" title="<%=@language.name%><%=type.name%> - <%=%>"><%=type.name%></a> <small>(<%=type.nbhangmen%>)</small> - <%=%>  <br>
             </td>
           </tr>
         
-          <tr>
-            <td>
-				<a href="HmanList.asp?x3=22&amp;Cat1=2" title="FrenchFamous Quote - Quotes from historical events, popular works of literature, movies, music, etc.">Famous Quote</a> <small>(56)</small> - Quotes from historical events, popular works of literature, movies, music, etc.  <br>
-            </td>
-          </tr>
-        
-          <tr>
-            <td>
-				<a href="HmanList.asp?x3=22&amp;Cat1=3" title="FrenchProverb - Popular sayings that teach wisdom or observations">Proverb</a> <small>(137)</small> - Popular sayings that teach wisdom or observations  <br>
-            </td>
-          </tr>
-        
-          <tr>
-            <td>
-				<a href="HmanList.asp?x3=22&amp;Cat1=4" title="FrenchFamous Name or Title - Names or titles of famous people, places, things, etc.">Famous Name or Title</a> <small>(113)</small> - Names or titles of famous people, places, things, etc.  <br>
-            </td>
-          </tr>
-        
-          <tr>
-            <td>
-				<a href="HmanList.asp?x3=22&amp;Cat1=5" title="French- Other - - Anything that does not fit in above categories">Other</a> <small>(647)</small> - Anything that does not fit in above categories  <br>
-            </td>
-          </tr>
+       <%end%>
         
         
       

@@ -114,38 +114,7 @@ Total found: 5252 !<br><span class="PageNumActive">1</span> &nbsp;
 				}
 				</script><a class="PageNumBig" href="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search&amp;Cnt=6">6</a> &nbsp;
 			<a class="PageNumBig" href="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search&amp;Cnt=526">526</a> &nbsp;<a class="PageArrow" style="margin-left: 3px;" href="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search&amp;Cnt=2&amp;UIdLast=4371664"><svg class="svg-inline--fa fa-arrow-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right"></i> --></a> &nbsp;
-	  <form name="frmSplitPage" id="frmSplitPage" method="get" action="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search">
-		<input type="hidden" name="selSrchList" value="15749707">
-		<input type="hidden" name="selX3" value="22">
-		<input type="hidden" name="selX6" value="1">
-		<input type="hidden" name="selCountry" value="33">
-		<input type="hidden" name="txtCity" value="">
-		<input type="hidden" name="txtAgeMin" value="18">
-		<input type="hidden" name="txtAgeMax" value="26">
-		<input type="hidden" name="selGender" value="0">
-		<input type="hidden" name="selIsClass" value="false">
-		<input type="hidden" name="selX4" value="true">
-		<input type="hidden" name="selTxtChat" value="true">
-		<input type="hidden" name="selFace" value="true">
-		<input type="hidden" name="selX13" value="true">
-		<input type="hidden" name="txtFName" value="">
-		<input type="hidden" name="txtDesc" value="">
-		<input type="hidden" name="selOrder" value="0">
-		<input type="hidden" name="txtSrchName" value="mysearch">
-		<input type="hidden" name="selSex" value="0">
-	                 
-	   <select name="nRows" id="nRows" onchange="this.form.submit();" style="height: 28px; border: 1px solid border-radius: 4px; margin: 1px 0px;">  
-		 <option selected="" value="10">10
-		 </option><option value="20">20
-		 </option><option value="50">50
-		 </option><option value="100">100
-		 </option><option value="250">250
-	   </option></select> 
-	   <span style="color: #666666; font-size: 14px; vertical-align:bottom;">rows/page. &nbsp;Go to:</span>
-		<input type="number" name="Cnt" id="Cnt" style="width: 62px; height: 22px; border: 1px solid border-radius: 4px; margin: 1px 0px;" step="1" min="1" max="526" placeholder="Page #">
-		
-		<input type="submit" name="btnSplitPage" class="PageGoBtn" value="Go">
-	  </form>
+	  <%=render "members/registrations/splitpage",member:@member%>
 	  <script>
 		function PageJump(){
 			var Cnt = document.getElementById("Cnt").value;
@@ -241,38 +210,7 @@ Total found: 5252 !<br><span class="PageNumActive">1</span> &nbsp;
 				}
 				</script><a class="PageNumBig" href="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search&amp;Cnt=6">6</a> &nbsp;
 			<a class="PageNumBig" href="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search&amp;Cnt=526">526</a> &nbsp;<a class="PageArrow" style="margin-left: 3px;" href="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search&amp;Cnt=2&amp;UIdLast=4371664"><svg class="svg-inline--fa fa-arrow-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right"></i> --></a> &nbsp;
-	  <form name="frmSplitPage" id="frmSplitPage" method="get" action="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search">
-		<input type="hidden" name="selSrchList" value="15749707">
-		<input type="hidden" name="selX3" value="22">
-		<input type="hidden" name="selX6" value="1">
-		<input type="hidden" name="selCountry" value="33">
-		<input type="hidden" name="txtCity" value="">
-		<input type="hidden" name="txtAgeMin" value="18">
-		<input type="hidden" name="txtAgeMax" value="26">
-		<input type="hidden" name="selGender" value="0">
-		<input type="hidden" name="selIsClass" value="false">
-		<input type="hidden" name="selX4" value="true">
-		<input type="hidden" name="selTxtChat" value="true">
-		<input type="hidden" name="selFace" value="true">
-		<input type="hidden" name="selX13" value="true">
-		<input type="hidden" name="txtFName" value="">
-		<input type="hidden" name="txtDesc" value="">
-		<input type="hidden" name="selOrder" value="0">
-		<input type="hidden" name="txtSrchName" value="mysearch">
-		<input type="hidden" name="selSex" value="0">
-	                 
-	   <select name="nRows" id="nRows" onchange="this.form.submit();" style="height: 28px; border: 1px solid border-radius: 4px; margin: 1px 0px;">  
-		 <option selected="" value="10">10
-		 </option><option value="20">20
-		 </option><option value="50">50
-		 </option><option value="100">100
-		 </option><option value="250">250
-	   </option></select> 
-	   <span style="color: #666666; font-size: 14px; vertical-align:bottom;">rows/page. &nbsp;Go to:</span>
-		<input type="number" name="Cnt" id="Cnt" style="width: 62px; height: 22px; border: 1px solid border-radius: 4px; margin: 1px 0px;" step="1" min="1" max="526" placeholder="Page #">
-		
-		<input type="submit" name="btnSplitPage" class="PageGoBtn" value="Go">
-	  </form>
+	  <%=render "members/registrations/splitpage",member:@member%>
 	  <script>
 		function PageJump(){
 			var Cnt = document.getElementById("Cnt").value;

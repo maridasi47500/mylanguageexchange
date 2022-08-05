@@ -1,0 +1,95 @@
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+
+<h2>Hangman Games</h2>
+
+
+	<h3><a href="Hangman.asp">Hangman Games Home</a>
+
+	
+	  &gt; <a href="HManList.asp?x3=<%= @language.id%>"><%= @language.name%></a>
+	
+	  &gt; <a href="HManList.asp?x3=<%= @language.id%>&amp;Cat1=<%= @type.id%>"><%=@type.name%></a>
+	
+	  &gt; <%=@category.name%>
+	</h3>
+
+    <b>Play games in this category</b><br>
+    <br>
+  
+    Showing newest games. 
+    Sort games by <a href="HManList.asp?x3=<%= @language.id%>&amp;Cat1=<%= @type.id%>&amp;Cat2=<%= @category.id%>&amp;Sort=Title">title</a>.
+    Sort games by <a href="HManList.asp?x3=<%= @language.id%>&amp;Cat1=<%= @type.id%>&amp;Cat2=<%= @category.id%>&amp;Sort=Rating">rating</a>.
+	<br>
+  
+    Click on a title to play the game.<br>
+    
+	<div class="WrapTblScroll">
+     <table class="TblSrchResults" width="570px" cellspacing="0" cellpadding="3" border="1">
+     <tbody><tr class="table-heading">
+       <td valign="bottom"><b>Title of Game</b></td>
+       <td valign="bottom"><b>Language</b></td>
+       <td valign="bottom"><b>Type</b></td>
+       <td valign="bottom"><b>Category</b></td>
+       <td valign="bottom"><b>Created by</b></td>
+       <td valign="bottom"><b>Rating</b></td>
+     </tr>
+    <%@hangmen.each do |hman|%>
+        <tr>
+          <td class="userdata" valign="top">
+          <b><a href="HManPlay.asp?GId=5747"><%=hman.title%></a></b><br>
+          <%@i=0%>
+                                        
+                                        
+                                        
+                                        <%hman.guess.split('').each do |f|%>
+                                        <%if f == " "%>
+                                        &nbsp;
+                                        <%else%>
+                                        <%if hman.hide[@i] == "0" || hman.useletter(f)%>
+				    <%=hman.guess[@i]%>
+                                          <%else%>
+								<img src="images/spacer.gif" width="1">_
+							
+								<%end%>
+                                                                
+							<%end%>
+                                                                <%@i+=1%>
+                                                                <%end%>
+          
+          </td>
+          
+          <td class="userdata" valign="top"><small><%= hman.mylanguage.try(:name)%></small></td>
+          <td class="userdata" valign="top"><small><%=hman.myhangmantype.try(:name)%></small></td>
+          <td class="userdata" valign="top"><small><%=hman.myhangmancat.try(:name)%></small></td>
+          <td class="userdata" valign="top"><a href="MemberInfo.asp?UId=<%=hman.member_id%>"><%=hman.membername%></a><br>
+            <font color="slategray"><small><%=l(hman.created_at,format: :sentemail)%></small></font><br>
+            <a href="HManMember.asp?UId=<%=hman.member_id%>"><small><%=hman.membernbgames%> games</small></a>
+          </td>
+          
+          <td class="userdata" valign="top">n/a<br>
+            
+            <font color="slategray"><small><%=hman.countrating%> votes</small></font><br>
+            <a href="HManRatings.asp?GId=<%=hman.id%>"><small>view</small></a>
+          </td>
+        </tr>
+       
+      <%end%>
+      
+    </tbody></table>
+	</div>
+    
+<br>
+<br>
+<b><a href="hangman.asp">Hangman Home</a></b><br>
+<b><a href="HManBuilder.asp?x3=<%= @language.id%>&amp;Cat1=<%= @type.id%>&amp;Cat2=<%= @category.id%>">Create a Game</a></b>
+
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/HmanList.asp?x3=<%= @language.id%>&amp;Cat1=<%= @type.id%>&amp;Cat2=<%= @category.id%>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHmanList.asp%3Fx3%3D53%26Cat1%3D2%26Cat2%3D23&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f2c904251e23872" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3855ed5f02f68%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff133a3177e2de52%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHmanList.asp%3Fx3%3D53%26Cat1%3D2%26Cat2%3D23&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

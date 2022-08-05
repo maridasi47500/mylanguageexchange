@@ -1,0 +1,27 @@
+<%=form_with model: member,scope:"",url: request.path, method: :get, html: {name: "frmSplitPage", id: "frmSplitPage"} do |form|%>
+		<%=form.hidden_field "selSrchList" %>
+		<%=form.hidden_field "selX3" %>
+		<%=form.hidden_field "selX6"%>
+		<%=form.hidden_field "selCountry" %>
+		<%=form.hidden_field "txtCity" %>
+		<%=form.hidden_field "txtAgeMin" %>
+		<%=form.hidden_field "txtAgeMax" %>
+		<%=form.hidden_field "selGender" %>
+		<%=form.hidden_field "selIsClass" %>
+		<%=form.hidden_field "selX4" %>
+		<%=form.hidden_field "selTxtChat" %>
+		<%=form.hidden_field "selFace" %>
+		<%=form.hidden_field "selX13" %>
+		<%=form.hidden_field "txtFName" %>
+		<%=form.hidden_field "txtDesc" %>
+		<%=form.hidden_field "selOrder" %>
+		<%=form.hidden_field "txtSrchName" %>
+		<%=form.hidden_field "selSex" %>
+	                 
+	   <%=form.select "nRows", [10,20,50,100,500],{},{ onchange: "this.form.submit();", style:"height: 28px; border: 1px solid border-radius: 4px; margin: 1px 0px;"}%>  
+		 
+	   <span style="color: #666666; font-size: 14px; vertical-align:bottom;">rows/page. &nbsp;Go to:</span>
+		<%=form.number_field "Cnt", style: "width: 62px; height: 22px; border: 1px solid border-radius: 4px; margin: 1px 0px;", step:"1", min: "1", max: "526", placeholder: "Page #"%>
+		
+		<input type="submit" name="btnSplitPage" class="PageGoBtn" value="Go">
+	  <%endn%>

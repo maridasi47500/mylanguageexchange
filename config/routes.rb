@@ -18,6 +18,8 @@ post "/JobsLogin.asp",to:"employers/sessions#create"
 
 
   end
+  get "HManMsgAdd.asp",to:"hangman#reply"
+  post "HManMsgAdd.asp",to:"hangman#replysent"
   post "HManFBK.asp",to:"hangman#fbk"
   devise_for :job_seekers, controllers: { registrations: 'job_seekers/registrations', sessions: 'job_seekers/sessions' }
   devise_scope :job_seeker do
@@ -33,13 +35,20 @@ post "/JobsLogin.asp",to:"employers/sessions#create"
   get "Pen-pals/Country/:name.asp",to:"penpals#bycountry"
   get "Hangman.asp",to:"hangman#seeall"
   get "Minfo.asp",to:"emails#myinfo",as: :minfo
+  get "MemberInfo.asp",to:"emails#myinfo"
   get "MembShowHistory.asp",to:"emails#previouscontacts"
+  get "HmanList.asp",to:"hangman#cat2", constraints: lambda { |request| request.params[:Cat2] && request.params[:Cat1] && request.params[:x3] }
+  get "HmanList.asp",to:"hangman#cat1", constraints: lambda { |request| request.params[:Cat1] && request.params[:x3] }
   get "HmanList.asp",to:"hangman#languagelist", constraints: lambda { |request| request.params[:x3] }
+  get "HManList.asp",to:"hangman#cat2", constraints: lambda { |request| request.params[:Cat2] && request.params[:Cat1] && request.params[:x3] }
+  get "HManList.asp",to:"hangman#cat1", constraints: lambda { |request| request.params[:Cat1] && request.params[:x3] }
+  get "HManList.asp",to:"hangman#languagelist", constraints: lambda { |request| request.params[:x3] }
 
-  get "HmanList.asp",to:"hangman#list"
+  get "HmanList.asp",to:"hangman#list",as: :hmanlist
+  get "HManList.asp",to:"hangman#list"
   get "HManMember.asp",to:"hangman#member"
   get "HManRelG.asp",to:"hangman#relg"
-  get "HmanRatings.asp",to:"hangman#ratings"
+  get "HmanRatings.asp",to:"hangman#ratings",as: :hmanratings
   get "HManRatings.asp",to:"hangman#ratings"
   post "/Minfo.asp",to:"emails#create"
 get "CLScatter.asp",to:"wordmatch#index"
@@ -93,7 +102,7 @@ get "NotepadAdd.asp",to:"notepad#add"
 get "Notepad.asp",to:"notepad#clublibrary", constraints: lambda { |request| request.params[:show] == "2" && !request.params[:lang1] && !request.params[:lang2] }
 get "Notepad.asp",to:"notepad#allmyentries", constraints: lambda { |request| request.params[:show] == "2" && request.params[:lang1] && request.params[:lang2] && request.params[:lang1].to_i == 0 && request.params[:lang2].to_i == 0 }
 get "Notepad.asp",to:"notepad#entriestwolanguages", constraints: lambda { |request| request.params[:show] == "2" && request.params[:lang1].to_i > 0 && request.params[:lang2].to_i > 0 }
-
+post "/NotepadAdd.asp",to:"notepad#addentry"
 get "Teachers/LessonList.asp",to:"teachers#lessonlistbylanguage", constraints: lambda { |request| request.params[:x3Id] }
 
 get "Teachers/LessonList.asp",to:"teachers#lessonlist"

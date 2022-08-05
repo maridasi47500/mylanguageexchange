@@ -1,17 +1,51 @@
 class HangmanController < ApplicationController
-  protect_from_forgery except: [:create,:play,:publish,:play1,:fbk]
+  protect_from_forgery except: [:create,:play,:publish,:play1,:fbk,:replysent]
+  
   before_action :authenticate_member!, only: [:publish], notice: 'Sorry, this area is for members only.'
+  before_action :authenticate_member!, only: [:reply]
   def fbk
     @hangman=Hangman.find(params[:GId])
-    @rating=Hmanrating.new(fbk_params)
+    @rating=Hmanrating.new(fbk_params.merge({:member_id => current_member.try(:id)}))
     @rating.save
     #fbk_params
   end
+  def list
+    @languages=Language.all.myhangmen
+  end
+  def seeall
+    @languages=Language.all.myhangmen
+  end
+  def reply
+    @rating=Hmanrating.myrating(params[:MId])
+    @hangman=@rating.hangman
+  end
+  def replysent
+    @comment=Hmancomment.new(comment_params.merge({member_id: current_member.try(:id)}))
+    @comment.save
+  end
   def languagelist
-    @language=Language.find(params[:x3])
+    @language=Language.find(params[:x3]) rescue nil
+    @types=Hangmantype.all.myhangmen(@language.id)
+    
+  end
+  def cat1
+    @language=Language.find(params[:x3]) rescue nil
+    @type=Hangmantype.find(params[:Cat1])
+    @categories=Hangmancat.all.myhangmen(params[:x3],params[:Cat1])
+    
+  end
+  def cat2
+    @language=Language.find(params[:x3]) rescue nil
+    @type=Hangmantype.find(params[:Cat1])
+    @category=Hangmancat.find(params[:Cat2])
+    @hangmen=Hangman.where(myhangmancat:@category,myhangmantype:@type,mylanguage:@language).withratings
   end
   def relg
      @hangman=Hangman.find(params[:GId])
+  end
+  def ratings
+    @hangman=Hangman.ratings(params[:GId])
+    @ratings=@hangman.myratings(params[:Cnt])
   end
   def member
     @member=Member.find(params[:UId])
@@ -104,5 +138,8 @@ class HangmanController < ApplicationController
   end
   def playparams
     params.permit(:hidPlayerGuessAll, :hidnumWrongGuesses, :hidHintsAll,:PlayerGuess,:hidGuess)
+  end
+  def comment_params
+    params.permit("txaCmts",:MId,:member_id)
   end
 end

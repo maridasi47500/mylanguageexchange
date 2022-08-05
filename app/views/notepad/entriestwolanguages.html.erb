@@ -12,11 +12,73 @@
 
 
    <br>
-   
+   <%if @notepads.length == 0%>
 	   <br>
 	   No item was found.<br>
 		        
    <br>
+ <%else%>
+   <div class="WrapTblScroll">
+   <table class="WidthMaxLim TblSrchResults" cellspacing="1" cellpadding="5" border="0">
+     <tbody>
+	 <tr class="table-heading">
+		
+			<td>
+				French
+			</td>
+			<td>
+				English 
+			</td>
+		
+			<td align="center">Edit
+			</td>
+		
+       
+     </tr>
+       
+			<tr>
+			 <td class="userdata" width="45%" valign="top">
+				 lait
+				<div style="position: relative; float: right">
+				 <a title="Translate, Web search, Hear it spoken" href="#" class="circle-btn btn-lt floating" onclick="dropdownSiblingToggle(this); return false;"><i class="material-icons notranslate">more_vert</i></a>
+				 
+				 <div class="dropdown-content hide" style="width:100px">
+							
+				 <a target="_blank" rel="nofollow" title="Web search" href="http://www.google.com/search?hl=en&amp;q=%22lait%22+-site%3Amylanguageexchange.com&amp;btnG=Search" class="circle-btn" onclick="dropdownAncestorClose(this);"><i class="material-icons notranslate">search</i></a>
+				 
+				 <a target="_blank" rel="nofollow" title="Translate &amp; listen" href="http://translate.google.com/#auto/en/lait" onclick="dropdownAncestorClose(this);" class="circle-btn"><i class="material-icons notranslate">translate</i></a>
+				 
+				 <a onclick="RVSpeak('lait','French Female'); return false;" href="/Notepad.asp" class="circle-btn"><i class="material-icons notranslate">play_arrow</i></a>
+					</div>
+             </div></td>
+			 <td class="userdata" width="45%" valign="top">
+             milk
+
+			<div style="position: relative; float: right">
+             <a title="Translate, Web search, Hear it spoken" href="#" class="circle-btn btn-lt floating" onclick="dropdownSiblingToggle(this); return false;"><i class="material-icons notranslate">more_vert</i></a>
+			 <div class="dropdown-content hide" style="width:100px">
+				 <a target="_blank" rel="nofollow" title="Web search" href="http://www.google.com/search?hl=en&amp;q=%22milk%22+-site%3Amylanguageexchange.com&amp;btnG=Search" class="circle-btn" onclick="dropdownAncestorClose(this);"><i class="material-icons notranslate">search</i></a>
+				 
+				 <a target="_blank" rel="nofollow" title="Translate &amp; listen" href="http://translate.google.com/#auto/en/milk" onclick="dropdownAncestorClose(this);" class="circle-btn"><i class="material-icons notranslate">translate</i></a>
+				 
+				 <a onclick="RVSpeak('milk','US English Female'); return false;" href="/Notepad.asp" class="circle-btn"><i class="material-icons notranslate">play_arrow</i></a>
+			</div>
+			</div>
+           </td>  
+           
+			<td valign="top" nowrap="">
+               
+              <a href="NotepadAdd.asp?MsgId=64172"><i class="material-icons notranslate" style="font-size: 18px">edit</i></a>&nbsp; 
+              <a href="Notepad.asp?lang1=22&amp;lang2=1&amp;hidProc=1&amp;show=2&amp;bars=&amp;lang=&amp;ClubLibId=64172&amp;del=1" onclick="return (confirm(&quot;Do you really want to delete this record from the Notepad?&quot;));"><i class="material-icons  notranslate" style="font-size: 18px">delete</i></a> 
+			</td>
+           
+         </tr>
+		 
+	   </tbody>
+     </table>
+	 </div>
+   
+   <%end%>
    
 	<a href="LessonTableEdit.asp"><b>Create a Lesson</b></a><br>
    

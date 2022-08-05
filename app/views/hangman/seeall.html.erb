@@ -65,14 +65,14 @@ It's a fun way to learn, make friends or find language exchange partners for reg
   </tr>
   <tr>
     <td>
-<%Language.all.each_slice(55).to_a.each do |languages|%>
+<%@languages.each_slice(55).to_a.each do |languages|%>
     <table class="TblListMenuCol" width="32%" align="left">
     
       <tbody>
           <%languages.each do |language|%>
           <tr>
         <td>
-          <a href="HmanList.asp?x3=<%=language.id%>" title="<%=language.name%> expressions, slang, idioms, famous quotes"><%=language.name%></a> <small>188</small>
+          <a href="HmanList.asp?x3=<%=language.id%>" title="<%=language.name%> expressions, slang, idioms, famous quotes"><%=language.name%></a> <small><%=language.nbhangmen%></small>
         </td>
       </tr>
   

@@ -70,7 +70,7 @@ It's a fun way to learn, make friends or find language exchange partners for reg
     <table class="TblListMenuCol" width="32%" align="left">
     
       <tbody>
-          <%Language.all.each do |language|%>
+          <%@languages.each do |language|%>
           <tr>
         <td>
           <a href="HmanList.asp?x3=<%=language.id%>" title="<%=language.name%> expressions, slang, idioms, famous quotes"><%=language.name%></a> <small><%=language.nbhangmen%></small>

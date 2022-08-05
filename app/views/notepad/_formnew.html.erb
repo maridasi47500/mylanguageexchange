@@ -1,0 +1,54 @@
+<%=form_with model: notepad,scope:"",url: request.path do |form|%>
+ <table class="TblInputForm TblUserForm" cellspacing="0" cellpadding="0" border="1">
+ 	<thead>
+   <tr class="table-heading">
+     <td colspan="2">Add New Entry</td>
+   </tr>
+   </thead>
+   <tbody><tr>
+     <td>
+       <script>$(document).ready(function() {    $(".select-suggestlang1").select2();$('#select2-lang1-container').html("<%=notepad.language1.try(:name)%>");});</script>
+       
+       
+                                      <%=form.select "lang1", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"lang1", size:"1",class:"select-suggestlang1"}%>
+       
+  <input type="text" name="txtF1" id="txtF1" value="Entrez du texte <%=notepad.language1.try(:name)%>" style="width: 290px;" maxlengthhh="160" class="text_field" onfocus="TextOnFocus(this,1)" onblur="TextOnBlur(this,1)">
+  
+     </td>
+
+     <td>
+       <script>$(document).ready(function() {    $(".select-suggestlang2").select2();$('#select2-lang2-container').html("<%=notepad.language2.try(:name)%>");});</script>
+       
+                                      <%=form.select "lang2", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"lang2", size:"1",class:"select-suggestlang2"}%>
+       
+  <input type="text" name="txtF2" id="txtF2" value="Entrez du texte <%=notepad.language2.try(:name)%>" style="width: 290px;" maxlengthhh="160" class="text_field" onfocus="TextOnFocus(this,2)" onblur="TextOnBlur(this,2)">
+  
+     </td>
+
+   </tr>
+   <tr>
+     <td colspan="2">
+       Explanation (optional):
+               <small><font color="gray">Do not write contact information.</font></small><br>
+       
+  <input type="text" name="txtF3" id="txtF3" value="" maxlengthhh="160" style="width: 99%;">
+  
+     </td>
+   </tr>
+   <tr>
+     <td colspan="2">
+		
+		<input type="hidden" name="radPublic" id="radPublic" checked="" value="1">
+		<!--input type="radio" name="radPublic" id="radPublic"  value="1" CHECKED onclick="Public(1);"-->
+		
+		<!--input type="radio" name="radPublic" id="radPublic"  value="0" onclick="Public(0);"-->
+		
+		<br>
+		   <input type="hidden" name="show" id="show" value="2">
+		   <input type="hidden" name="bars" id="bars" value="">
+		<input type="hidden" value="1" name="hidProc" id="hidProc">  
+		<input type="submit" name="submit1" id="submit1" value="Add to My Notepad and Club Library" onclick="SubmitCheck();">
+	 </td>
+   </tr>
+ </tbody></table> 
+ <%end%>

@@ -10,6 +10,14 @@ class NotepadController < ApplicationController
   def show
   end
   def add
-    
+    @notepad=Notepad.new(notepad_params)
+  end
+  def addentry
+    @notepad=Notepad.new(notepad_params)
+    @notepad.save
+  end
+  private
+  def notepad_params
+    params.permit("lang1", "txtF1", "lang2", "txtF2", "txtF3")
   end
 end

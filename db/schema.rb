@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_04_220501) do
+ActiveRecord::Schema.define(version: 2022_08_05_222642) do
 
   create_table "bboardcats", force: :cascade do |t|
     t.string "name_fr"
@@ -111,6 +111,12 @@ ActiveRecord::Schema.define(version: 2022_08_04_220501) do
     t.integer "member_id"
   end
 
+  create_table "hmancomments", force: :cascade do |t|
+    t.text "txaCmts"
+    t.integer "MId"
+    t.integer "member_id"
+  end
+
   create_table "hmanratings", force: :cascade do |t|
     t.string "txtGuess"
     t.integer "selX3"
@@ -120,6 +126,7 @@ ActiveRecord::Schema.define(version: 2022_08_04_220501) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "chkSameX3"
+    t.integer "member_id"
   end
 
   create_table "job_seekers", force: :cascade do |t|
@@ -188,6 +195,14 @@ ActiveRecord::Schema.define(version: 2022_08_04_220501) do
     t.string "selGender"
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+  end
+
+  create_table "notepads", force: :cascade do |t|
+    t.integer "lang1"
+    t.integer "lang2"
+    t.string "txtF1"
+    t.string "txtF2"
+    t.text "txtF3"
   end
 
   create_table "teachers", force: :cascade do |t|

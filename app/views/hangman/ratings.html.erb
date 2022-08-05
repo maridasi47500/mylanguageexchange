@@ -11,37 +11,37 @@
 	<tbody><tr>
 		<td align="left"><h5>Title:</h5>
 		</td>
-		<td valign="top" align="left"><b><span class="userdata">Faire du cheval</span></b>
+		<td valign="top" align="left"><b><span class="userdata"><%=@hangman.title%></span></b>
 		</td>
 	</tr>
 	<tr>
 		<td align="left"><h5>Answer:</h5>
 		</td>
-		<td valign="top" align="left"><b><span class="userdata">équitation</span></b>
+		<td valign="top" align="left"><b><span class="userdata"><%=@hangman.guess%></span></b>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2" align="left">
-			<b>French</b>
-			&gt; <b>Popular Expression</b>
-			&gt; <b>Sports</b>
+			<b><%=@hangman.mylanguage.try(:name)%></b>
+			&gt; <b><%=@hangman.myhangmantype.try(:name)%></b>
+			&gt; <b><%=@hangman.myhangmancat.try(:name)%></b>
 		</td>
 	</tr>
 	<!-- TR>
 		<TD align=left><b>Language:</b>
 		</TD>
-		<TD align=left><small>French</small>
+		<TD align=left><small><%=@hangman.mylanguage.try(:name)%></small>
 		</TD>
 	</TR>
 	<TR>
 		<TD align=left><b>Type:</b>
 		</TD>
-		  <td valign="top"><small>Popular Expression</small></td>
+		  <td valign="top"><small><%=@hangman.myhangmantype.try(:name)%></small></td>
 	</TR>
 	<TR>
 		<TD align=left><b>Category:</b>
 		</TD>
-		  <td valign="top"><small>Sports</small></td>
+		  <td valign="top"><small><%=@hangman.myhangmancat.try(:name)%></small></td>
 	</TR-->
 </tbody></table>
 
@@ -62,7 +62,7 @@
 		</td>
 		<td><img src="images/spacer.gif" width="10" border="0">
 		</td>
-		<td class="userdata" align="left">3.5
+		<td class="userdata" align="left"><%=@hangman.moyrating%>
 		</td>
 	</tr>
 	<tr>
@@ -70,7 +70,7 @@
 		</td>
 		<td><img src="images/spacer.gif" width="10" border="0">
 		</td>
-		<td class="userdata" align="left">17
+		<td class="userdata" align="left"><%=@hangman.countrating%>
 		</td>
 	</tr>
 	<tr>
@@ -78,7 +78,7 @@
 		</td>
 		<td><img src="images/spacer.gif" width="10" border="0">
 		</td>
-		<td class="userdata" align="left">2
+		<td class="userdata" align="left"><%=@hangman.countgarbage%>
 		</td>
 	</tr>
 	<tr>
@@ -86,7 +86,7 @@
 		</td>
 		<td><img src="images/spacer.gif" width="10" border="0">
 		</td>
-		<td class="userdata" valign="top" align="left">1
+		<td class="userdata" valign="top" align="left"><%=@hangman.countgarbagenative%>
 		</td>
 	</tr>
 </tbody></table>
@@ -149,17 +149,39 @@ This list may differ from the summary statistics above because only approved rat
 	border: 1px outset slategray ;
 }
 </style>			
-Total found: 15 !<br><span class="PageNumActive">1</span> &nbsp;<a class="PageNumBig" href="/HmanRatings.asp?GId=14453&amp;Cnt=2">2</a> &nbsp;<a class="PageArrow" style="margin-left: 3px;" href="/HmanRatings.asp?GId=14453&amp;Cnt=2"><svg class="svg-inline--fa fa-arrow-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right notranslate"></i> --></a> &nbsp;<br>
+Total found: <%=@hangman.countrating%> !<br>
+<%@hmancount=@hangman.countrating/5+1%>
+<%if params[:Cnt].to_i > 1 && @hmancount > 1%>
+<a class="PageArrow" style="margin-right: 3px;" href="/HmanRatings.asp?GId=14453&amp;Cnt=1"><svg class="svg-inline--fa fa-arrow-left fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg><!-- <i class="fas fa-arrow-left"></i> --></a><!-- comment -->
+<%end%>
+<%=link_to_unless_current(1, hmanratings_path(GId: @hangman.id),{class:"PageNumBig"}) do 
+  ("<span class=\"PageNumActive\">1</span>".html_safe)
+end%>
+<%if @hmancount > 1%>
+<%(2..@hmancount).each do |a|%>
+<%=link_to_unless_current(a, hmanratings_path(GId: @hangman.id,Cnt: a),{class:"PageNumBig"}) do 
+  ("<span class=\"PageNumActive\">#{a}</span>".html_safe)
+end%>
+<%end%>
+ 
+<%end%>
+<%if params[:Cnt].to_i < @hmancount && @hmancount > 1%>
+<a class="PageArrow" style="margin-left: 3px;" href="/HmanRatings.asp?GId=14453&amp;Cnt=2">
+    <%end%>
+    
+    <!-- <i class="fas fa-arrow-right notranslate"></i> --></a> &nbsp;<br>
   <table class="TblSrchResults" width="99%" cellspacing="0" cellpadding="3" border="1">
   <tbody><tr class="table-heading">
     <td width="17%" valign="BOTTOM">Reviewer</td>
     <td valign="top">Comments</td>
   </tr>
-   
+   <%@ratings.each do |rating|%>
+ 
      <tr>
 		<td valign="top">
-			
-			  <a href="MemberInfo.asp?UId=2170726">Martin</a>
+			<%if !rating.member%>Guest<%else%>
+			  <a href="MemberInfo.asp?UId=<%=rating.member_id%>"><%=rating.membername%></a>
+                          <%end%>
 			
 		</td>
 		<td valign="top">
@@ -167,43 +189,10 @@ Total found: 15 !<br><span class="PageNumActive">1</span> &nbsp;<a class="PageNu
 			<tbody><tr>
 				<td>
 				  
-				    Rating: <span class="userdata">5</span>
+				    Rating: <span class="userdata"><%=rating.radRating%></span>
 				  
 				</td>
-				<td align="right">November 10, 2013
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  Merci bcp!<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=141355"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  <a href="MemberInfo.asp?UId=2141520">Georgie Armstrong</a>
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">2</span>
-				  
-				</td>
-				<td align="right">August 28, 2012
+				<td align="right"><%=l(rating.created_at,format: :emailsent)%>
 				</td>
 			</tr>
 		</tbody></table>
@@ -211,294 +200,20 @@ Total found: 15 !<br><span class="PageNumActive">1</span> &nbsp;<a class="PageNu
 				<tbody><tr>
 					<td>
 					  &nbsp;<br>
-					  
-						Instead of "<span class="userdata">équitation</span>",  in English we say "<span class="userdata">horse riding</span>"<br>
-					  
+					  <%if !rating.txtGuess.empty?%>
+						Instead of "<span class="userdata"><%=@hangman.guess%></span>",  in English we say "<span class="userdata"><%=rating.txtGuess%></span>"<br>
+					  <%end%>
 					</td>
 					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=133211"><small>Reply</small></a>
+					  <a href="HManMsgAdd.asp?MId=<%=rating.id%>"><small>Reply</small></a>
 					</td>
 				</tr>
 		  </tbody></table>
 		  
 		</td>
      </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  Guest
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">4</span>
-				  
-				</td>
-				<td align="right">August 15, 2012
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  &nbsp;<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=132815"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  <a href="MemberInfo.asp?UId=2058217">Peiya XIAO</a>
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">3</span>
-				  
-				</td>
-				<td align="right">April 27, 2012
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  &nbsp;<br>
-					  
-						Instead of "<span class="userdata">équitation</span>",  in Chinese, Cantonese we say "<span class="userdata">骑马</span>"<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=130310"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  <a href="MemberInfo.asp?UId=1953589">Anne Salberg Pedersen</a>
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">4</span>
-				  
-				</td>
-				<td align="right">November 1, 2011
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  &nbsp;<br>
-					  
-						Instead of "<span class="userdata">équitation</span>",  in Norwegian we say "<span class="userdata">Ridning</span>"<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=125946"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  Guest
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">4</span>
-				  
-				</td>
-				<td align="right">February 14, 2010
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  &nbsp;<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=109788"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  <a href="MemberInfo.asp?UId=1412053">Lesley</a>
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">4</span>
-				  
-				</td>
-				<td align="right">September 6, 2009
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  &nbsp;<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=104687"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  <a href="MemberInfo.asp?UId=1405219">Maddie Harris</a>
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">5</span>
-				  
-				</td>
-				<td align="right">June 26, 2009
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  &nbsp;<br>
-					  
-						Instead of "<span class="userdata">équitation</span>",  in English we say "<span class="userdata">horse riding</span>"<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=102352"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  Guest
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">5</span>
-				  
-				</td>
-				<td align="right">September 29, 2008
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  &nbsp;<br>
-					  
-						Instead of "<span class="userdata">équitation</span>",  in French we say "<span class="userdata">équitation</span>"<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=91636"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
-     <tr>
-		<td valign="top">
-			
-			  <a href="MemberInfo.asp?UId=1097066">pierre lebarbier</a>
-			
-			  <br>
-			  <span class="userdata"><small>(native speaker)</small></span><br>
-			
-		</td>
-		<td valign="top">
-		<table width="100%" cellspacing="1" cellpadding="0" border="0">
-			<tbody><tr>
-				<td>
-				  
-				    Rating: <span class="userdata">5</span>
-				  
-				</td>
-				<td align="right">April 11, 2008
-				</td>
-			</tr>
-		</tbody></table>
-		  <table width="100%" cellspacing="1" cellpadding="0" border="0">
-				<tbody><tr>
-					<td>
-					  &nbsp;<br>
-					  
-					</td>
-					<td valign="bottom" align="right">
-					  <a href="HManMsgAdd.asp?MId=84156"><small>Reply</small></a>
-					</td>
-				</tr>
-		  </tbody></table>
-		  
-		</td>
-     </tr>
-     
+    
+     <%end%>
    </tbody></table>
    
 <style>
@@ -549,8 +264,31 @@ Total found: 15 !<br><span class="PageNumActive">1</span> &nbsp;<a class="PageNu
 	border: 1px outset slategray ;
 }
 </style>			
-Total found: 15 !<br><span class="PageNumActive">1</span> &nbsp;<a class="PageNumBig" href="/HmanRatings.asp?GId=14453&amp;Cnt=2">2</a> &nbsp;<a class="PageArrow" style="margin-left: 3px;" href="/HmanRatings.asp?GId=14453&amp;Cnt=2"><svg class="svg-inline--fa fa-arrow-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right notranslate"></i> --></a> &nbsp;<br>
-  <br>
+Total found: <%=@hangman.countrating%> !<br>
+
+
+
+<%@hmancount=@hangman.countrating/5+1%>
+<%if params[:Cnt].to_i > 1 && @hmancount > 1%>
+<a class="PageArrow" style="margin-right: 3px;" href="/HmanRatings.asp?GId=14453&amp;Cnt=1"><svg class="svg-inline--fa fa-arrow-left fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg><!-- <i class="fas fa-arrow-left"></i> --></a><!-- comment -->
+<%end%>
+<%=link_to_unless_current(1, hmanratings_path(GId: @hangman.id),{class:"PageNumBig"}) do 
+  ("<span class=\"PageNumActive\">1</span>".html_safe)
+end%>
+<%if @hmancount > 1%>
+<%(2..@hmancount).each do |a|%>
+<%=link_to_unless_current(a, hmanratings_path(GId: @hangman.id,Cnt: a),{class:"PageNumBig"}) do 
+  ("<span class=\"PageNumActive\">#{a}</span>".html_safe)
+end%>
+<%end%>
+ 
+<%end%>
+<%if params[:Cnt].to_i < @hmancount && @hmancount > 1%>
+<a class="PageArrow" style="margin-left: 3px;" href="/HmanRatings.asp?GId=14453&amp;Cnt=2">
+    <%end%>
+    
+    
+    <br>
   <a href=""><b>Play Another Game</b></a>
 
 <br>

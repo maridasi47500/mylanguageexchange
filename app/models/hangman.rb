@@ -10,19 +10,36 @@ class Hangman < ApplicationRecord
   belongs_to :myhangmancat,class_name:"Hangmancat",foreign_key:"category",optional:true
   belongs_to :myhangmantype,class_name:"Hangmantype",foreign_key:"types",optional:true
   before_validation :savevalues
+  def self.ratings(id)
+        Hangman.where("hangmen.id" => id).joins(:ratings).select("hangmen.*, hmanratings.radRating as rating,count(distinct hmanratings.radRating) as countrating,sum(case when hmanratings.radRating = 0 then 1 else 0 end) as countgarbage,hmanratings.chkSameX3 as chkSameX3,sum(case when hmanratings.GId = '#{id}' and hmanratings.chkSameX3 is true and hmanratings.radRating = 0 then 1 else 0 end) as countgarbagenative, avg(hmanratings.radRating) as moyrating").having('rating is not null').group("hangmen.id")[0]
+
+  end
+  def self.ratings2(id)
+        Hangman.where("hangmen.id" => id).left_joins(:ratings).select("hangmen.*, hmanratings.radRating as rating,count(distinct hmanratings.radRating) as countrating,sum(case when hmanratings.radRating = 0 then 1 else 0 end) as countgarbage,hmanratings.chkSameX3 as chkSameX3,sum(case when hmanratings.chkSameX3 is true and hmanratings.radRating = 0 then 1 else 0 end) as countgarbagenative, avg(hmanratings.radRating) as moyrating").group("hangmen.id")
+
+  end
+  def myratings(cnt = nil)
+        page = cnt.to_i > 0 ? (cnt.to_i - 1) : 0
+        Hmanrating.where("hmanratings.GId" => self.id).left_joins(:member).select("hmanratings.*,(case when members.id is not null then members.firstname else null end) as membername").having('hmanratings.radRating is not null').group("hmanratings.id").limit(5).offset(page*5)
+
+  end
   def self.sortby(sort)
     case sort
     when "Rating"
     
-    left_joins(:ratings).select("hangmen.*, hmanratings.radRating as rating, count(hmanratings.radRating) as countrating, avg(hmanratings.radRating) as moyrating").having('countrating is not null').group("hangmen.id").order("moyrating" => :desc)
+    left_joins(:ratings).select("hangmen.*, hmanratings.radRating as rating, count(distinct hmanratings.radRating) as countrating, avg(distinct hmanratings.radRating) as moyrating").having('countrating is not null').group("hangmen.id").order("moyrating" => :desc)
 
     else
-      order(created_at: :asc).left_joins(:ratings).select("hangmen.*, hmanratings.radRating as rating, count(hmanratings.radRating) as countrating, avg(hmanratings.radRating) as moyrating").having('countrating is not null').group("hangmen.id")
+      order(created_at: :asc).left_joins(:ratings).select("hangmen.*, hmanratings.radRating as rating, count(distinct hmanratings.radRating) as countrating, avg(distinct hmanratings.radRating) as moyrating").having('countrating is not null').group("hangmen.id")
 
     end
   end
+  def self.withratings
+    left_joins(:ratings).left_joins(:member).select("hangmen.*,(select count(h.id) from hangmen h where h.member_id = hangmen.member_id) as membernbgames,members.firstname as membername, hmanratings.radRating as rating,count(distinct hmanratings.radRating) as countrating, avg(hmanratings.radRating) as moyrating").group("hangmen.id")
+  end
+
   def moyratings
-    Hangman.where("hangmen.id" => self.id).joins(:ratings).select("hangmen.*, hmanratings.radRating as rating, avg(hmanratings.radRating) as moyrating").having('rating is not null').group("hangmen.id")[0].try(:moyrating)
+    Hangman.where("hangmen.id" => self.id).joins(:ratings).select("hangmen.*, hmanratings.radRating as rating,count(distinct hmanratings.radRating) as countrating, avg(hmanratings.radRating) as moyrating").having('rating is not null').group("hangmen.id")[0].try(:moyrating)
   end
   def mysamplehangman
     if self.hidPGID

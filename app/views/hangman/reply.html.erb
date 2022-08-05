@@ -1,0 +1,107 @@
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+
+<h2>Hangman Game Feedback - Reply to Comments</h2>
+
+
+	<table cellspacing="1" cellpadding="1" border="0">
+		<tbody><tr>
+			<td align="left"><h5>Title:</h5>
+			</td>
+			<td valign="top" align="left"><b><span class="userdata"><%=@hangman.title%></span></b>
+			</td>
+		</tr>
+		<tr>
+			<td align="left"><h5>Answer:</h5>
+			</td>
+			<td valign="top" align="left"><b><span class="userdata"><%=@hangman.guess%></span></b>
+			</td>
+		</tr>
+		<tr>
+			<td align="left"><h5>Language:</h5>
+			</td>
+			<td align="left"><b><span class="userdata"><%=@hangman.mylanguage.try(:name)%></span></b>
+			</td>
+		</tr>
+	</tbody></table>
+	<br>
+
+	  <table class="TblInfoFormLt" width="99%" cellspacing="0" cellpadding="3" border="1">
+	  <tbody><tr class="table-heading">
+	    <td width="17%" valign="BOTTOM">Created by</td>
+	    <td valign="top">Comments</td>
+	  </tr>
+	   
+	     <tr>
+			<td valign="top">
+				
+				  <a href="HManMember.asp?UId=<%=@rating.member_id%>"><%=@rating.membername%></a><br>
+				
+				<small>Msg # 141004</small><br>
+				
+			</td>
+			<td valign="top">
+				<table width="100%" cellspacing="1" cellpadding="0" border="0">
+					<tbody><tr>
+						<td>
+						  
+						    Rating: <span class="userdata"><b><%=@rating.radRating%></b></span>
+						  
+						</td>
+						<td align="right"><%=l(@rating.created_at,format: :sentemail)%>
+						</td>
+					</tr>
+				</tbody></table>
+			  
+				<span class="userdata">&nbsp;</span><br>
+			  <%if @rating.language.try(:name) || @hangman.mylanguage.try(:name)%>
+				"<span class="userdata"><b><%=@hangman.guess%></b></span>" in <%=@rating.language.try(:name) ||@rating.member.try(:native_languages).try(:first).try(:name) || @hangman.mylanguage.try(:name)%> is "<span class="userdata"><b><%=@rating.txtGuess%></b></span>"<br>
+			  <%end%>
+			</td>
+	     </tr>
+	   </tbody></table>
+	<br>
+	<br>
+
+
+	<h2>Reply to the above comment</h2>
+
+	 <table class="TblUserForm" width="560" cellspacing="0" cellpadding="5" border="1">
+	   <tbody><tr class="table-heading"><td>Type your message and press the SUBMIT button</td></tr>
+	   <tr>
+	     <td>  
+	       <form action="HManMsgAdd.asp?MId=<%=@rating.id%>" method="post" id="form1" name="form1">
+	         <table width="100%" cellspacing="0" cellpadding="5" border="0" align="center">
+	           <tbody><tr>
+	             <td>
+	               Your Message<br>
+	               <textarea name="txaCmts" id="txaCmts" rows="12" style="width:100%;&quot;"></textarea>
+	             </td>
+	           </tr>
+	         </tbody></table>
+	         <br>                             
+	         <input type="hidden" value="1" name="hidProc" id="hidProc">  
+	         <div align="center">
+	         <input type="submit" value="Submit" id="submit1" name="submit1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	         <input type="reset" value="Clear this form" onclick="return (confirm(&quot;Do you really want to clear this form?&quot;));" id="reset1" name="reset1">
+	         </div>
+	       </form>
+	     </td>
+	   </tr>     
+	 </tbody></table>      
+
+<br>
+<b><a href="HManRatings.asp?GId=<%=@hangman.id%>">Back to Games Feedback</a></b>
+<br>
+
+
+<p align="right"><i>- February 8, 2002</i>&nbsp;&nbsp;</p>
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/HManMsgAdd.asp?MId=<%=@rating.id%>&amp;lang=" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHManMsgAdd.asp%3FMId%3D141004%26lang%3D&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f256f9b9d227a06" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df18adb93efe738%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff29cbcaee8227a2%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHManMsgAdd.asp%3FMId%3D141004%26lang%3D&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

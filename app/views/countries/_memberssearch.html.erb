@@ -614,7 +614,7 @@ function InsertAccentsMail(ch) {
 			<br>
 			Save this search as:<br>
 			<%=form.search_field "txtSrchName", style: "width: 200px;", placeholder: "Optional"%><br>
-			<input type="hidden" name="nRows" value="">
+			<%=form.hidden_field "nRows" %>
 			<input type="submit" value="Search" class="formSub-btn" id="BtnSubSrch" name="BtnSubSrch">
 		 </td>
 	   </tr> 
