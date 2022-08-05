@@ -1,0 +1,209 @@
+<td valign="top">
+				<!-- Page Begin -->
+
+
+Language exchange in <%=@country.name%> via conversation, email, text chat, voice chat.
+Follow free activities and lesson plans for fun, interesting, effective practice. 
+Use guidelines provided by an expert in language exchange to help each other learn. 
+Find the partner you want quickly with <a href="#SearchForm">powerful search features</a>, such as search by age, gender, location and languages.<br>
+<br>
+
+<div id="BasicsInline">
+<table class="TblCardSm" width="100%" cellspacing="0" cellpadding="2" border="0">
+  <tbody><tr class="table-heading" valign="middle" align="left">
+	<td valign="middle">
+	  The Basics
+	</td>
+  </tr>
+	<tr>
+	  <td>
+	  <a href="../faq.asp#_a1">What</a> is a language exchange?<br>
+	</td></tr>
+	<tr>
+	  <td>
+	  <a href="../faq.asp#_a2">Why</a>  do a language exchange?<br>
+	</td></tr>
+	<tr>
+	  <td>
+	  <a href="../HowTo.asp">How</a> to do a language exchange?<br>
+	</td></tr>
+	<tr>
+	  <td>
+	  <a href="../SignUp.asp?showmenu=1">Sign up</a> now - add your free profile!<br>
+	</td></tr>
+</tbody></table>	
+	
+<br>
+<br>
+</div>
+
+<h2>What You Can Do Here</h2>
+Here at MyLanguageExchange.com, you can find <%=@country.name%>  language exchange partners for:
+<ul>
+	<li>Meet up face-to-face <a href="../Search.asp?selCountry=64&amp;selFace=true">conversation exchange</a>.
+    </li><li>Exchange by protected emails (<a href="../penpals.asp">pen pals</a>).
+    </li><li>Practice written conversation using <a href="../TextChat.asp">text chat</a>.
+    </li><li>Practice speaking using <a href="../voiceChat.asp">voice chat</a>.
+</li></ul>
+We provide free, helpful guidelines and tips on <a href="../HowTo.asp">how</a> to do a language exchange, 
+as well as free
+<!-- a href="" onclick="CFOpen(0); return false;" -->lesson plans<!-- /a --> designed by an <a href="../Helene.asp">expert</a> in 
+language exchange learning. The activities are fun so you can easily "break the ice" with your 
+new learning partner and get effective practice.<br>
+<br>
+In short, you have everything you need to find and practice with your <%=@country.name%> language exchange partners. 
+<br>
+
+<br>
+<br>
+<h2>Meet up, Email, Text Chat or Voice Chat?</h2>
+
+The type of exchange that is right for you depends on your location, proficiency level in the language you are practicing 
+and your learning goals. Find out which 
+<a href="../../HowTo.asp#a1">type of language exchange</a> is right for you.
+<br>
+<br>
+<br>
+<h2>Before Practicing</h2>
+
+Before you begin practicing, please read the free guideline, <a href="../HowTo.asp">How To Do A Language Exchange</a> 
+for hints on doing an effective language exchange.<br>
+<br>
+<br>
+
+
+<h2>Language Exchange Partners from <%=@country.name%></h2>
+Here are 20 of our most recent <%=@country.name%> members that could become your partner.<br><br>To view all registered <%=@country.name%> language exchange members, please click <a href="../Search.asp?selCountry=64">here</a>.<br>Click on a name for more information or to contact the member.<br><table class="TblDataRecs TblSrchResults" width="99%" cellspacing="0" cellpadding="1" border="1"><tbody></tbody><thead>
+        <tr class="table-heading"><td>Name</td> <td>Country<br>(City)</td> <td>Native Language</td> <td>Practicing Language</td> <td>Description</td> </tr></thead><tbody>
+        
+        
+        
+        
+        
+        
+        <%=render partial: "usershow",as: :member,collection: @members%>
+    
+    
+   
+    </tbody></table><br>Click <a href="../Search.asp?selCountry=64">here</a> to view all <%=@country.name%> language exchange partners.<br>
+  <br>
+  
+<br>
+<a href="../SignUp.asp?Showmenu=1"><b>Sign-Up Now</b></a>: Add your free profile! 
+Click <a href="../SignUp.asp?Showmenu=1">here</a>.<br>
+<br>
+<br>
+<br>
+<a name="SearchForm"></a>
+<h2>Advanced Search</h2>
+
+  <table class="TblUserForm" cellspacing="0" cellpadding="1" border="1">
+   <tbody><tr class="table-heading">
+	<td colspan="2">
+		Members Search
+	</td>
+   </tr>
+
+	<tr>
+		<td>
+   <%=render "countries/memberssearch",member:@member%>
+	</td>
+	</tr>
+  </tbody></table>
+  
+        
+
+<br>
+<br>
+<br>
+<h2>Find <%=@country.name%>  Language Exchange by City</h2>
+
+<a name="City"></a>
+
+	<table class="TblListMenu" width="99%" cellspacing="0" cellpadding="0" border="0">
+	  <tbody><tr class="table-heading">
+		<td valign="middle">
+		  <span title="<%=@country.name%> language exchange partners"><%=@country.name%> Language Exchange Partners - Express Find by City</span>
+		</td>
+	  </tr>
+	  <tr>
+		<td>
+	<%@country.cities.each_slice(5).each do |cities|%>
+		<table class="TblListMenuCol" width="33%" cellspacing="1" cellpadding="1" align="left">
+		
+		  <tbody>
+                      
+                      <%=render collection: cities, as: :city,partial:"countries/city"%>
+	  
+		</tbody></table>
+		
+		<%end%>
+	
+	<br clear="all">
+		</td>
+	  </tr>
+	</tbody></table>
+
+ 
+
+<br>
+<br>
+<br>
+
+<table class="TblTranspose" width="75%" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+        <td valign="top">
+
+<table width="30%" cellspacing="0" cellpadding="1" border="0" bgcolor="Sienna">
+    <tbody><tr>
+        <td>
+<table width="100%" cellspacing="0" cellpadding="6" border="0" bgcolor="ivory">
+    <tbody><tr>
+        <td>
+<table cellspacing="1" cellpadding="0" border="0">
+    <tbody><tr bgcolor="ivory">
+      <td align="center">
+    <em>MyLanguageExchange.com is doing "<b>extraordinary things online</b></em>."<br>
+    <br>
+    <a href="../awards.asp"><img src="../images/YilLogo2.gif" alt="Yahoo! Internet Life Magazine Logo" width="163" height="44" border="0"></a><br>
+    <!--small style="FONT-SIZE: 8pt;">- January 2001</small-->
+        </td>
+    </tr>
+</tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+        </td>
+        <td valign="top"><img src="../images/spacer.gif" width="55">
+        </td>
+        <td valign="top">
+
+<table width="250" cellspacing="5" cellpadding="4" border="0">
+    <tbody><tr bgcolor="white">
+        <td>
+    <em>"<b><font color="Black">Our level of knowledge has increased a lot. You made my dream come true.</font></b>"</em>
+    <p align="right">
+    <small style="FONT-SIZE: 8pt;">- Juan Jos� Guerrero, Seville (Spain)<!--br>February 25, 2002--></small> <br>
+    <a href="../" onclick="TestimonialDream(); return false;"><small>Read entire testimonial</small></a>
+    </p>
+        </td>
+    </tr>
+</tbody></table>
+
+        </td>
+    </tr>
+</tbody></table>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<br>        
+    </td>

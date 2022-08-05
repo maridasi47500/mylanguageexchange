@@ -1,4 +1,4 @@
-<%=form_with url: "/SignUp.asp?showmenu=1&lang=fr", html: {name: "SignUpForm"} do |form|%>
+<%=form_with model: member, scope:"",url: "/SignUp.asp?showmenu=1&lang=fr", html: {name: "SignUpForm"} do |form|%>
          <table class="TblInputForm" width="100%" border="0" cellpadding="1" cellspacing="1">
 
            <tr class="SectionHead">
@@ -7,7 +7,7 @@
            </tr>
 
            <tr ID="NLRow">
-             <td><font color="red"><b>*</b></font><b>Votre langue maternelle:</b></td>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("selX3"),Member.human_attribute_name("selX3"), highlighter: (member.errors[:selX3][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
              <td colspan="4">
                 <script>$(document).ready(function() {    $(".select-suggestselX3").select2();});</script>
 <%=form.select "selX3", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX3", size:"1",class:"select-suggestselX3"}%>
@@ -17,7 +17,7 @@
            </tr>
 
            <tr ID="PLRow">
-             <td><font color="red"><b>*</b></font><b>La langue que vous voulez pratiquer:</b></td>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("selX6"),Member.human_attribute_name("selX6"), highlighter: (member.errors[:selX6][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
              <td colspan="4">
                 <script>$(document).ready(function() {    $(".select-suggestselX6").select2();});</script>
 <%=form.select "selX6", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX6", size:"1",class:"select-suggestselX6"}%>
@@ -76,8 +76,9 @@
              <td valign="top" colspan="3">
 <%=form.select'selIsClass',[["oui","true"],["non","false"]],{include_blank: ""}, {id: 'selIsClass'}%>
 				 <span ID="nStudents">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<font color="red"><b>*</b></font><b>Quantité des étudiants:</b>
-					&nbsp;<input type='number' name="txtNStudents" id="txtNStudents" value="" width="4" style="width: 80px;" maxlength="3" min="0" max="130" step="1">
+					<font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("txtNStudents"),Member.human_attribute_name("txtNStudents"), highlighter: (member.errors[:txtNStudents][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%>
+					&nbsp;
+<%=form.number_field "txtNStudents", id: "txtNStudents", width: "4", style:"width: 80px;", maxlength:"3", min: "0", max: "130", step: "1"%>
 				 </span>
 			 </td>
            </tr>
@@ -86,7 +87,7 @@
              <td colspan="5">
                <br>
                <IMG name="renewSession" ID="renewSession" SRC="RenewSession.asp" width=1 height=1>
-               <font color="red"><b>*</b></font><b>Description:</b> Parlez-nous un peu de vous - vos goûts et vos intérêts, pourquoi vous désirez apprendre cette langue, etc. :-) Ecrivez dans la langue de votre choix.
+               <font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("txaDescr"),Member.human_attribute_name("txaDescr"), highlighter: (member.errors[:txaDescr][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%> Parlez-nous un peu de vous - vos goûts et vos intérêts, pourquoi vous désirez apprendre cette langue, etc. :-) Ecrivez dans la langue de votre choix.
                <small><font color=black>(N'écrivez pas vos adresses de correspondance.)</font></small><br>
                <%=form.text_area "txaDescr", wrap: "VIRTUAL",id: "txaDescr", rows:"5", cols: "44", style: "width:99%;"%>
 <br>
@@ -112,14 +113,14 @@
 
 		   
            <tr>
-             <td><font color="red"><b>*</b></font><b>Mot de passe (4 à 12 caractères):</b></td>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("pasPassw"),Member.human_attribute_name("pasPassw"), highlighter: (member.errors[:pasPassw][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
              <td colspan="4">
 <%=form.password_field "pasPassw", id: "pasPassw", size: "15", maxlength: "15", required: true%>
 </td>
            </tr>
 
            <tr>
-             <td><font color="red"><b>*</b></font><b>Re-tapez votre mot de passe:</b></td>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("pasPassw_2"),Member.human_attribute_name("pasPassw_2"), highlighter: (member.errors[:pasPassw_2][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
              <td colspan="4">
 <%=form.password_field "pasPassw_2", id: "pasPassw_2", size: "15", maxlength: "15", required: true%>
 </td>
@@ -135,7 +136,7 @@
 		   
 
            <tr>
-             <td><font color="red"><b>*</b></font><b>Adresse de courrier électronique:</b><br>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("txtEmail"),Member.human_attribute_name("txtEmail"), highlighter: (member.errors[:txtEmail][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%><br>
                 <A href='' onclick='PrivacyPopUp(); return false;'>Politique sur la protection de la vie privée</A> -
                 <a href='' onclick='EmailWhyPopUp(); return false;'>Pourquoi</a> - 
                 <a href='' onclick='HiddenEmailPopUp(); return false;'>Protégée</a>             
@@ -147,7 +148,7 @@
 
            <tr>
              <td>
-               <font color="red"><b>*</b></font><b>Re-tapez votre adresse de courrier électronique:</b><br>
+               <font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("txtEmail2"),Member.human_attribute_name("txtEmail2"), highlighter: (member.errors[:txtEmail2][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%><br>
                <a href='' onclick='EmailWhiteListPopUp(); return false;' title='Ajuster vos filtres de courrier indésirable - pop up aide'>Veuillez ajuster vos filtres de courrier indésirable</a>
              </td>
              <td colspan="3" valign="top">
@@ -163,24 +164,24 @@
 
            <tr>
              <td colspan="5">
-         <input type="hidden" value="" name="hidFN" id="hidFN">
-         <input type="hidden" value="" name="hidLN" id="hidLN">
-         <input type="hidden" value="" name="hidAge" id="hidAge">
-         <input type="hidden" value="" name="hidUTime" id="hidUTime">
-         <input type="hidden" value="" name="hidTimeZ" id="hidTimeZ">
-         <input type="hidden" value="" name="hidHP" id="hidHP">
-         <input type="hidden" value="" name="hidCL1" id="hidCL1">
-         <input type="hidden" value="" name="hidCL2" id="hidCL2">
-         <input type="hidden" value="" name="hidCL3" id="hidCL3">
-         <input type="hidden" value="" name="hidCountry" id="hidCountry">
-         <input type="hidden" value="" name="hidLoc" id="hidLoc">
-         <input type="hidden" value="" name="hidGender" id="hidGender">
-         <input type="hidden" value="" name="hidMemberAgree" id="hidMemberAgree">
-         <input type="hidden" value="true" name="hidWantNews" id="hidWantNews">
-         <input type="hidden" value="true" name="hidWantAds" id="hidWantAds">
+         <%=form.hidden_field "hidFN", id:"hidFN"%>
+         <%=form.hidden_field "hidLN", id:"hidLN"%>
+         <%=form.hidden_field "hidAge", id:"hidAge"%>
+         <%=form.hidden_field "hidUTime", id:"hidUTime"%>
+         <%=form.hidden_field "hidTimeZ", id:"hidTimeZ"%>
+         <%=form.hidden_field "hidHP", id:"hidHP"%>
+         <%=form.hidden_field "hidCL1", id:"hidCL1"%>
+         <%=form.hidden_field "hidCL2", id:"hidCL2"%>
+         <%=form.hidden_field "hidCL3", id:"hidCL3"%>
+         <%=form.hidden_field "hidCountry", id:"hidCountry"%>
+         <%=form.hidden_field "hidLoc", id:"hidLoc"%>
+         <%=form.hidden_field "hidGender", id:"hidGender"%>
+         <%=form.hidden_field "hidMemberAgree", id:"hidMemberAgree"%>
+         <input type="hidden" value="true" name="hidWantNews", id:"hidWantNews"%>
+         <input type="hidden" value="true" name="hidWantAds", id:"hidWantAds"%>
  
-         <input type="hidden" value="False" name="hidEditPro" id="hidEditPro">  
-         <input type="hidden" value="1" name="hidProc" id="hidProc">  
+         <input type="hidden" value="False" name="hidEditPro", id:"hidEditPro"%>  
+         <input type="hidden" value="1" name="hidProc", id:"hidProc"%>  
          
            <input type="submit" value="Soumettre" id="submit1" name="submit1">
          

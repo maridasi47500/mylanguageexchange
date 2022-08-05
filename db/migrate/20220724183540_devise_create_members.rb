@@ -2,7 +2,11 @@
 
 class DeviseCreateMembers < ActiveRecord::Migration[6.0]
   def change
-	create_table :member_languages do |t|
+	create_table :member_practice_languages do |t|
+	t.integer :language_id
+	t.integer :member_id
+	end
+	create_table :member_native_languages do |t|
 	t.integer :language_id
 	t.integer :member_id
 	end
@@ -29,6 +33,18 @@ class DeviseCreateMembers < ActiveRecord::Migration[6.0]
 	t.boolean :voice_chat
 	t.boolean :in_person
 	t.boolean :teacher
+  
+      t.string :firstname
+      t.string :lastname
+      t.integer :age
+      t.string :city
+      t.integer :country_id
+      t.integer :timezone
+      
+      t.boolean :cgv
+      t.boolean :ads
+      t.boolean :news
+      
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at

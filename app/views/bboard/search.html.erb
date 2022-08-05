@@ -1,0 +1,245 @@
+<td style="padding: 5px;" data-select2-id="select2-data-9-1y6t" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+<h2>Bulletin Board Search</h2>
+
+<table class="TblInfoForm floating" width="100%" cellspacing="0" cellpadding="6" border="0">
+    <tbody><tr>
+        <td>
+  All messages with:
+  
+  <%if @lan1%><br>•&nbsp;Language 1 = <b><%=@lan1.name%></b><%end%>
+  
+  <%if @lan2%><br>•&nbsp;Language 2 = <b><%=@lan2.name%></b><%end%>
+  
+  <%if @cat%><br>•&nbsp;Category = <b><%=@cat.name%></b><%end%>
+  <%if !params[:txtSubj].empty?%><br>•&nbsp;Subject contains = <b><%=params[:txtSubj]%></b><%end%>
+  <%if !params[:txtBody].empty?%><br>•&nbsp;Body contains = <b><%=params[:txtBody]%></b><%end%>
+  <%if !params[:txtMsgID].empty?%><br>•&nbsp;Message ID = <b><%=params[:txtMsgID]%></b><%end%>
+  <%if !params[:txtFName].empty?%><br>•&nbsp;Author first name = <b><%=params[:txtFName]%></b><%end%>
+  
+ 
+  <br><a href="BBoard.asp">View all messages</a>
+		</td>
+    </tr>
+</tbody></table>
+<br clear="all">
+<br>
+
+
+    Click on message title to view all messages in discussion.<br>
+    <br>
+    <%if @bboard.length > 0%>
+<style>
+.PageNumBig {
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: gray;/*#854514;*/
+	font-size: 12px;
+	background-color: #f5f2f0; /*#f2f2f2; */
+	border: 1px solid gray;/*#877364;*/
+}
+.PageNumBig:hover {
+	font-size: 12px;
+	background-color: #cccccc; /*#cccccc; */
+}
+.PageNumActive {
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: white;
+	border: 1px solid #cb6a1f;
+}
+.PageArrow {
+	display: inline-block;
+	padding: 6px 24px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: gray;/*#854514;*/
+	font-size: 12px;
+	background-color: #f5f2f0; /*#f2f2f2; */
+	border: 1px solid gray;/*#877364;*/
+}
+.PageArrow:hover {
+	font-size: 12px;
+	background-color: #cccccc; /*#cccccc;*/
+}
+.PageGoBtn{
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	font-size: 12px;
+	border: 1px outset slategray ;
+}
+</style>			
+Total found: 59 !<br><span class="PageNumActive">1</span> &nbsp;
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&selX6=1&selCat=10&txtSubj=&txtBody=&txtMsgID=&txtFName=&submit2=Search&Cnt=2">2</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=2">2</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&selX6=1&selCat=10&txtSubj=&txtBody=&txtMsgID=&txtFName=&submit2=Search&Cnt=3">3</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=3">3</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&selX6=1&selCat=10&txtSubj=&txtBody=&txtMsgID=&txtFName=&submit2=Search&Cnt=4">4</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=4">4</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&selX6=1&selCat=10&txtSubj=&txtBody=&txtMsgID=&txtFName=&submit2=Search&Cnt=5">5</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=5">5</a> &nbsp;
+			<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=6">6</a> &nbsp;<a class="PageArrow" style="margin-left: 3px;" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=2"><svg class="svg-inline--fa fa-arrow-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right"></i> --></a> &nbsp;<br>
+     <table class="TblSrchResults" width="100%" cellspacing="0" cellpadding="3" border="1">
+     <tbody><tr class="table-heading">
+    <td width="1%" valign="bottom"><b>#</b></td>
+       <td valign="bottom"><b>Message</b></td>
+    <td width="15%" valign="top"><b>Posted By</b></td>
+     </tr>
+   
+    <%=render partial: "bboard",collection: @bboards,as: :bboard%>
+     
+     
+     
+   </tbody></table>
+   
+<style>
+.PageNumBig {
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: gray;/*#854514;*/
+	font-size: 12px;
+	background-color: #f5f2f0; /*#f2f2f2; */
+	border: 1px solid gray;/*#877364;*/
+}
+.PageNumBig:hover {
+	font-size: 12px;
+	background-color: #cccccc; /*#cccccc; */
+}
+.PageNumActive {
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: white;
+	border: 1px solid #cb6a1f;
+}
+.PageArrow {
+	display: inline-block;
+	padding: 6px 24px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: gray;/*#854514;*/
+	font-size: 12px;
+	background-color: #f5f2f0; /*#f2f2f2; */
+	border: 1px solid gray;/*#877364;*/
+}
+.PageArrow:hover {
+	font-size: 12px;
+	background-color: #cccccc; /*#cccccc;*/
+}
+.PageGoBtn{
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	font-size: 12px;
+	border: 1px outset slategray ;
+}
+</style>			
+Total found: 59 !<br><span class="PageNumActive">1</span> &nbsp;
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&selX6=1&selCat=10&txtSubj=&txtBody=&txtMsgID=&txtFName=&submit2=Search&Cnt=2">2</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=2">2</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&selX6=1&selCat=10&txtSubj=&txtBody=&txtMsgID=&txtFName=&submit2=Search&Cnt=3">3</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=3">3</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&selX6=1&selCat=10&txtSubj=&txtBody=&txtMsgID=&txtFName=&submit2=Search&Cnt=4">4</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=4">4</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&selX6=1&selCat=10&txtSubj=&txtBody=&txtMsgID=&txtFName=&submit2=Search&Cnt=5">5</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=5">5</a> &nbsp;
+			<a class="PageNumBig" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=6">6</a> &nbsp;<a class="PageArrow" style="margin-left: 3px;" href="/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search&amp;Cnt=2"><svg class="svg-inline--fa fa-arrow-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right"></i> --></a> &nbsp;<br>
+ <%else%>
+                      <b>There are no messages.</b>  
+                        <%end%>
+                        <br>
+
+ 
+ <br>
+  
+<script language="javascript">
+<!--
+function ShowAll(formObj) {
+  //formObj.selX3.value = ""
+  //formObj.selX6.value = ""
+  //formObj.selCat.value = ""
+  //formObj.txtSrch.value = ""
+  location.href = "BBoard.asp"
+  //formObj.submit()
+}
+//-->
+</script>
+
+  <table class="TblUserForm" cellspacing="0" cellpadding="1" border="0">
+   <tbody><tr class="table-heading"><td>Search for messages where:</td></tr>
+   <tr>
+     <td>       
+		<%=render "form_bboard_search",:bboard=>@bboard%>
+     </td>
+   </tr>       
+  </tbody></table>
+
+
+
+
+
+ <br>
+ <table width="99.5%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td align="left">
+		  <a href="BBoard.asp"><b>Bulletin Board Home</b></a>
+		</td>
+		<td align="right">
+		  <!-- a href='BBoardAdd.asp?first=1&selX3=22&selX6=1&selCat=10'><b>Add New Message</b></a -->
+		</td>
+	</tr>
+ </tbody></table>
+
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/BBoardSearch.asp?selX3=22&amp;selX6=1&amp;selCat=10&amp;txtSubj=&amp;txtBody=&amp;txtMsgID=&amp;txtFName=&amp;submit2=Search" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FBBoardSearch.asp%3FselX3%3D22%26selX6%3D1%26selCat%3D10%26txtSubj%3D%26txtBody%3D%26txtMsgID%3D%26txtFName%3D%26submit2%3DSearch&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="fa722a8716a78a" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df31ff7c7384ae26%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff111ea6ed5ef398%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FBBoardSearch.asp%3FselX3%3D22%26selX6%3D1%26selCat%3D10%26txtSubj%3D%26txtBody%3D%26txtMsgID%3D%26txtFName%3D%26submit2%3DSearch&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

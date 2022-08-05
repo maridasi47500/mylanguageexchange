@@ -1,0 +1,70 @@
+				
+
+                <!-- Page Begin -->
+<h2>Email Center</h2>
+
+Folders: 
+
+  <b>Inbox</b> ∙ <a href="Inbox.asp?Folder=Sent">Sent</a> ∙ <a href="Inbox.asp?Folder=Draft">Draft</a><br>
+
+  <%if @emails.length > 0%>
+	<a href="Scams.asp">Beware of scams</a> Latest: chinese investment scam<br>
+	<br>
+	
+  Click on the subject to view message.<br>
+  <form action="/Inbox.asp" method="post" id="MsgDelete" name="MsgDelete">  
+  <div class="WrapTblScroll">
+  <table class="TblSrchResults" width="100%" cellspacing="0" cellpadding="3" border="1">
+  <tbody><tr class="table-heading">
+    
+       <td valign="bottom">Select</td>
+     
+     <td valign="bottom">From</td>
+     <td valign="bottom" nowrap="">Subject</td>
+	
+     <td valign="bottom" nowrap="">Date Received</td>
+  </tr>
+  <%@emails.each do |email|%>
+    <tr>
+      
+      <td valign="top">
+        <input type="checkbox" id="IdMsgDelete" name="IdMsgDelete[]" value="<%=email.id%>">
+      </td>
+     
+      <td valign="top">
+        <a href="MInfo.asp?UId=<%=email.expediteur.try(:id)%>"><%=email.expediteur.try(:firstname_initial)%></a>
+      </td>
+      <td valign="top">
+        <b><a href="InboxMsgView.asp?showmenu=1&amp;Id=<%=email.id%>"><%=email.txtSubj%></a></b><br>
+      </td>
+      <td class="userdata" valign="top">
+	    <%=l(email.created_at,format: :emailsent)%>
+      </td>
+    </tr>
+     <%end%>
+   
+    
+  </tbody></table>
+  </div>
+
+  <input type="submit" value="Delete" id="btnMsgDelete" name="btnMsgDelete">
+  <a href="" onclick="checkAll(document.MsgDelete.IdMsgDelete); return false;"><small>Check All</small></a> <small>-</small>
+  <a href="" onclick="uncheckAll(document.MsgDelete.IdMsgDelete); return false;"><small>Clear All</small></a><br>
+  </form>
+
+ 
+
+
+<br>
+<br>
+<%else%>
+<b>There are no messages.</b>
+
+<%end%>
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/Inbox.asp" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FInbox.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f2314784dff662" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df16dccca68b12a%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff1e104883a9c5c2%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FInbox.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+              

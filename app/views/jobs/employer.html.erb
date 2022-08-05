@@ -1,0 +1,58 @@
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+<h2>Your Job Ads</h2>
+
+<%if @employers.length > 0%>
+  Click on a job title to edit.<br>
+  <table bordercolorlight="#e9f2f5" width="100%" cellspacing="0" cellpadding="3" bordercolor="#81c6e2" border="1">
+  <tbody><tr bgcolor="ForestGreen">
+     <td valign="bottom"><b><font color="ivory">Job Title</font></b></td>
+     <td width="1%" valign="bottom" nowrap=""><b><font color="ivory"># Views</font></b></td>
+     <td width="1%" valign="bottom" nowrap=""><b><font color="ivory">Edit Date</font></b></td>
+     <td width="1%" valign="bottom" nowrap=""><b><font color="ivory">Activation Date</font></b></td>
+     <td width="1%" valign="bottom" nowrap=""><b><font color="ivory">Expiration Date</font></b></td>
+  </tr>
+  <%@employers.each do |employer|%>
+  	<tr bgcolor="Ivory">
+  	  <td valign="top">
+  	  <b><a href="JobsEdit.asp?Id=<%=employer.id%>"><%=employer.hidTitle%></a></b><br>
+  	  <a href="JobsEdit.asp?Id=<%=employer.id%>"><small>Edit</small></a>&nbsp;
+  	  <a href="JobsDelete.asp?Id=<%=employer.id%>"><small>Delete</small></a>
+  	  </td>
+  	  <td valign="top" align="right">0</td>
+  	  <td valign="top"><%=l(employer.created_at,format: :emailsent)%></td>
+  	  
+  	  <td valign="top"><font color="gray">Never activated</font></td>
+  	  
+  	  <td valign="top"><font color="gray">Never activated</font><br>
+  	  
+  	  <a href="JobsOrder.asp?Id=<%=employer.id%>"><small>Activate</small></a>
+  	  </td>
+  	</tr>
+    <%end%>
+  </tbody></table>
+  <%else%>
+  <br>
+  There are no job ads.
+  <br>
+  <%end%>
+<br>
+<a href="JobsAdd.asp"><b>Add a new job ad</b></a><br>
+<br>
+<br>
+<br>
+<br>
+<a href="Jobs.asp">Job Center Home</a><br>
+
+
+<br>
+<br>
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/JobsEmployer.asp" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FJobsEmployer.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f1f16702a1ccaa2" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dff93c68619e754%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff189021f06f2e5%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FJobsEmployer.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

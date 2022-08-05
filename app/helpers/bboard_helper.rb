@@ -1,0 +1,2 @@
+module BboardHelper
+end

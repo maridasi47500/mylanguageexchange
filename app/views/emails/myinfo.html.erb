@@ -1,0 +1,935 @@
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+
+
+<h2 id="PageTitleID" style="">Member Profile - Send Private Email</h2>
+
+
+
+
+
+<span id="MembProFormID" style="">
+<%if Email.lastmsg(current_member)%>
+	<table style="width: 100%; border: 1px solid #ccc; background-color: #f5f5f5; padding:10px;">
+	<tbody><tr>
+		<td style="vertical-align: text-top;" width="1%">
+			<svg class="svg-inline--fa fa-info-circle fa-w-16" style="font-size: 36px; color: orange; padding-left: 20px; padding-right: 20px;" aria-hidden="true" data-prefix="fa" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fa fa-info-circle" style="font-size:36px; color:orange; padding-left:20px; padding-right:20px;"></i> -->
+		</td>
+		<td style="color: #404040;" align="left">
+			You sent <%=@member.semifullname%> an Email on <%=l(Email.lastmsg(current_member).created_at,format: :sentemail)%>.<br><a href="" onclick="ShowHistory(4356365,4356365); return false;" title="View message history"><small>View contact history</small></a><br>
+		</td>
+	</tr>
+	</tbody></table>
+	<%end%>
+	<br clear="all">
+
+
+	<table width="100%" cellspacing="1" cellpadding="1" border="0">
+		<tbody><tr>
+			<td width="1%" valign="bottom">
+				
+		<img src="images/Face.gif" class="HomePicSmiley" border="0">
+	
+			</td>
+			<td width="25%" valign="bottom">
+			  
+				  <span class="FAVAdd4356365" style="display:inline;"><a href="FavAdd.asp?UId=4356365" onclick="FavAdd(4356365); return false;" class="circle-btn btn-lt floating">
+				  <i class="material-icons-outlined notranslate">favorite_border</i>
+				  </a></span>
+				  
+				  <span class="FAVDel4356365" style="display:none;"><a href="FavDelete.asp?UId=4356365" onclick="FavDel(4356365); return false;" class="circle-btn  btn-lt floating">
+				  <i class="material-icons-outlined notranslate">favorite</i>
+				  </a></span>
+				  
+				  <span class="FAVAddDel4356365" style="display: inline;"></span><br>
+				  
+			    
+				<span class="HIFTime4356365" style="display:inline;"><a href="HISend.asp?UId=4356365&amp;ToName=cleo+j%2E" onclick="HISend(4356365); return false;" class="rounded-btn  btn-lt floating" title="Send free Hi!">
+				<i class="material-icons-outlined notranslate">send</i>
+				<span><span class="ScreenMed">Free</span> Hi!</span></a></span>
+
+				<span class="HI4356365" style="display:none;"><a href="HISend.asp?UId=4356365&amp;ToName=cleo+j%2E" onclick="HISend(4356365); return false;" class="rounded-btn  btn-lt floating" title="Send free Hi!">
+				<i class="material-icons-outlined notranslate">send</i>
+				<span><span class="ScreenMed">Free</span> Hi!</span></a></span>
+				
+				<br>
+				
+				<div class="LBoxHiSent" style="display:none;">
+					
+					<table style="width: 100%; border: 1px solid #ccc; background-color: #f5f5f5; padding:10px 50px 10px 30px;">
+					<tbody><tr>
+						<td style="vertical-align: text-top;" width="1%">
+							<img src="images/Check.png" style="padding-left:0px; padding-right:20px;">
+						</td>
+						<td style="color: #404040; font-size: 18px; font-weight: 620;" align="left">
+							Hi was sent!
+						</td>
+					</tr>
+					</tbody></table>
+				</div>
+
+			  	
+				  <a href="#SendEmail" id="SendMailLink" title="Send Email" class="circle-btn   btn-lt floating">
+				  <i class="material-icons-outlined notranslate">email</i>
+				  </a><br>
+			  
+				<span class="BlockAdd4356365" style="display:inline;"><a href="MemberBlock.asp?UId=4356365&amp;ToName=cleo+j%2E" onclick="BlockAdd(4356365); return false;" title="Block this member from contacting me." class="circle-btn  btn-lt floating">
+				<i class="material-icons-outlined notranslate" "="">block</i>
+				<!--span class="fa-stack fa-1x">
+				  <i class="fas fa-envelope fa-stack-1x" style="font-size:13px; padding:7px; padding-left: 8px; color:#999999;"></i>
+				  <i class="fas fa-ban fa-stack-1x" style="font-size:23px; padding:7px; padding-left: 5px; color:#e08585"></i>
+				</span-->
+				</a></span>
+
+				<span class="BlockDel4356365" style="display:none;"><a href="MemberUnblock.asp?UId=4356365&amp;ToName=cleo+j%2E" onclick="BlockDel(4356365); return false;" title="Unblock this member. Allow email contact." class="circle-btn  btn-lt floating">
+				<i class="material-icons notranslate" style="color: black;">block</i>
+				<!--span class="fa-stack fa-1x">
+				  <i class="fas fa-envelope fa-stack-1x" style="font-size:13px; padding:7px; padding-left: 8px; color:#666666;"></i>
+				  <i class="fas fa-ban fa-stack-1x" style="font-size:23px; padding:7px; padding-left: 5px; color:brown"></i>
+				</span-->
+				</a></span>
+			</td>
+			<td valign="bottom" align="right">
+				<a href="Scams.asp">Beware of scams</a> Latest: chinese investment scam
+			</td>
+		</tr>
+	</tbody></table>
+
+	<table width="100%" cellspacing="0" cellpadding="2" border="0">
+	  <tbody><tr class="table-heading-big" valign="middle">
+		<td>
+	   <%=@member.semifullname%>
+		</td>
+		<td align="right">
+			<a href="AbuseReport.asp?ProfileId=4356365&amp;ReporteeId=4356365" title="Report Abuse" class="backlit-btn" style="font-size:14px; background-color: orange" data-featherlight="iframe" data-featherlight-iframe-width="500" data-featherlight-iframe-height="380" data-featherlight-iframe-scrolling="No" data-featherlight-iframe-framebordr="0">Report Abuse</a>
+		</td>
+	  </tr>
+	</tbody></table>
+
+<table width="100%" cellspacing="1" cellpadding="1" bordercolor="Burlywood" border="0">
+ <!--tr valign="middle" class="table-seprow">
+   <td align=left width=50% colspan=2>
+	 &nbsp;<strong>Basics</strong>
+   </td>
+   <td align=left colspan=2>
+	 &nbsp;<strong>Where</strong>
+	 &nbsp;<strong>Where</strong>
+   </td>
+ </tr-->
+ 
+ <tbody><tr>
+   <td width="25%" valign="top" align="left">Age:</td>
+   <td class="userdata" width="25%" valign="top" align="left"><strong></strong>&nbsp;</td>
+   <td valign="top" align="left">Country:</td>
+   <td class="userdata" valign="top" align="left"><strong><%=@member.country.try(:name)%></strong></td>
+ </tr>
+
+ <tr>
+   <td valign="top" align="left">Gender:</td>
+   <td class="userdata" valign="top" align="left"><strong><%=@member.mygender%></strong>&nbsp;</td>
+   <td valign="top" align="left">City:</td>
+   
+   <td class="userdata" valign="top" align="left">
+		<div style="max-width: 35vw; word-wrap: break-word;">
+		<strong><%=@member.city%></strong>
+		</div>
+   </td>
+ </tr>
+ 
+ <tr>
+   <td valign="top" align="left">Classroom?</td>
+   <td class="userdata" valign="top" align="left"><strong>No</strong>&nbsp;</td>
+   <td valign="top" align="left">Time zone:</td>
+	
+   <td class="userdata" valign="top" align="left"><strong></strong></td>
+ </tr>
+ 
+<!--/table>
+
+<table border="0" cellpadding="2" cellspacing="2"  width="100%"-->
+ <tr class="table-seprow" valign="middle">
+   <td colspan="2" width="50%" align="left">
+	 &nbsp;<!--strong>Languages</strong-->
+   </td>
+   <td colspan="2" align="left">
+	 &nbsp;<!--strong>Language Exchange</strong-->
+   </td>
+ </tr>
+
+ <tr>
+   <td colspan="2" valign="top" align="left">
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr>
+			   <td width="50%" valign="top" align="left">Native language(s):</td>
+			   <td class="userdata" valign="top" align="left"><strong>French</strong></td>
+			</tr>
+			
+			
+
+			<tr>
+			   <td colspan="2" valign="top" align="left"><img src="images/spacer.gif" height="8"></td>
+			</tr>
+
+			<tr>
+			   <td valign="top" align="left">Practicing language(s):</td>
+			   <td class="userdata" valign="top" align="left"><strong>Ukrainian</strong></td>
+			</tr>
+
+	
+		</tbody></table>
+   </td>
+   <td colspan="2" valign="top" align="left">
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr>
+			   <td valign="top" align="left">Seeking an e-mail exchange:</td>
+			   <td class="userdata" valign="top" align="left"><strong><%=@member.by_email ? "oui" : "non"%></strong></td>
+			</tr>
+
+			<tr>
+			   <td colspan="2" valign="top" align="left"><img src="images/spacer.gif" height="4"></td>
+			</tr>
+			<tr>
+			   <td valign="top" align="left">Seeking a text chat exchange:</td>
+			   <td class="userdata" valign="top" align="left"><strong><%=@member.text_chat ? "oui" : "non"%></strong></td>
+			</tr>
+
+			<tr>
+			   <td colspan="2" valign="top" align="left"><img src="images/spacer.gif" height="4"></td>
+			</tr>
+			<tr>
+			   <td valign="top" align="left">Seeking a voice chat exchange:</td>
+			   <td class="userdata" valign="top" align="left"><strong><%=@member.voice_chat ? "oui" : "non"%></strong></td>
+			</tr>
+
+			<tr>
+			   <td colspan="2" valign="top" align="left"><img src="images/spacer.gif" height="4"></td>
+			</tr>
+			<tr>
+			   <td valign="top" align="left">Seeking exchange in person:</td>
+			   <td class="userdata" valign="top" align="left"><strong><%=@member.in_person ? "oui" : "non"%></strong></td>
+			</tr>
+		</tbody></table>
+   </td>
+</tr>
+
+ <tr class="table-seprow" valign="middle">
+   <td colspan="4">
+	  <div style="text-align: left; display: inline;">Description</div>
+	  <div style="float: right;">
+		<a href="" class="circle-btn" onclick="GTransBr('DESC'); return false;">
+		<i class="material-icons notranslate">translate</i></a>
+	  </div>
+   </td>
+ </tr>
+
+ <tr>
+   <td colspan="4" class="userdata">
+   <span id="DESC" style="text-align: justify;">
+   I am looking for Ukrainian-speaking or Russian-speaking penpals to exchange emails, or do snail mail (in Ukrainian). I like every things that make life more exciting including travelling, music, sports.<br>
+	<br>
+	</span>
+   </td>
+ </tr>
+
+ <tr class="table-seprow" valign="middle">
+   <td colspan="4" align="left">
+	  Sender Criteria
+   </td>
+ </tr>
+
+ <tr>
+   <td colspan="4" class="userdata">
+	
+	<div align="justify">Everyone can contact this member.</div>
+   </td>
+ </tr>
+
+
+
+ 
+ <tr class="table-seprow" valign="middle">
+   <td colspan="4" align="left">
+	  &nbsp;
+   </td>
+ </tr>
+ <tr>
+   <td colspan="4">
+	  Signup date: <strong>May 17, 2022</strong><br>
+	  Profile date: <strong>June 17, 2022</strong><br>
+	  Most recent login: <strong>August 2, 2022</strong><br>
+   </td>
+ </tr>
+ 
+ <tr class="table-seprow" valign="middle">
+   <td colspan="4" align="left">
+	  &nbsp;
+   </td>
+ </tr>
+
+</tbody></table> 
+
+  <span style="line-height:42px">
+	<span class="FAVAdd4356365" style="display:inline;"><a href="FavAdd.asp?UId=4356365" onclick="FavAdd(4356365); return false;" class="rounded-btn floating">
+	<i class="material-icons-outlined notranslate">favorite_border</i>
+	<span style="font-size:14px; position: relative; top: -3px;">Add to Favorites</span>
+	</a></span>
+	  
+	<span class="FAVDel4356365" style="display:none;"><a href="FavDelete.asp?UId=4356365" onclick="FavDel(4356365); return false;" class="rounded-btn floating">
+	<i class="material-icons-outlined notranslate">favorite</i>
+	<span style="font-size:14px; position: relative; top: -3px;">Remove from Favorites </span>
+	</a></span>
+	<span class="FAVAddDel4356365" style="display: inline;"></span>
+	  
+	
+	<span class="HIFTime4356365" style="display:inline;"><a href="HISend.asp?UId=4356365&amp;ToName=cleo+j%2E" onclick="HISend(4356365); return false;" class="rounded-btn floating" title="Send free Hi!">
+	<i class="material-icons-outlined notranslate">send</i>
+	<span style="font-size:14px; position: relative; top: -3px;">Free Hi!</span></a></span>
+
+	<span class="HI4356365" style="display:none;"><a href="HISend.asp?UId=4356365&amp;ToName=cleo+j%2E" onclick="HISend(4356365); return false;" class="rounded-btn floating" title="Send free Hi!">
+	<i class="material-icons-outlined notranslate">send</i>
+	<span style="font-size:14px; position: relative; top: -3px;">Free Hi!</span></a></span>
+	
+	<div class="LBoxHiSent" style="display:none;">
+		
+		<table style="width: 100%; border: 1px solid #ccc; background-color: #f5f5f5; padding:10px 50px 10px 30px;">
+		<tbody><tr>
+			<td style="vertical-align: text-top;" width="1%">
+				<img src="images/Check.png" style="padding-left:0px; padding-right:20px;">
+			</td>
+			<td style="color: #404040; font-size: 18px; font-weight: 620;" align="left">
+				Hi was sent!
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+
+	<a href="#SendEmail" id="SendMailLink" title="Send Email" class="rounded-btn floating">
+	<i class="material-icons-outlined notranslate">email</i>
+	<span style="font-size:14px; position: relative; top: -3px;">Send Email</span></a></span>
+	
+  
+  
+	<span class="BlockAdd4356365" style="display:inline;"><a href="MemberBlock.asp?UId=4356365&amp;ToName=cleo+j%2E" onclick="BlockAdd(4356365); return false;" title="Block this member from contacting me." class="rounded-btn floating">
+	<i class="material-icons-outlined notranslate" "="">block</i>
+	<span style="font-size:14px; position: relative; top: -3px;">Block</span></a></span>
+	<!--span class="fa-stack fa-1x">
+	  <i class="fas fa-envelope fa-stack-1x" style="font-size:13px; padding:7px; padding-left: 8px; color:#999999;"></i>
+	  <i class="fas fa-ban fa-stack-1x" style="font-size:23px; padding:7px; padding-left: 5px; color:#e08585"></i>
+	</span-->
+	</span>
+
+	<span class="BlockDel4356365" style="display:none;"><a href="MemberUnblock.asp?UId=4356365&amp;ToName=cleo+j%2E" onclick="BlockDel(4356365); return false;" title="Unblock this member. Allow email contact." class="rounded-btn floating">
+	<i class="material-icons notranslate" style="color: black;">block</i>
+	<span style="font-size:14px; position: relative; top: -3px;">Block</span></a></span>
+	<!--span class="fa-stack fa-1x">
+	  <i class="fas fa-envelope fa-stack-1x" style="font-size:13px; padding:7px; padding-left: 8px; color:#666666;"></i>
+	  <i class="fas fa-ban fa-stack-1x" style="font-size:23px; padding:7px; padding-left: 5px; color:brown"></i>
+	</span-->
+	
+  
+ 
+<p></p>
+<br>
+
+
+
+    <br>
+
+<br>
+
+
+<a class="pageAnchor" id="SendEmail" name="SendEmail"></a>
+
+<h2>Send Email</h2>
+
+	You may write your email address or other contact information.
+	<a href="#" id="BlurbMore" onclick="document.getElementById('Blurb').style.display='inline';document.getElementById('BlurbLess').style.display='inline'; this.style.display='none';return false;"><svg class="svg-inline--fa fa-angle-double-down fa-w-10" style="font-size: 12px;" aria-hidden="true" data-prefix="fas" data-icon="angle-double-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z"></path></svg><!-- <i class="fas fa-angle-double-down" style="font-size:12px;"></i> --> See more</a>
+	<span id="Blurb" style="display:none;">Your communications will become more convenient,
+	because you will be able to contact each other directly. 
+	However, please do this only when you feel comfortable sharing contact information with your partner.<br>
+	<br>
+	
+		  Please note, after your partner's gold membership expires, you will no longer
+		  be able to contact each other via the site. Purchase a gold memberhsip <a href="order.asp" target="_top">here</a>.
+		
+	Emails sent to you will arrive in your <a href="Inbox.asp" target="_top">Inbox</a> on the site. Please check it regularly.
+	Just log into your account and click on 'View emails' at the bottom of the page.
+	A copy will also be sent to your personal email address at cleo.ordioni@gmail.com.
+	<br>
+	<br>
+	<a href="#" id="BlurbLess" onclick="document.getElementById('Blurb').style.display='none'; document.getElementById('BlurbMore').style.display='inline'; this.style.display='none';return false;"><svg class="svg-inline--fa fa-angle-double-up fa-w-10" style="font-size: 12px;" aria-hidden="true" data-prefix="fas" data-icon="angle-double-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M177 255.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 351.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 425.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1zm-34-192L7 199.7c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l96.4-96.4 96.4 96.4c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9l-136-136c-9.2-9.4-24.4-9.4-33.8 0z"></path></svg><!-- <i class="fas fa-angle-double-up" style="font-size:12px;"></i> --> See less</a>
+	</span>
+      
+        <%if notice%>
+        <table style="width: 100%; border: 1px solid #ccc; background-color: #f5f5f5; padding:10px;">
+	<tbody><tr>
+		<td style="vertical-align: text-top;" width="1%">
+			<svg class="svg-inline--fa fa-check-circle fa-w-16" style="font-size: 36px; color: green; padding-left: 20px; padding-right: 20px;" aria-hidden="true" data-prefix="fa" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><!-- <i class="fa fa-check-circle" style="font-size:36px; color:green; padding-left:20px; padding-right:20px;"></i> -->
+		</td>
+		<td style="color: #404040;" align="left">
+                    <%=notice.html_safe%>
+					</td>
+	</tr>
+	</tbody></table>
+        my text
+        <%end%>
+	<br><br>
+
+<form method="post" id="MailForm" name="MailForm" action="/Minfo.asp?UId=<%=@member.id%>&amp;lang=en">
+<table class="WidthMaxLim TblUserForm" cellspacing="0" cellpadding="5" border="1">
+
+   <tbody><tr class="table-heading">
+    <td align="left">
+      Send e-mail message to <%=@member.semifullname%> - <a href="" onclick="EmailHelpPopUp(); return false;">How does this work?</a>
+    </td>
+   
+   </tr><tr>
+     <td align="center">  
+
+       <table width="100%" cellspacing="0" cellpadding="5" border="1" align="center">
+        <tbody><tr>
+          <td width="5%"><strong>To:</strong></td>
+          <td><%=@member.semifullname%> <!-- [address hidden] --></td>
+        </tr>
+
+        <tr>
+          <td><b>Subject:</b></td>
+          <td><input type="text" name="txtSubj" id="txtSubj" value="Hello from <%=current_member.try(:semifullname)%>. - MyLanguageExchange.com" style="width: 96%;"></td>
+        </tr>
+        
+        <tr>
+          <td colspan="2">
+          
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody><tr>
+              <td><b>Message:</b></td>
+              <td align="right">
+                <img id="renewSession" src="RenewSession.asp" width="1" height="1">
+		
+<style>
+.dropdownAccents {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-contentAccents {
+    display: none;
+    position: absolute;
+	
+bottom: 39px;
+left: -260px;
+    background-color: #f1f1f1;
+    min-width: 100px;
+	max-height: 300px;
+	max-width: 320px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.aDeadAccents {
+	pointer-events:none;
+}
+
+.showAccents {display: block;}
+</style>
+
+<a href="#" title="Insert accented characters" onclick="DropdownToggleAccents(); return false;" class="dropbtnAccents">Insert Accents</a>
+
+
+<script>
+var IsDropdownOpenAccents = false;
+
+function openDropdownAccents() {
+    document.getElementById("myDropdownAccents").classList.add('showAccents');
+	var dropdownLinks = document.getElementsByClassName("dropdownLinkAccents");
+	var iRow;
+	for (iRow = 0; iRow < dropdownLinks.length; iRow++) {
+		var opendropdown = dropdownLinks[iRow];
+		if (opendropdown.classList.contains('aDeadAccents')) {
+			opendropdown.classList.remove('aDeadAccents');
+	  }   
+	}
+	IsDropdownOpenAccents = true;
+}
+function closeDropdownAccents() {
+    document.getElementById("myDropdownAccents").classList.remove('showAccents');
+	var dropdownLinks = document.getElementsByClassName("dropdownLinkAccents");
+	var iRow;
+	for (iRow = 0; iRow < dropdownLinks.length; iRow++) {
+		var closedropdown = dropdownLinks[iRow];
+		if (!closedropdown.classList.contains('aDeadAccents')) {
+			closedropdown.classList.add('aDeadAccents');
+	  }   
+	}
+	IsDropdownOpenAccents = false;
+}
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function DropdownToggleAccents() {
+	if (IsDropdownOpenAccents) {
+		closeDropdownAccents();
+	}
+	else {
+		openDropdownAccents();
+	}
+}
+// Close the dropdown if the user clicks outside of it
+window.addEventListener("click", function(event) {
+    if (!event.target.matches('.dropbtnAccents')) {
+        closeDropdownAccents();
+    }
+});
+
+function InsertAccentsMail(ch) {
+	var targetText = document.getElementById("txaBody");
+	targetText.focus();
+	targetText.value = targetText.value + ch
+	targetText.focus();
+}
+	
+</script>
+
+		<div class="dropdownAccents">
+		  <div id="myDropdownAccents" class="dropdown-contentAccents">
+			
+	<style>
+		.dropdownLinkAccents {
+			color: #009688!important;  /* teal */
+			text-align: center;
+			font-size: 19px;
+			padding: 5px 5px;
+			display: block;
+		}
+
+		.dropdownLinkAccents:hover {
+			font-size: 19px;
+			background-color: #ddd;
+		}
+	</style>
+	
+<table width="300px" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ā'); return false;" class="dropdownLinkAccents aDeadAccents">Ā</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('À'); return false;" class="dropdownLinkAccents aDeadAccents">À</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Á'); return false;" class="dropdownLinkAccents aDeadAccents">Á</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Â'); return false;" class="dropdownLinkAccents aDeadAccents">Â</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǎ'); return false;" class="dropdownLinkAccents aDeadAccents">Ǎ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ã'); return false;" class="dropdownLinkAccents aDeadAccents">Ã</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ä'); return false;" class="dropdownLinkAccents aDeadAccents">Ä</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Å'); return false;" class="dropdownLinkAccents aDeadAccents">Å</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ā'); return false;" class="dropdownLinkAccents aDeadAccents">ā</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('à'); return false;" class="dropdownLinkAccents aDeadAccents">à</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('á'); return false;" class="dropdownLinkAccents aDeadAccents">á</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('â'); return false;" class="dropdownLinkAccents aDeadAccents">â</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǎ'); return false;" class="dropdownLinkAccents aDeadAccents">ǎ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ã'); return false;" class="dropdownLinkAccents aDeadAccents">ã</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ă'); return false;" class="dropdownLinkAccents aDeadAccents">ă</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ä'); return false;" class="dropdownLinkAccents aDeadAccents">ä</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('å'); return false;" class="dropdownLinkAccents aDeadAccents">å</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ē'); return false;" class="dropdownLinkAccents aDeadAccents">Ē</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('È'); return false;" class="dropdownLinkAccents aDeadAccents">È</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('É'); return false;" class="dropdownLinkAccents aDeadAccents">É</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ê'); return false;" class="dropdownLinkAccents aDeadAccents">Ê</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ě'); return false;" class="dropdownLinkAccents aDeadAccents">Ě</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ë'); return false;" class="dropdownLinkAccents aDeadAccents">Ë</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ē'); return false;" class="dropdownLinkAccents aDeadAccents">ē</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('è'); return false;" class="dropdownLinkAccents aDeadAccents">è</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('é'); return false;" class="dropdownLinkAccents aDeadAccents">é</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ê'); return false;" class="dropdownLinkAccents aDeadAccents">ê</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ě'); return false;" class="dropdownLinkAccents aDeadAccents">ě</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ë'); return false;" class="dropdownLinkAccents aDeadAccents">ë</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ī'); return false;" class="dropdownLinkAccents aDeadAccents">Ī</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ì'); return false;" class="dropdownLinkAccents aDeadAccents">Ì</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Í'); return false;" class="dropdownLinkAccents aDeadAccents">Í</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Î'); return false;" class="dropdownLinkAccents aDeadAccents">Î</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǐ'); return false;" class="dropdownLinkAccents aDeadAccents">Ǐ </a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ï'); return false;" class="dropdownLinkAccents aDeadAccents">Ï</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('I'); return false;" class="dropdownLinkAccents aDeadAccents">I</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ī'); return false;" class="dropdownLinkAccents aDeadAccents">ī</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ì'); return false;" class="dropdownLinkAccents aDeadAccents">ì</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('í'); return false;" class="dropdownLinkAccents aDeadAccents">í</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('î'); return false;" class="dropdownLinkAccents aDeadAccents">î</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǐ'); return false;" class="dropdownLinkAccents aDeadAccents">ǐ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ï'); return false;" class="dropdownLinkAccents aDeadAccents">ï</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ı'); return false;" class="dropdownLinkAccents aDeadAccents">ı</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ō'); return false;" class="dropdownLinkAccents aDeadAccents">Ō</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ò'); return false;" class="dropdownLinkAccents aDeadAccents">Ò</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ó'); return false;" class="dropdownLinkAccents aDeadAccents">Ó</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ô'); return false;" class="dropdownLinkAccents aDeadAccents">Ô</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǒ'); return false;" class="dropdownLinkAccents aDeadAccents">Ǒ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Õ'); return false;" class="dropdownLinkAccents aDeadAccents">Õ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ö'); return false;" class="dropdownLinkAccents aDeadAccents">Ö</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ő'); return false;" class="dropdownLinkAccents aDeadAccents">Ő</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ø'); return false;" class="dropdownLinkAccents aDeadAccents">Ø</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ō'); return false;" class="dropdownLinkAccents aDeadAccents">ō</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ò'); return false;" class="dropdownLinkAccents aDeadAccents">ò</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ó'); return false;" class="dropdownLinkAccents aDeadAccents">ó</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ô'); return false;" class="dropdownLinkAccents aDeadAccents">ô</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǒ'); return false;" class="dropdownLinkAccents aDeadAccents">ǒ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('õ'); return false;" class="dropdownLinkAccents aDeadAccents">õ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ö'); return false;" class="dropdownLinkAccents aDeadAccents">ö</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ő'); return false;" class="dropdownLinkAccents aDeadAccents">ő</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ø'); return false;" class="dropdownLinkAccents aDeadAccents">ø</a>
+        </td>  
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ū'); return false;" class="dropdownLinkAccents aDeadAccents">Ū</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ù'); return false;" class="dropdownLinkAccents aDeadAccents">Ù</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ú'); return false;" class="dropdownLinkAccents aDeadAccents">Ú</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Û'); return false;" class="dropdownLinkAccents aDeadAccents">Û</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǔ'); return false;" class="dropdownLinkAccents aDeadAccents">Ǔ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ů'); return false;" class="dropdownLinkAccents aDeadAccents">Ů</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ü'); return false;" class="dropdownLinkAccents aDeadAccents">Ü</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ű'); return false;" class="dropdownLinkAccents aDeadAccents">Ű</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǖ'); return false;" class="dropdownLinkAccents aDeadAccents">Ǖ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǜ'); return false;" class="dropdownLinkAccents aDeadAccents">Ǚ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǘ'); return false;" class="dropdownLinkAccents aDeadAccents">Ǘ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǚ'); return false;" class="dropdownLinkAccents aDeadAccents">Ǚ</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ū'); return false;" class="dropdownLinkAccents aDeadAccents">ū</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ù'); return false;" class="dropdownLinkAccents aDeadAccents">ù</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ú'); return false;" class="dropdownLinkAccents aDeadAccents">ú</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('û'); return false;" class="dropdownLinkAccents aDeadAccents">û</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǔ'); return false;" class="dropdownLinkAccents aDeadAccents">ǔ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ů'); return false;" class="dropdownLinkAccents aDeadAccents">ů</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ü'); return false;" class="dropdownLinkAccents aDeadAccents">ü</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ű'); return false;" class="dropdownLinkAccents aDeadAccents">ű</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǖ'); return false;" class="dropdownLinkAccents aDeadAccents">ǖ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǜ'); return false;" class="dropdownLinkAccents aDeadAccents">ǚ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǘ'); return false;" class="dropdownLinkAccents aDeadAccents">ǘ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǚ'); return false;" class="dropdownLinkAccents aDeadAccents">ǚ</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ÿ'); return false;" class="dropdownLinkAccents aDeadAccents">Ÿ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ÿ'); return false;" class="dropdownLinkAccents aDeadAccents">ÿ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ý'); return false;" class="dropdownLinkAccents aDeadAccents">ý</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ß'); return false;" class="dropdownLinkAccents aDeadAccents">ß</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Č'); return false;" class="dropdownLinkAccents aDeadAccents">Č</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('č'); return false;" class="dropdownLinkAccents aDeadAccents">č</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ç'); return false;" class="dropdownLinkAccents aDeadAccents">Ç</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ç'); return false;" class="dropdownLinkAccents aDeadAccents">ç</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ğ'); return false;" class="dropdownLinkAccents aDeadAccents">Ğ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ğ'); return false;" class="dropdownLinkAccents aDeadAccents">ğ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ñ'); return false;" class="dropdownLinkAccents aDeadAccents">Ñ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ñ'); return false;" class="dropdownLinkAccents aDeadAccents">ñ</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ř'); return false;" class="dropdownLinkAccents aDeadAccents">Ř</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ř'); return false;" class="dropdownLinkAccents aDeadAccents">ř</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Š'); return false;" class="dropdownLinkAccents aDeadAccents">Š</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('š'); return false;" class="dropdownLinkAccents aDeadAccents">š</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ş'); return false;" class="dropdownLinkAccents aDeadAccents">ş</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ţ'); return false;" class="dropdownLinkAccents aDeadAccents">ţ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ž'); return false;" class="dropdownLinkAccents aDeadAccents">Ž</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ž'); return false;" class="dropdownLinkAccents aDeadAccents">ž</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('æ'); return false;" class="dropdownLinkAccents aDeadAccents">æ</a> 
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('œ'); return false;" class="dropdownLinkAccents aDeadAccents">œ</a> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('¿'); return false;" class="dropdownLinkAccents aDeadAccents">¿</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('¡'); return false;" class="dropdownLinkAccents aDeadAccents">¡</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('«'); return false;" class="dropdownLinkAccents aDeadAccents">«</a> 
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('»'); return false;" class="dropdownLinkAccents aDeadAccents">»</a> 
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('¹'); return false;" class="dropdownLinkAccents aDeadAccents">¹</a> 
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('³'); return false;" class="dropdownLinkAccents aDeadAccents">³</a> 
+        </td>
+    </tr>
+</tbody></table>      
+
+		  </div>
+		</div>
+		&nbsp;
+                <!--a href="" onClick="AccentsPopUp(); return false;">Insert International Characters</a--> 
+                &nbsp;&nbsp;<a href="" onclick="TranslOpen(); return false;">Dictionary</a>
+                
+              </td>
+            </tr>
+            </tbody></table>
+
+            <textarea name="txaBody" id="txaBody" style="width: 99%; height:230px;"></textarea>
+          </td>
+        </tr>
+       </tbody></table>
+
+	   
+	   <div align="left">
+		<input type="checkbox" name="chkCopySender" id="chkCopySender" value="1">
+		<label for="chkCopySender">Send a copy of this message to me at: <%=current_member.try(:semifullname)%>. [<%=current_member.try(:email)%>]</label><br>
+       </div>
+	   <div align="center">
+         <input type="submit" value="Send Message" id="btnSend" name="btnSend">
+         <input type="hidden" name="hidProc" id="hidProc" value="1">
+         <input type="hidden" value="" id="hidMsgID" name="hidMsgID">
+		 <span id="DraftSaveLabel"></span>
+         </div>
+     </td>
+   </tr>       
+</tbody></table>
+</form>
+  
+  
+
+<br>
+<br>
+
+	<!-- Navigation -->   
+	
+	  <a href="/search.asp?selSrchList=15749707&amp;selX3=22&amp;selX6=1&amp;selCountry=33&amp;txtCity=&amp;txtAgeMin=18&amp;txtAgeMax=26&amp;selGender=0&amp;selIsClass=false&amp;selX4=true&amp;selTxtChat=true&amp;selX13=true&amp;selFace=true&amp;txtFName=&amp;txtDesc=&amp;selOrder=0&amp;txtSrchName=mysearch&amp;nRows=10&amp;BtnSubSrch=Search"><b>Back to Search Results</b></a>&nbsp;&nbsp;
+	
+	<br>
+
+	
+	  <a href="Search.asp"><b>Search Members</b></a>
+	
+	<br><br><br><br><br><br><br><br>
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/Minfo.asp?UId=4356365" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FMinfo.asp%3FUId%3D4356365&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f51854d2af9ca4" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1f0dfdcfade706%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff1dba0d6845a59e%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FMinfo.asp%3FUId%3D4356365&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

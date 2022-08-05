@@ -1,0 +1,144 @@
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+    <h2>Bulletin Board - Add a Message</h2>
+     
+	<table class="WidthMaxLim" cellspacing="0" cellpadding="1" border="0" bgcolor="White">
+	<tbody><tr>
+		<td>
+	<h3>Guidelines</h3>
+	The bulletin board is a place to share your learning of languages and cultures
+	in public, so that all readers can benefit.<br>
+	<br>
+	<h4>How to Use the Bulletin Board</h4>
+	Please follow these simple guidelines when posting your message.<br>
+	<ul>
+	  <li>Post only <b><em>specific</em></b> questions about your target language 
+		  or culture. For example, ask about specific words, grammar or help to translate
+		  specific phrases or sentences. 
+		  Do not ask general questions like "I need help with language X". 
+	  </li><li>Make your title specific. For example, don't create a title like "Please help!". 
+		  Instead, write "How to say Hello in language X".
+	  </li><li>If replying to another member's post, provide the answer to his/her question 
+		  directly in your message. If the person has not written a specific question,
+		  invite them to reply with a specific question in the bulletin board.
+		  For example, don't write "I can help you, but first you have to email me." 
+		  Instead, write the answer to his/her question and ask a specific
+		  question of your own. (After all, this is a language exchange!) 
+		  Then, invite the person to reply in the bulletin board with another specific 
+		  question.
+	  </li><li>Choose an appropriate category for your post. Posts that are not in
+	      the appropriate category can be moved or deleted.
+	  </li><li>Do not write contact information. See section below.
+	  </li><li>Do not refer to other websites or organizations. 
+	</li></ul>
+	Any message that does not follow the above guidelines or violates the terms of the 
+	<a href="" onclick="MemberAgreementPopUp(); return false;">Membership Agreement</a>,
+	may be edited, moved or deleted, with or without notice. 
+	Violations can result in you being banned from this community.
+	All messages are reviewed before they are published.<br>
+			</td>
+		</tr>
+	</tbody></table>
+	
+	<br>
+	<br>
+	
+	<table style="width: 100%; border: 1px solid #ccc; background-color: #f5f5f5; padding:10px;">
+	<tbody><tr>
+		<td style="vertical-align: text-top;" width="1%">
+			<i class="material-icons notranslate" style="font-size:36px;color:red; padding-left:20px; padding-right:20px;">warning</i>
+		</td>
+		<td style="color: #404040;" align="left">
+			Do not write your email address or any other form of contact information.<br><br>Writing your contact information in public places violates the terms of the <a href="" onclick="MemberAgreementPopUp(); return false;">Membership Agreement</a>.You can be banned from the community.<br>
+		</td>
+	</tr>
+	</tbody></table>
+	
+	<br clear="all">
+
+
+     <br>
+     <br>
+       
+  
+ <b></b><p>
+ 
+ </p><table class="WidthMaxLim TblUserForm" cellspacing="0" cellpadding="5" border="1">
+   <tbody><tr class="table-heading"><td>Add a Message to the Bulletin Board</td></tr>
+   <tr>
+     <td>  
+       Fields in <b>bold</b> are required.
+       <%=form_with scope:"", url: "BBoardAdd.asp?selCat=5" do |form|%>
+         <table class="TblTranspose" bordercolorlight="Cornsilk" cellspacing="0" cellpadding="5" bordercolor="Burlywood" border="1" align="center">
+
+           <tbody><tr>
+     <td valign="top">
+       <b>Language 1</b>:<br>
+<%=form.select "selX3", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX3", size:"1",class:"select-suggestselX3"}%>
+     <script></script></td>
+     <td valign="top">
+       Language 2:<br>
+<%=form.select "selX6", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX6", size:"1",class:"select-suggestselX6"}%>
+     </td>
+    
+     <td valign="top">
+       Category:<br>
+       <font color="DimGray">Jokes</font>
+       <input type="hidden" id="selCat" name="selCat" value="5">
+       <img src="images/spacer.gif" width="100" height="1">
+     </td>
+           </tr>
+           <tr>
+             <td colspan="3">
+               <b>Title</b><br>
+               <input type="text" name="txtF1" id="txtF1" style="width: 96%" value="" maxlength="160">
+             </td>
+           </tr>
+           <tr>
+             <td colspan="3">
+               <b>Message (maximum 3000 characters)</b><br>
+               <small>Do not write your email address or other contact information.
+               Others can follow a link to your profile and send you a private email message.
+               Public forums are monitored.</small><br>
+               <textarea name="txaF2" id="txaF2" rows="12" style="width: 99%;"></textarea>
+             </td>
+           </tr>
+         </tbody></table>
+  
+         <input type="hidden" value="1" name="hidProc" id="hidProc">  
+
+         <input type="hidden" value="" name="thread" id="thread">  
+         <!--input type="hidden" value="" name="lang" id="lang">  
+         <input type="hidden" value="" name="lang2" id="lang2">  
+         <input type="hidden" value="5" name="Cat" id="Cat"-->  
+
+         <br>                             
+         <div align="center">
+         <input type="submit" value="Submit" id="submit1" name="submit1">
+		 <input type="reset" value="Clear this form" onclick="return (confirm(&quot;Do you really want to clear this form?&quot;));">
+         </div>
+       <%end%>
+     </td>
+   </tr>     
+ </tbody></table>      
+  
+  
+ 
+    
+    <br>
+    <a href="BBoardCat.asp?selCat=5&amp;X3=151"><b>Back to the messages</b></a>
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/BBoardAdd.asp?first=1&amp;selCat=5" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FBBoardAdd.asp%3Ffirst%3D1%26selCat%3D5&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="fbb816a4d8e85" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df16047755b2256a%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff1d8a2602779602%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FBBoardAdd.asp%3Ffirst%3D1%26selCat%3D5&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>
+                <%=content_for :scriptjs do%>
+ <script>$(function(){
+       $(".select-suggestselX6").select2();
+    $(".select-suggestselX3").select2();
+   })</script>
+ <%end%>

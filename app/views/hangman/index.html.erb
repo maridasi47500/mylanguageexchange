@@ -1,0 +1,89 @@
+
+				
+
+                <!-- Page Begin -->
+
+<h2>Manage My Hangman Games</h2>
+<%if @hangmen.length == 0%>
+	You have no games.
+        <%else%>
+        
+
+	Click on a title to edit and test the game.
+        <br>
+<div class="WrapTblScroll">
+	 <table class="TblSrchResults" width="570" cellspacing="0" cellpadding="3" border="1">
+	 <tbody><tr class="table-heading">
+	   <td>Title</td>
+	   <td width="1%" valign="bottom" nowrap=""><strong>Language</strong></td>
+	   <td width="1%" valign="bottom" nowrap=""><strong>Type</strong></td>
+	   <td width="1%" valign="bottom" nowrap=""><strong>Category</strong></td>
+	   <td width="1%" valign="bottom" nowrap=""><strong>Edited</strong></td>
+	   <td width="1%" valign="bottom" nowrap=""><strong>Rating</strong></td>
+	   <td width="1%" valign="bottom" nowrap=""><strong>Status</strong></td>
+	 </tr>
+	<%@hangmen.each do |hangman|%>
+		<tr>
+		  <td class="userdata" valign="top">
+		  <b><a href="HManBuilder.asp?GId=<%=hangman.id%>"><%=hangman.title%></a></b><br>
+		  
+          <img src="images/spacer.gif" width="1"><%hangman.guess.to_s.split('').each_with_index do |f,i|%>
+                                        <%if f == " "%>
+                                       &nbsp;
+                                        <%elsif hangman.hide[i] == "0" || hangman.hidPlayerGuessAll.to_s.downcase.include?(f)%>
+				    <%=hangman.guess[i]%>
+                                          <%else%>
+								_
+							
+								<%end%>
+							<%end%><br>
+		  <a href="HManBuilder.asp?GId=<%=hangman.id%>"><small>Edit</small></a>
+		  <a href="HManPlay.asp?GId=<%=hangman.id%>"><small>Play</small></a><br>
+			
+		  </td>
+		  <td class="userdata" valign="top"><small><%=(Language.find(hangman.language) rescue nil).try(:name)%></small></td>
+		  <td class="userdata" valign="top"><small><%=(Hangmantype.find(hangman.types) rescue nil).try(:name)%></small></td>
+		  <td class="userdata" valign="top"><small><%=(Hangmancat.find(hangman.category) rescue nil).try(:name)%></small></td>
+		  <td class="userdata" valign="top"><small><%=l(hangman.created_at.to_date)%></small></td>
+		  
+		  <td class="userdata" valign="top">0<br>
+		    
+			<font color="slategray"><small>0 votes</small></font><br>
+			<a href="HManRatings.asp?GId=<%=hangman.id%>"><small>view</small></a>
+		  </td>
+		  <td class="userdata" valign="top" nowrap="">
+		  
+			<form method="post" action="HmanMyGames.asp">
+			   <input type="hidden" value="<%=hangman.id%>" name="hidGId">
+               
+               <select name="selMStatus" id="selMStatus">  
+                 <option selected="" value="1">Live
+                 </option><option value="0">Sleep
+                 </option><option value="-1">Delete
+               </option></select>
+               <input type="submit" value="Set" id="submit1" name="submit1">
+            </form> 
+		  
+		  </td>
+		</tr>
+                <%rescue => e%>
+                <%end%>
+	   
+	  
+	</tbody></table>
+	</div>
+        <%end%>
+
+	
+<br>
+<br>
+<b><a href="hangman.asp">Hangman Home</a></b><br>
+<b><a href="HManBuilder.asp">Create a Game</a></b>
+
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/HManMyGames.asp?lang=" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHManMyGames.asp%3Flang%3D&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f153c3323a8687" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df292ccb71379f62%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff1c5ca0d1dce968%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHManMyGames.asp%3Flang%3D&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                

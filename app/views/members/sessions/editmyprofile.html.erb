@@ -1,0 +1,238 @@
+
+				
+
+                <!-- Page Begin -->
+<h2>Informations sur mon compte</h2>
+
+    <a class="rounded-btn-outline icon-text notranslate" href="HiSearch.asp" title="View my Hi!s"><i class="material-icons-outlined notranslate">emoji_people</i>Hi!s</a>
+    <a class="rounded-btn-outline icon-text" href="Inbox.asp" title="View emails received or sent"><i class="material-icons-outlined notranslate">email</i> Courriels (Inbox)</a> 
+    <a class="rounded-btn-outline icon-text" href="FavSearch.asp" title="View and search my favorites"><i class="material-icons-outlined notranslate">favorite_border</i> Favorites</a>
+
+<br>
+<br>
+
+
+<table width="100%" cellspacing="1" cellpadding="1" border="0">
+    <tbody><tr>
+        <td align="left">
+    
+      Nom d'usager (Adresse de courriel): <span class="userdata"><b><%=@member.email%></b></span>
+    
+        </td>
+    </tr>
+</tbody></table>
+	<div class="WrapTblScroll">
+     <table class="TblCardGr" width="99.5%" cellspacing="0" cellpadding="3" border="1">
+     <tbody><tr class="table-heading">
+        
+            <td width="1%" valign="bottom"><b>Pseudonyme</b></td>
+            <!--td width="1%" valign="bottom"><b>Langue(s) maternelle(s)</b></td>
+            <td width="1%" valign="bottom"><b>Langue(s) pratiquée(s)</b></td-->
+            <td width="1%" valign="bottom"><b>Vous cherchez à faire un échange linguistique?</b></td>
+            <!--td width="1%" valign="bottom"><b>Adresse de courriel</b></td-->
+            <td width="1%" valign="bottom"><b>Type d'adhésion</b></td>
+        
+     </tr>
+     
+        
+        <tr>
+          <td class="userdata" valign="top">
+            <div style="display:inline-block; border: 1px solid black; margin-bottom:3px;">
+		<img src="images/Face.gif" class="HomePicSmiley" border="0">
+	</div><br>
+			<a href="PicAdd.asp" class="formSub-btn btnSend">Upload photo</a><br>
+			<br>
+            <%=@member.fullname%>
+          </td>
+          <!--td valign="top">
+            <TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=2>
+                <TR>
+                    <TD align=left class="userdata">français</TD>
+                </TR>
+                
+                <TR>
+                    <TD align=left class="userdata"></TD>
+                </TR>
+                
+                </TR>
+                
+                <TR>
+                    <TD align=left class="userdata"></TD>
+                </TR>
+                
+                </TR>
+                
+                <TR>
+                    <TD align=left class="userdata"></TD>
+                </TR>
+                
+            </TABLE>
+          </td>
+          <td valign=top>
+            <TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=2>
+                <TR>
+                    <TD class="userdata">ukrainien</TD>
+                </TR>
+                
+                <TR>
+                    <TD align=left class="userdata"></TD>
+                </TR>
+                
+                </TR>
+                
+                <TR>
+                    <TD align=left class="userdata"></TD>
+                </TR>
+                
+                </TR>
+                
+                <TR>
+                    <TD align=left class="userdata"></TD>
+                </TR>
+                
+            </TABLE>
+          </td-->
+          
+          <td valign="top">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody><tr>
+              
+
+                   <td valign="top" align="left">Courriel:</td>
+                   <td class="userdata" valign="top" align="left"><strong><%=@member.by_email ? "oui" : "non"%></strong></td>
+                
+                </tr>
+
+                <tr>
+                   <td colspan="2" valign="top" align="left"><img src="images/spacer.gif" height="4"></td>
+                </tr>
+                <tr>
+                
+                   <td valign="top" align="left">Chat textuel:</td>
+                   <td class="userdata" valign="top" align="left"><strong><%=@member.text_chat ? "oui" : "non"%></strong></td>
+                
+                </tr>
+
+                <tr>
+                   <td colspan="2" valign="top" align="left"><img src="images/spacer.gif" height="4"></td>
+                </tr>
+                <tr>
+                
+                   <td valign="top" align="left">Chat vocal:</td>
+                   <td class="userdata" valign="top" align="left"><strong><%=@member.voice_chat ? "oui" : "non"%></strong></td>
+                
+                </tr>
+				
+                <tr>
+                   <td colspan="2" valign="top" align="left"><img src="images/spacer.gif" height="4"></td>
+                </tr>
+                <tr>
+                
+                   <td valign="top" align="left">en personne:</td>
+                   <td class="userdata" valign="top" align="left"><strong><%=@member.in_person ? "oui" : "non"%></strong></td>
+                
+                </tr>
+            </tbody></table>
+                      
+          </td>
+          <!--td valign="top" class="userdata">
+            <%=@member.email%>          
+          </td-->
+          <td class="userdata" valign="top">
+                      
+					Régulière<br>
+					<br>
+					<!--form name=form1 method=get action="member.asp">
+					<font color=darkgreen>Changer pour une Adhésion Or:</font><br>
+					Entrez le code de mise à jour de l'adhésion:
+					<input type=text size=5 name="Act">
+					<input type=submit value="Changer" name="submit1">
+					
+					</form-->
+					<a href="Order_fr.asp" class="formSub-btn btnSend">Obtenir le code de mise à jour de l'adhésion</a><br>
+					<a href="FAQMembers_fr.asp">Adhésion : Foire Aux Questions</a><br>
+					<a href="OrderM.asp">Group rates</a><br>
+				  
+          </td>
+        </tr>
+    </tbody></table>
+	</div>
+
+
+
+
+
+
+
+<br>
+
+<table class="TblInfoForm floating">
+<tbody><tr><td>
+    <a class="LinkTextMenu" href="Minfo.asp?UId=<%=@member.id%>">Voir mon profil</a> (M'envoyer un message)
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="EditProfile.asp">Modifier mon profil</a> (Modifier le profil d'utilisateur)
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="MemberDelete.asp">Supprimer mon profil</a>
+    (<a class="LinkTextMenu" href="MemberDelete.asp">Aide</a>)
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="MemberSenderFilter.asp">Who can contact me?</a>
+</td></tr>
+<tr><td>
+	<a class="LinkTextMenu" href="PassWReset.asp">Modifier mon mot de passe</a><br>
+</td></tr></tbody></table>
+<br>
+
+<table class="TblInfoForm floating"><tbody><tr><td>
+    <!--a class="LinkTextMenu" href="dc.asp">Supprimer mon nom d'usager et mot de passe des témoins de séance</a><br-->
+    <a class="LinkTextMenu" href="HManMyGames.asp">Modifier mes jeux du bonhomme pendu</a>
+</td></tr></tbody></table>
+<br>
+
+<table class="TblInfoForm floating"><tbody><tr><td>
+    <a class="LinkTextMenu" href="Inbox.asp" title="View emails received or sent">Courriel</a> (Inbox)
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="HiSearch.asp" title="View my Hi!s">Hi!s</a>
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="FavSearch.asp" title="View and search my favorites">Favorites</a>
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="BlockSearch.asp" title="View the members I have blocked">Blocks</a>
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="HiEdit.asp" title="Block or receive free Hi!s">Receive or Block Hi!s</a>
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="MemberEmailNotifyMe.asp" title="Block or receive Email Notifications">Email Notifications</a>
+</td></tr>
+<tr><td>
+    <a class="LinkTextMenu" href="MemberPushNotifyMe.asp" title="Block or receive Push (Browser pop-up) Notifications">Push (Browser pop-up) Notifications</a><br>
+</td></tr></tbody></table>
+
+ 
+<!-- Search other Members -->          
+<a name="Search"></a>          
+<p>
+<br>
+
+</p><h2>Contacts précédents avec d'autres membres</h2>
+
+Click <a href="Inbox.asp">here</a> to see all your email messages.
+<a href="Inbox.asp">View emails</a>.
+<br>
+
+ <br>
+ <br>
+ <br>
+           
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/Member.asp?lang=fr" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=837&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FMember.asp%3Flang%3Dfr&amp;layout=button_count&amp;locale=fr_FR&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f376f8e737264ca" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2e85cb9da850da%26domain%3Dwww.mylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.mylanguageexchange.com%252Ff128a9b47d53736%26relation%3Dparent.parent&amp;container_width=837&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FMember.asp%3Flang%3Dfr&amp;layout=button_count&amp;locale=fr_FR&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+              

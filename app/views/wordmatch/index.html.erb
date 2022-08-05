@@ -1,0 +1,66 @@
+				
+
+                <!-- Page Begin -->
+
+<h2>Word Match Games - Random Club Library Entries</h2>
+
+<h3><a href="Games.asp">Games</a> 
+  &gt; <a href="CLScatter.asp">Word Match - Random Club Library Entries</a>
+
+</h3>
+
+<a href="login.asp?showmenu=1">Log in</a> or <a href="SignUp.asp?showmenu=1">sign up</a> 
+to save your results, track your progress or access the words and phrases you entered before.  <br>
+
+<a name="Play"></a>
+
+<br>
+<table class="TblListMenu" width="99%" cellspacing="0" cellpadding="2" border="0">
+  <tbody><tr class="table-heading" valign="middle">
+    <td valign="middle">
+      <span title="Word Match Games - Choose language pair"> Random Club Library Word Games - Choose the Language you are Learning
+    </span></td>
+  </tr>
+  <tr>
+    <td>
+
+		
+	
+		
+		
+		<%for languages in Language.all.each_slice(50).to_a%>
+        
+        <table class="TblListMenuCol" width="33%" align="left">
+        
+          <tbody>
+              <%for language in languages%>
+              <tr>
+            <td>
+				
+					<a href="CLScatter.asp?x3=<%=language.id%>" title="<%=language.name%>"><%=language.name%></a> <small>0</small><br>
+				
+            </td>
+          </tr>
+          <%end%>
+      </tbody></table>
+    <%end%>
+		
+		
+<br clear="all">
+    </td>
+  </tr>
+</tbody></table>
+<br>
+<b><a href="NotepadAdd.asp?lang1=0&amp;lang2=">Add to the Club Library</a></b> - Add words or phrases you are learning and share with the world!<br>
+<b><a href="login.asp?showmenu=1">Log in</a></b> - Play games with the words and phrases you entered before, track your progress or save your results. <br>
+<b><a href="Notepad.asp?lang1=&amp;lang2=&amp;hidProc=1&amp;show=2&amp;srch=&amp;bars=">View my Entries</a></b> - View your entries in the Club Library (your personal member notepad).<br>
+<br>
+
+
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/CLScatter.asp" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FCLScatter.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f38928d9c739c0a" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://web.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1417d892ebe82%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff106351c681ca98%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FCLScatter.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+               

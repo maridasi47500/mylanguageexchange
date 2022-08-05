@@ -1,0 +1,1231 @@
+<tr>
+          <td colspan="2" valign="top" bgcolor="#FFFFFF" align="left">
+          <hr width="100%" size="1">
+        <!-- Page Begin --> 
+<h2>Create Multiple Choice Quiz</h2>
+
+ 
+ <table width="100%" cellspacing="0" cellpadding="0" border="0">
+   <tbody><tr>
+     <td bgcolor="ForestGreen">
+       <font color="#FFFFFF"><b>&nbsp;Page 2/2</b></font>
+     </td>
+   </tr>
+   <tr>
+     <td bgcolor="Ivory">  
+       <form method="post" action="/Teachers/rte/rte/LessonMChoiceEdit.asp" name="LessonForm" id="LessonForm">
+         <table class="TblInputForm" width="100%" cellspacing="1" cellpadding="1" border="0">
+
+           <tbody><tr>
+             <td colspan="2">
+               <b>Multiple Choice</b><br>
+        Enter your questions and possible answers.
+        Press Preview to test the quiz.<br>
+               <small><font color="gray">
+               Do not upload anything that 
+               infringes on the copyrights of others or is illegal or harmful in anyway.
+               </font></small>
+             </td>
+           </tr>
+
+
+           
+           <!-- Start Question 1 -->
+           
+           <tr valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 1</b>
+             </td>
+           </tr>
+           
+           <tr valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest1" name="txaQuest" style="max-width: 440px; width:100%" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice1" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr>
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio1" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(1);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio1"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp1"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr>
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic1" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(1);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic1"></span>
+               <span name="FNamePicOp" id="FNamePicOp1"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer1A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer1B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer1C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer1D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr valign="top">
+             <td>
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer1" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q2Add" style="" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 2" onclick="UnHideQuestion(2); return false;">Add a question</a>
+             </td>
+           </tr>
+           <!-- End Question 1 -->
+
+
+           <!-- Start Question 2 -->
+           
+           <tr id="Q2Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 2</b> <span id="Q2LabelDel"><a href="" onclick="DeleteQuestion(2); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q2Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest2" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice2" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q2Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio2" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(2);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio2"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp2"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q2Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic2" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(2);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic2"></span>
+               <span name="FNamePicOp" id="FNamePicOp2"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q2AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer2A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q2AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer2B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q2AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer2C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q2AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer2D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q2Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer2" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q3Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 3" onclick="UnHideQuestion(3); return false;">Add a question</a>
+             </td>
+           </tr>
+         <!-- End Question 2 -->
+
+
+
+           <!-- Start Question 3 -->
+           
+           <tr id="Q3Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 3</b> <span id="Q3LabelDel"><a href="" onclick="DeleteQuestion(3); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q3Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest3" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice3" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q3Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio3" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(3);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio3"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp3"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q3Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic3" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(3);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic3"></span>
+               <span name="FNamePicOp" id="FNamePicOp3"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q3AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer3A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q3AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer3B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q3AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer3C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q3AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer3D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q3Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer3" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q4Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 4" onclick="UnHideQuestion(4); return false;">Add a question</a>
+             </td>
+           </tr>
+           <!-- End Question 3 -->
+
+
+           <!-- Start Question 4 -->
+           
+           <tr id="Q4Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 4</b> <span id="Q4LabelDel"><a href="" onclick="DeleteQuestion(4); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q4Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest4" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice4" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q4Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio4" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(4);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio4"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp4"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q4Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic4" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(4);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic4"></span>
+               <span name="FNamePicOp" id="FNamePicOp4"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q4AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer4A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q4AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer4B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q4AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer4C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q4AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer4D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q4Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer4" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q5Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 5" onclick="UnHideQuestion(5); return false;">Add a question</a>
+             </td>
+           </tr>
+           <!-- End Question 4 -->
+
+
+           <!-- Start Question 5 -->
+           
+           <tr id="Q5Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 5</b> <span id="Q5LabelDel"><a href="" onclick="DeleteQuestion(5); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q5Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest5" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice5" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q5Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio5" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(5);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio5"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp5"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q5Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic5" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(5);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic5"></span>
+               <span name="FNamePicOp" id="FNamePicOp5"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q5AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer5A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q5AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer5B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q5AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer5C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q5AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer5D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q5Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer5" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q6Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 6" onclick="UnHideQuestion(6); return false;">Add a question</a>
+             </td>
+           </tr>
+           <!-- End Question 5 -->
+
+
+
+           <!-- Start Question 6 -->
+           
+           <tr id="Q6Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 6</b> <span id="Q6LabelDel"><a href="" onclick="DeleteQuestion(6); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q6Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest6" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice6" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q6Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio6" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(6);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio6"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp6"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q6Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic6" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(6);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic6"></span>
+               <span name="FNamePicOp" id="FNamePicOp6"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q6AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer6A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q6AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer6B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q6AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer6C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q6AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer6D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q6Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer6" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q7Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 7" onclick="UnHideQuestion(7); return false;">Add a question</a>
+             </td>
+           </tr>
+           <!-- End Question 6 -->
+
+
+
+           <!-- Start Question 7 -->
+           
+           <tr id="Q7Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 7</b> <span id="Q7LabelDel"><a href="" onclick="DeleteQuestion(7); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q7Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest7" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice7" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q7Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio7" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(7);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio7"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp7"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q7Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic7" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(7);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic7"></span>
+               <span name="FNamePicOp" id="FNamePicOp7"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q7AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer7A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q7AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer7B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q7AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer7C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q7AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer7D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q7Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer7" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q8Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 8" onclick="UnHideQuestion(8); return false;">Add a question</a>
+             </td>
+           </tr>
+           <!-- End Question 7 -->
+
+
+
+           <!-- Start Question 8 -->
+           
+           <tr id="Q8Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 8</b> <span id="Q8LabelDel"><a href="" onclick="DeleteQuestion(8); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q8Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest8" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice8" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q8Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio8" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(8);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio8"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp8"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q8Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic8" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(8);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic8"></span>
+               <span name="FNamePicOp" id="FNamePicOp8"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q8AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer8A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q8AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer8B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q8AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer8C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q8AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer8D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q8Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer8" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q9Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 9" onclick="UnHideQuestion(9); return false;">Add a question</a>
+             </td>
+           </tr>
+           <!-- End Question 8 -->
+
+
+
+           <!-- Start Question 9 -->
+           
+           <tr id="Q9Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 9</b> <span id="Q9LabelDel"><a href="" onclick="DeleteQuestion(9); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q9Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest9" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice9" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q9Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio9" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(9);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio9"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp9"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q9Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic9" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(9);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic9"></span>
+               <span name="FNamePicOp" id="FNamePicOp9"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q9AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer9A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q9AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer9B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q9AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer9C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q9AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer9D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q9Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer9" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q10Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 10" onclick="UnHideQuestion(10); return false;">Add a question</a>
+             </td>
+           </tr>
+           <!-- End Question 9 -->
+
+
+
+           <!-- Start Question 10 -->
+           
+           <tr id="Q10Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 10</b> <span id="Q10LabelDel"><a href="" onclick="DeleteQuestion(10); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q10Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest10" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice10" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q10Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio10" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(10);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio10"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp10"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q10Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic10" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(10);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic10"></span>
+               <span name="FNamePicOp" id="FNamePicOp10"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q10AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer10A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q10AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer10B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q10AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer10C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q10AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer10D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q10Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer10" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q11Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 11" onclick="UnHideQuestion(11); return false;">Add a question</a>
+             </td>
+           </tr>
+         <!-- End Question 10 -->
+
+
+
+         <!-- Start Question 11 -->
+           
+           <tr id="Q11Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 11</b> <span id="Q11LabelDel"><a href="" onclick="DeleteQuestion(11); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q11Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest11" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice11" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q11Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio11" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(11);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio11"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp11"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q11Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic11" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(11);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic11"></span>
+               <span name="FNamePicOp" id="FNamePicOp11"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q11AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer11A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q11AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer11B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q11AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer11C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q11AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer11D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q11Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer11" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+           
+           <tr id="Q12Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonMChoiceEdit.asp" title="Add question 12" onclick="UnHideQuestion(12); return false;">Add a question</a>
+             </td>
+           </tr>
+         <!-- End Question 11 -->
+
+
+
+           <!-- Start Question 12 -->
+           
+           <tr id="Q12Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Question 12</b> <span id="Q12LabelDel"><a href="" onclick="DeleteQuestion(12); return false;">Delete</a></span>
+             </td>
+           </tr>
+           
+           <tr id="Q12Quest" style="display: none;" valign="top">
+             <td>Question: 
+             </td>
+             <td>
+               <textarea id="txaQuest12" name="txaQuest" style="max-width: 440px; width:100%;" rows="2"></textarea>
+               <input type="hidden" value="" id="hidIdMChoice12" name="hidIdMChoice">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="Q12Audio" style="display: none;">
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio12" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(12);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio12"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp12"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="Q12Pic" style="display: none;">
+             <td>Insert picture:
+             </td>
+             <td>
+               <textarea id="hidPic12" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(12);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic12"></span>
+               <span name="FNamePicOp" id="FNamePicOp12"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="Q12AnswerA" style="display: none;" valign="top">
+             <td>Answer A: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer12A" name="txtAnswerA" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q12AnswerB" style="display: none;" valign="top">
+             <td>Answer B: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer12B" name="txtAnswerB" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q12AnswerC" style="display: none;" valign="top">
+             <td>Answer C: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer12C" name="txtAnswerC" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           <tr id="Q12AnswerD" style="display: none;" valign="top">
+             <td>Answer D: 
+             </td>
+             <td>
+        <input type="text" id="txtAnswer12D" name="txtAnswerD" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+
+           <tr id="Q12Answer" style="display: none;">
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <select id="selAnswer12" name="selAnswer" size="1" class="select-suggestselAnswer"><option value="null"> - Select an Answer - </option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select><br>
+             </td>
+           </tr>
+         <!-- End Question 12 -->
+
+
+
+
+         <!-- Character Encoding section -->
+           <tr bgcolor="#dfe7df">
+             <td colspan="2">&nbsp;<br>
+             </td>
+           </tr>
+
+           <!-- tr>
+             <td width="35%" valign=top>
+               Character Encoding: <font color=gray>(optional)</font>
+             </td>
+             <td>
+               <script>$(document).ready(function() {    $('.select-suggestselEncoding').select2();});</script><select name="selEncoding" id="selEncoding" size="1"   class='select-suggestselEncoding'><option value="null" > - Choose encoding - <option value="1" >Arabic (ASMO 708)                       <option value="2" >Arabic (DOS)                            <option value="3" >Arabic (ISO)                            <option value="35" >Arabic (Mac)                            <option value="4" >Arabic (Windows)                        <option value="5" >Baltic (ISO)                            <option value="6" >Baltic (Windows)                        <option value="7" >Central European (DOS)                  <option value="8" >Central European (ISO)                  <option value="36" >Central European (Mac)                  <option value="9" >Central European (Windows)              <option value="26" >Chinese Simplfied (GB2312)              <option value="10" >Chinese Simplified (GB18030)            <option value="11" >Chinese Simplified (HZ)                 <option value="37" >Chinese Simplified (Mac)                <option value="12" >Chinese Traditional (Big5)              <option value="38" >Chinese Traditional (Mac)               <option value="13" >Cyrillic (DOS)                          <option value="14" >Cyrillic (ISO)                          <option value="15" >Cyrillic (KOI8-R)                       <option value="16" >Cyrillic (KOI8-U)                       <option value="39" >Cyrillic (Mac)                          <option value="17" >Cyrillic (Windows)                      <option value="18" >Greek (ISO)                             <option value="40" >Greek (Mac)                             <option value="19" >Greek (Windows)                         <option value="20" >Hebrew (DOS)                            <option value="21" >Hebrew (ISO-logical)                    <option value="22" >Hebrew (ISO-Visual)                     <option value="41" >Hebrew (Mac)                            <option value="23" >Hebrew (Windows)                        <option value="24" >Japanese (EUC)                          <option value="42" >Japanese (Mac)                          <option value="25" >Japanese (Shift-JIS)                    <option value="27" >Korean                                  <option value="43" >Korean (Mac)                            <option value="28" >Thai (Windows)                          <option value="29" >Turkish (ISO)                           <option value="44" >Turkish (Mac)                           <option value="30" >Turkish (Windows)                       <option value="31" >Unicode (UTF-8)                         <option value="32" >Vietnamese (Windows)                    <option value="34" >Western European (ISO)                  <option value="45" >Western European (Mac)                  <option value="33" SELECTED>Western European (Windows)              </select><br>
+             </td>
+           </tr-->
+           <input type="hidden" id="selEncoding" name="selEncoding" value="31">  <!-- utf8 -->
+
+           
+
+         <tr>
+           <td colspan="2">
+          <input type="hidden" value="22" name="hidX3Learn" id="hidX3Learn">  
+          <input type="hidden" value="1" name="hidX3Inst" id="hidX3Inst">  
+          <input type="hidden" value="apprendre alphabet" name="hidTitle" id="hidTitle">
+          <input type="hidden" value="1" name="hidLevel" id="hidLevel">  
+          <input type="hidden" value="1" name="hidCat1" id="hidCat1">  
+          <input type="hidden" value="1" name="hidCat2" id="hidCat2">  
+
+        <input type="hidden" value="2" name="hidPNum" id="hidPNum">  
+        <input type="hidden" value="1" name="hidProc" id="hidProc">
+        <!-- input type="submit" value="Preview & Test" onclick="OpenNew('LessonForm','LessonMChoicePreview.asp')" id="submit" name="submit">
+        <small><font color=black>Opens in new window</font><small>
+        <br-->
+       </td>
+       </tr>
+
+           <tr bgcolor="#dfe7df">
+             <td colspan="2">&nbsp;Finishing<br>
+             </td>
+           </tr>
+      
+      
+      <tr>
+        <td><font color="red"><b></b></font><b>I agree to the <a href="" onclick="PopUpAgree(); return false;">Terms of Use</a></b></td>
+        <td colspan="5" valign="top"><input type="checkbox" name="selLessonsAgree" id="selLessonsAgree" value="true">Yes</td>
+      </tr>
+      
+
+         <tr>
+           <td colspan="2">
+        <input type="submit" value="Save" onclick="OpenSelf('LessonForm','/Teachers/rte/rte/LessonMChoiceEdit.asp')" id="submit" name="submit">
+        &nbsp;
+        <input type="submit" value="Save and Publish" onclick="OpenSelf('LessonForm','/Teachers/rte/rte/LessonMChoiceEdit.asp')" id="submit" name="submit">
+       </td>
+       </tr>
+
+
+         </tbody></table>
+       </form>
+     </td>
+   </tr>     
+ </tbody></table>     
+
+ 
+
+<script language="JavaScript">
+<!--//
+
+window.setInterval("renewSession();", 300000); 
+function renewSession()
+{document.images("renewSession").src = "../../RenewSession.asp?par=" + Math.random();}
+
+function PicInsertPopUp(QNum) {
+  var newWnd, h;
+  h=450;
+  newWnd=window.open("MChoice_Popup_Pic.asp?QNum="+QNum, "MChoice_Popup_Pic", "toolbar=0, directories=0, menubar=0,scrollbars=1,resizable=1,width=840,height=" + h);
+}
+function AudioInsertPopUp(QNum) {
+  var newWnd, h;
+  h=450;
+  newWnd=window.open("MChoice_Popup_Audio.asp?QNum="+QNum, "MChoice_Popup_Audio", "toolbar=0, directories=0, menubar=0,scrollbars=1,resizable=1,width=840,height=" + h);
+}
+
+function UnHideQuestion(QNum) {
+  document.getElementById('Q'+QNum+'Add').style.display = "none";
+  document.getElementById('Q'+QNum+'Label').style.display = "";  // Use display='' because table-row is required by FF but not supported by IE.
+  document.getElementById('Q'+QNum+'Quest').style.display = "";
+  document.getElementById('Q'+QNum+'Audio').style.display = "";
+  document.getElementById('Q'+QNum+'Pic').style.display = "";
+  document.getElementById('Q'+QNum+'AnswerA').style.display = "";
+  document.getElementById('Q'+QNum+'AnswerB').style.display = "";
+  document.getElementById('Q'+QNum+'AnswerC').style.display = "";
+  document.getElementById('Q'+QNum+'AnswerD').style.display = "";
+  document.getElementById('Q'+QNum+'Answer').style.display = "";
+  if (QNum<12) {
+    document.getElementById('Q'+(QNum+1)+'Add').style.display = "";
+  }
+}
+
+function DeleteQuestion(QNum) {
+
+  document.getElementById('hidIdMChoice'+QNum).value = "";
+  document.getElementById('txaQuest'+QNum).value = "";
+  document.getElementById('hidAudio'+QNum).value = "";
+  document.getElementById('hidPic'+QNum).value = "";
+  document.getElementById('txtAnswer'+QNum+'A').value = "";
+  document.getElementById('txtAnswer'+QNum+'B').value = "";
+  document.getElementById('txtAnswer'+QNum+'C').value = "";
+  document.getElementById('txtAnswer'+QNum+'D').value = "";
+  document.getElementById('selAnswer'+QNum).value = "null";
+  document.getElementById('Q'+QNum+'LabelDel').innerHTML="&nbsp;<small>This question will be deleted when you save this page.</small>";
+  document.getElementById('Q'+QNum+'Label').style.display = "";
+  document.getElementById('Q'+QNum+'Quest').style.display = "none";
+  document.getElementById('Q'+QNum+'Audio').style.display = "none";
+  document.getElementById('Q'+QNum+'Pic').style.display = "none";
+  document.getElementById('Q'+QNum+'AnswerA').style.display = "none";
+  document.getElementById('Q'+QNum+'AnswerB').style.display = "none";
+  document.getElementById('Q'+QNum+'AnswerC').style.display = "none";
+  document.getElementById('Q'+QNum+'AnswerD').style.display = "none";
+  document.getElementById('Q'+QNum+'Answer').style.display = "none";
+}
+//-->
+</script>
+
+<br>
+<br>
+<a href="../../LessonList.asp"><b>Lessons Home</b></a><br>
+<a href="../../LessonListMine.asp"><b>Edit My Lessons</b></a> - Edit your existing lessons, quizzes, etc.<br>
+
+            <!-- End of Page contents -->
+              <!-- Facebook Like, etc. -->
+              <br>
+              <br>
+              <br>
+              <br>
+              <fb:like href="http://www.mylanguageexchange.com/Teachers/rte/rte/LessonMChoiceEdit.asp" send="true" width="310px" show_faces="true" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=254680024583689&amp;container_width=0&amp;href=http%3A%2F%2Fwww.mylanguageexchange.com%2FTeachers%2Frte%2Frte%2FLessonMChoiceEdit.asp&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=true&amp;width=310px"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f1ba65f56c9afe4" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/plugins/like.php?app_id=254680024583689&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df12cbbaff1ce698%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff1d4c7b2eea47ec%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fwww.mylanguageexchange.com%2FTeachers%2Frte%2Frte%2FLessonMChoiceEdit.asp&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=true&amp;width=310px" height="1000px" frameborder="0"></iframe></span></fb:like>
+              <br>
+            </td>
+        </tr>

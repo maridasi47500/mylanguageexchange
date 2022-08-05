@@ -1,4 +1,4 @@
-<form method="post" name="HManBuilder" action="HManBuilder.asp">
+   <%=form_with model:hangman,scope:"", url: "HManBuilder.asp", html: {name: "HManBuilder"} do |form|%>
 	   
 
          <table class="WidthMaxLim" border="0" cellpadding="0" cellspacing="0">
@@ -17,7 +17,7 @@
 
 				<tr>
 				  <td colspan=2>
-					<input type='text' name="txtTitle" id="txtTitle" value="" style="width: 96%;" maxlength="120">
+					<%=form.text_field "txtTitle", id:"txtTitle", style:"width: 96%;", maxlength:"120"%>
 				  </td>	
 				</tr>
 
@@ -36,7 +36,7 @@
 
 				<tr>
 				  <td colspan=2>
-					<input type='text' name="txtGuess" id="txtGuess" value="" style="width: 96%;" maxlength="40">
+					<%=form.text_field "txtGuess", id:"txtGuess",style:"width: 96%;", maxlength:"40"%>
 				  </td>	
 				</tr>
 				
@@ -47,7 +47,11 @@
 				</tr>
 
 				<tr>
-				  <td colspan=2><script>$(document).ready(function() {    $(".select-suggestselX3").select2();});</script><select name="selX3" id="selX3" size="1"   class="select-suggestselX3"><option value="null" ><option value="120" >- Other -<option value="77" >Afrikaans<option value="106" >Akan<option value="60" >Albanian<option value="94" >Amharic (Ethiopian)<option value="18" >Arabic, Egyptian<option value="3" >Arabic, Middle Eastern<option value="2" >Arabic, Moroccan<option value="4" >Arabic, other<option value="168" >Arabic, Palestinian<option value="82" >Aramaic<option value="64" >Armenian<option value="112" >Assamese<option value="78" >Assyrian<option value="72" >Azerbaijani<option value="165" >Bambara (Bamana)<option value="145" >Baoulé (Baule, Bawule)<option value="7" >Basque<option value="144" >Bavarian (Austro-Bavarian)<option value="100" >Belarusian<option value="153" >Bemba (Chiwemba, Wemba)<option value="8" >Bengali<option value="9" >Berber (Tamazight)<option value="59" >Bosnian<option value="116" >Breton<option value="10" >Bulgarian<option value="96" >Burmese<option value="65" >Cambodian (Khmer)<option value="55" >Catalan<option value="136" >Cebuano (Bisaya)<option value="95" >Chichewa (Nyanja)<option value="11" >Chinese, Cantonese<option value="12" >Chinese, Mandarin<option value="13" >Chinese, other<option value="167" >Chinese, Taiwanese (Hokkien, Minnanhua)<option value="147" >Chuvash (Bulgar)<option value="14" >Creole<option value="83" >Croatian<option value="15" >Czech<option value="16" >Danish<option value="17" >Dutch<option value="1" >English<option value="19" >Esperanto<option value="63" >Estonian<option value="146" >Faroese<option value="88" >Fijian<option value="20" >Filipino (Tagalog)<option value="21" >Finnish<option value="155" >Fon (Dahomeen, Djedji, Fongbe)<option value="22" SELECTED>French<option value="68" >Gaelic (Irish)<option value="170" >Gaelic (Manx)<option value="69" >Gaelic (Scottish)<option value="79" >Galician<option value="71" >Georgian<option value="23" >German<option value="24" >Greek<option value="74" >Gujarati<option value="138" >Hausa<option value="73" >Hawaiian<option value="25" >Hebrew<option value="26" >Hindi<option value="117" >Hmong<option value="27" >Hungarian<option value="56" >Icelandic<option value="109" >Ido<option value="157" >Igbo (Ibo)<option value="5" >Indonesian (Bahasa)<option value="108" >Interlingua<option value="29" >Italian<option value="30" >Japanese<option value="159" >Kachchi<option value="67" >Kannada<option value="91" >Kazakh<option value="141" >Kituba (Kikoongo, Munukutuba)<option value="123" >Konkani<option value="143" >Konkani (Kunabi, Cugani, Bankoti)<option value="31" >Korean<option value="53" >Kurdish<option value="135" >Kyrgyz (Kara-Kirgiz, Kirghiz, Kirgiz)<option value="133" >Ladino<option value="84" >Lao<option value="57" >Latin<option value="62" >Latvian<option value="114" >Ligurian<option value="142" >Lingala (Ngala)<option value="61" >Lithuanian<option value="66" >Lombard<option value="148" >Luxembourgeois (Luxemburgian)<option value="87" >Macedonian<option value="115" >Malagasy<option value="6" >Malay (Bahasa Malaysia)<option value="93" >Malayalam<option value="119" >Maldivian (Dhivehi)<option value="101" >Maltese<option value="160" >Mandinka<option value="122" >Maori (New Zealand Maori)<option value="85" >Marathi<option value="105" >Mongolian<option value="158" >Montenegrin<option value="104" >Native American (Ojibway, Cree...)<option value="81" >Nepali<option value="102" >Newari<option value="32" >Norwegian<option value="151" >Nyanja (Chewa, Chinyanja)<option value="154" >Occitan (Occitani)<option value="90" >Oriya<option value="152" >Oromo (Oromoo , Oromiffa)<option value="161" >Papiamento (or Papiamentu)<option value="124" >Paraguayan Guarani<option value="33" >Persian (Farsi, Dari)<option value="34" >Polish<option value="35" >Portuguese<option value="128" >Pulaar<option value="36" >Punjabi<option value="166" >Purépecha (Tarascan)<option value="58" >Pushto (Pashto)<option value="80" >Quechua<option value="169" >Rapa Nui<option value="37" >Romanian<option value="89" >Romansch<option value="150" >Romany (Gypsy, Danubian)<option value="140" >Rundi (Kirundi, Urundi)<option value="38" >Russian<option value="139" >Rwanda (Kinyarwanda)<option value="121" >Saami (sami)<option value="132" >Samoan<option value="111" >Sanskrit<option value="39" >Serbian<option value="98" >Shona<option value="131" >Sicilian<option value="40" >Sign Language<option value="76" >Sindhi<option value="86" >Sinhalese<option value="41" >Slovak<option value="54" >Slovenian<option value="99" >Somali<option value="42" >Spanish<option value="43" >Swahili<option value="44" >Swedish<option value="163" >Swiss German<option value="149" >Tajiki (Tajiki, Tadzhik)<option value="45" >Tamil<option value="126" >Tatar (Tartar)<option value="75" >Telugu<option value="103" >Tetum<option value="46" >Thai<option value="47" >Tibetan<option value="137" >Tigrigna (Tigray, Tigrinya)<option value="162" >Tok Pisin<option value="107" >Tongan<option value="92" >Tswana<option value="134" >Tumbuka<option value="48" >Turkish<option value="49" >Ukrainian<option value="50" >Urdu<option value="127" >Uyghur (Wighor)<option value="97" >Uzbek<option value="113" >Venetian<option value="51" >Vietnamese<option value="70" >Welsh<option value="129" >Wolof<option value="118" >Xhosa<option value="52" >Yiddish<option value="130" >Yoruba<option value="125" >Zulu</select></td>
+				  <td colspan=2><script>$(document).ready(function() {    $(".select-suggestselX3").select2();$('#select2-selCat2-container').html("<%=hangman.samplelanguage%>");});</script>
+                                      
+                                      <%=form.select "selX3", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX3", size:"1",class:"select-suggestselX3"}%>
+                                      
+                                  </td>
 				</tr>
 
 				<tr>
@@ -60,8 +64,19 @@
 				</tr>
 
 				<tr>
-				  <td><script>$(document).ready(function() {    $(".select-suggestselCat1").select2();});</script><select name="selCat1" id="selCat1" size="1"   class="select-suggestselCat1"><option value="null" SELECTED><option value="1" >Popular Expression<option value="2" >Famous Quote<option value="3" >Proverb<option value="4" >Famous Name or Title<option value="5" >- Other -</select></td>
-				  <td><script>$(document).ready(function() {    $(".select-suggestselCat2").select2();});</script><select name="selCat2" id="selCat2" size="1"   class="select-suggestselCat2"><option value="null" SELECTED><option value="1" >Amounts / Quantities<option value="2" >Birth / Dying<option value="3" >Body / Health / Senses<option value="4" >Business / Commerce<option value="5" >Coming and Going<option value="6" >Computers / Technology<option value="7" >Drugs / Alcohol / Tobacco<option value="8" >Education / School<option value="9" >Emotions<option value="10" >Family / Relatives<option value="11" >Fashion<option value="12" >Food / Drink<option value="13" >History<option value="14" >Holidays / Travel<option value="15" >Home / House<option value="16" >Insults / Swearing<option value="17" >Literature<option value="18" >Making Love / Sex<option value="19" >Money<option value="20" >Movies / Films<option value="21" >Music<option value="22" >Nature<option value="23" >People<option value="24" >Places<option value="25" >Play / Fun / Entertainment<option value="26" >Social Status<option value="27" >Sports<option value="28" >Stores / Shopping<option value="29" >Success / Happiness<option value="30" >Time<option value="31" >Work / Job<option value="32" >- Other -</select></td>
+				  <td><script>$(document).ready(function() {    $(".select-suggestselCat1").select2();$('#select2-selCat1-container').html("<%=hangman.sampletype%>");});</script>
+                                      <%=form.select "selCat1", Hangmantype.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selCat1", size:"1",class:"select-suggestselCat1"}%>
+                                  
+                                  
+                                  </td>
+				  <td><script>$(document).ready(function() {    $(".select-suggestselCat2").select2();$('#select2-selCat2-container').html("<%=hangman.samplecat%>");});</script>
+                                      
+                                      
+                                      
+                                      <%=form.select "selCat2", Hangmancat.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selCat2", size:"1",class:"select-suggestselCat2"}%>
+                                  
+                                  
+                                  </td>
 				</tr>
 
 
@@ -78,26 +93,27 @@
 	         <td>
 				 <br>
 				 
-				<input type="hidden" value="0" name="hidEditMode" id="hidEditMode">  
-				<input type="hidden" value="" name="hidGId" id="hidGId">  
-				<input type="hidden" value="" name="hidGuess" id="hidGuess">  
-				<input type="hidden" value="" name="hidHide" id="hidHide">  
-				<input type="hidden" value="" name="hidTitle" id="hidTitle">  
-				<input type="hidden" value="22" name="hidX3" id="hidX3">  
-				<input type="hidden" value="" name="hidCat1" id="hidCat1">  
-				<input type="hidden" value="" name="hidCat2" id="hidCat2">  
-				<input type="hidden" value="" name="hidHint1" id="hidHint1">  
-				<input type="hidden" value="" name="hidHint2" id="hidHint2">  
-				<input type="hidden" value="" name="hidHint3" id="hidHint3">
-				<input type="hidden" value="" name="hidEquiv1" id="hidEquiv1">  
-				<input type="hidden" value="" name="hidEquiv2" id="hidEquiv2">  
-				<input type="hidden" value="" name="hidEquiv3" id="hidEquiv3">  
-				<input type="hidden" value="" name="hidDesc" id="hidDesc">  
-				<input type="hidden" value="" name="hidWinMsg" id="hidWinMsg">  
-				<input type="hidden" value="" name="hidLoseMsg" id="hidLoseMsg">  
-				<input type="hidden" value="" name="hidPTitle" id="hidPTitle">
-				<input type="hidden" value="" name="hidPGuess" id="hidPGuess">
-				<input type="hidden" value="" name="hidPGId" id="hidPGId">
+				<%=form.hidden_field "hidEditMode", id: "hidEditMode"%>  
+				<%=form.hidden_field "hidGId", id: "hidGId"%>  
+				<%=form.hidden_field "hidGuess", id: "hidGuess"%>  
+				<%=form.hidden_field "hidHide", id: "hidHide"%>  
+				<%=form.hidden_field "hidTitle", id: "hidTitle"%>  
+				<%=form.hidden_field "hidX3", id: "hidX3"%>  
+				<%=form.hidden_field "hidCat1", id: "hidCat1"%>  
+				<%=form.hidden_field "hidCat2", id: "hidCat2"%>  
+				<%=form.hidden_field "hidHint1", id: "hidHint1"%>  
+				<%=form.hidden_field "hidHint2", id: "hidHint2"%>  
+				<%=form.hidden_field "hidHint3", id: "hidHint3"%>
+				<%=form.hidden_field "hidEquiv1", id: "hidEquiv1"%>  
+				<%=form.hidden_field "hidEquiv2", id: "hidEquiv2"%>  
+				<%=form.hidden_field "hidEquiv3", id: "hidEquiv3"%>  
+				<%=form.hidden_field "hidDesc", id: "hidDesc"%>  
+				<%=form.hidden_field "hidWinMsg", id: "hidWinMsg"%>  
+				<%=form.hidden_field "hidLoseMsg", id: "hidLoseMsg"%>  
+				<%=form.hidden_field "hidPTitle", id: "hidPTitle"%>
+				<%=form.hidden_field "hidPGuess", id: "hidPGuess"%>
+				<%=form.hidden_field "hidPGId", id: "hidPGId"%>
+						   
 						   
 		          <input type="hidden" value="1" name="hidPnum" id="hidPnum">  
 				
@@ -106,4 +122,4 @@
 		   </tr>
          </table>
          
-       </form>
+       <%end%>

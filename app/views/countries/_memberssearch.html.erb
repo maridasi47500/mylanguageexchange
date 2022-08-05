@@ -1,0 +1,622 @@
+<%=form_with scope:"",model:member, method: :get,url: "../search.asp", html:{id:"Form1", name:"Form1"} do |form|%>
+   <table class="TblInputForm" width="100%" cellspacing="0" cellpadding="4" border="1">
+   <tbody><tr>
+    
+     <td colspan="2">  
+       
+       <div align="left">
+         <div style=" font-size: 14pt;">
+             Find a language exchange partner who has:
+         <br></div>
+       </div>
+	 </td>
+	</tr> 
+     
+       <!--table border="1" cellpadding="1" cellspacing="0" align="center" bordercolor="Burlywood" bordercolorlight="Cornsilk"-->
+	   
+		
+
+		 <tr>
+           <td nowrap=""><b>Native language</b> (required)</td>
+<td><script>$(document).ready(function() {    $(".select-suggestselX3").select2();});</script>
+                                      
+                                      <%=form.select "selX3", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX3", size:"1",class:"select-suggestselX3"}%>
+                                      
+                                  </td>            <!--td></td-->
+         </tr>
+
+           <tr>
+             <td nowrap="">Practicing language</td>
+<td><script>$(document).ready(function() {    $(".select-suggestselX6").select2();});</script>
+                                      
+                                      <%=form.select "selX6", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX6", size:"1",class:"select-suggestselX6"}%>
+                                      
+                                  </td>           </tr>
+
+           <tr>
+             <td nowrap="">Country</td>
+<td><script>$(document).ready(function() {    $(".select-suggestselCountry").select2();});</script>
+                                      
+                                      <%=form.select "selCountry", Country.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selCountry", size:"1",class:"select-suggestselCountry"}%>
+                                      
+                                  </td>            </tr>
+
+           <tr>
+             <td valign="top" nowrap="" align="left">City<br>
+               <small>
+                 Tip: use language versions of the city name.<br> 
+                 For example, search for Montreal and Montréal.<br>
+                 Search for Rome and for Roma.
+               </small>
+             </td>
+             <td valign="top" align="left">
+               <%=form.search_field "txtCity",placeholder:"Optional"%><br>
+		
+<style>
+.dropdownAccents {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-contentAccents {
+    display: none;
+    position: absolute;
+	
+bottom: 39px;
+left: -110px;
+    background-color: #f1f1f1;
+    min-width: 100px;
+	max-height: 300px;
+	max-width: 320px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.aDeadAccents {
+	pointer-events:none;
+}
+
+.showAccents {display: block;}
+</style>
+
+<a href="#" title="Insert accented characters" onclick="DropdownToggleAccents(); return false;" class="dropbtnAccents">Insert Accents</a>
+
+
+<script>
+var IsDropdownOpenAccents = false;
+
+function openDropdownAccents() {
+    document.getElementById("myDropdownAccents").classList.add('showAccents');
+	var dropdownLinks = document.getElementsByClassName("dropdownLinkAccents");
+	var iRow;
+	for (iRow = 0; iRow < dropdownLinks.length; iRow++) {
+		var opendropdown = dropdownLinks[iRow];
+		if (opendropdown.classList.contains('aDeadAccents')) {
+			opendropdown.classList.remove('aDeadAccents');
+	  }   
+	}
+	IsDropdownOpenAccents = true;
+}
+function closeDropdownAccents() {
+    document.getElementById("myDropdownAccents").classList.remove('showAccents');
+	var dropdownLinks = document.getElementsByClassName("dropdownLinkAccents");
+	var iRow;
+	for (iRow = 0; iRow < dropdownLinks.length; iRow++) {
+		var closedropdown = dropdownLinks[iRow];
+		if (!closedropdown.classList.contains('aDeadAccents')) {
+			closedropdown.classList.add('aDeadAccents');
+	  }   
+	}
+	IsDropdownOpenAccents = false;
+}
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function DropdownToggleAccents() {
+	if (IsDropdownOpenAccents) {
+		closeDropdownAccents();
+	}
+	else {
+		openDropdownAccents();
+	}
+}
+// Close the dropdown if the user clicks outside of it
+window.addEventListener("click", function(event) {
+    if (!event.target.matches('.dropbtnAccents')) {
+        closeDropdownAccents();
+    }
+});
+
+function InsertAccentsMail(ch) {
+	var targetText = document.getElementById("txtCity");
+	targetText.focus();
+	targetText.value = targetText.value + ch
+	targetText.focus();
+}
+	
+</script>
+
+		<div class="dropdownAccents">
+		  <div id="myDropdownAccents" class="dropdown-contentAccents">
+			
+	<style>
+		.dropdownLinkAccents {
+			color: #009688!important;  /* teal */
+			text-align: center;
+			font-size: 19px;
+			padding: 5px 5px;
+			display: block;
+		}
+
+		.dropdownLinkAccents:hover {
+			font-size: 19px;
+			background-color: #ddd;
+		}
+	</style>
+	
+<table width="300px" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ā'); return false;" class="dropdownLinkAccents">Ā</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('À'); return false;" class="dropdownLinkAccents">À</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Á'); return false;" class="dropdownLinkAccents">Á</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Â'); return false;" class="dropdownLinkAccents">Â</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǎ'); return false;" class="dropdownLinkAccents">Ǎ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ã'); return false;" class="dropdownLinkAccents">Ã</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ä'); return false;" class="dropdownLinkAccents">Ä</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Å'); return false;" class="dropdownLinkAccents">Å</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ā'); return false;" class="dropdownLinkAccents">ā</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('à'); return false;" class="dropdownLinkAccents">à</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('á'); return false;" class="dropdownLinkAccents">á</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('â'); return false;" class="dropdownLinkAccents">â</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǎ'); return false;" class="dropdownLinkAccents">ǎ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ã'); return false;" class="dropdownLinkAccents">ã</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ă'); return false;" class="dropdownLinkAccents">ă</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ä'); return false;" class="dropdownLinkAccents">ä</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('å'); return false;" class="dropdownLinkAccents">å</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ē'); return false;" class="dropdownLinkAccents">Ē</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('È'); return false;" class="dropdownLinkAccents">È</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('É'); return false;" class="dropdownLinkAccents">É</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ê'); return false;" class="dropdownLinkAccents">Ê</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ě'); return false;" class="dropdownLinkAccents">Ě</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ë'); return false;" class="dropdownLinkAccents">Ë</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ē'); return false;" class="dropdownLinkAccents">ē</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('è'); return false;" class="dropdownLinkAccents">è</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('é'); return false;" class="dropdownLinkAccents">é</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ê'); return false;" class="dropdownLinkAccents">ê</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ě'); return false;" class="dropdownLinkAccents">ě</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ë'); return false;" class="dropdownLinkAccents">ë</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ī'); return false;" class="dropdownLinkAccents">Ī</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ì'); return false;" class="dropdownLinkAccents">Ì</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Í'); return false;" class="dropdownLinkAccents">Í</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Î'); return false;" class="dropdownLinkAccents">Î</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǐ'); return false;" class="dropdownLinkAccents">Ǐ </a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ï'); return false;" class="dropdownLinkAccents">Ï</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('I'); return false;" class="dropdownLinkAccents">I</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ī'); return false;" class="dropdownLinkAccents">ī</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ì'); return false;" class="dropdownLinkAccents">ì</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('í'); return false;" class="dropdownLinkAccents">í</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('î'); return false;" class="dropdownLinkAccents">î</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǐ'); return false;" class="dropdownLinkAccents">ǐ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ï'); return false;" class="dropdownLinkAccents">ï</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ı'); return false;" class="dropdownLinkAccents">ı</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ō'); return false;" class="dropdownLinkAccents">Ō</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ò'); return false;" class="dropdownLinkAccents">Ò</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ó'); return false;" class="dropdownLinkAccents">Ó</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ô'); return false;" class="dropdownLinkAccents">Ô</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǒ'); return false;" class="dropdownLinkAccents">Ǒ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Õ'); return false;" class="dropdownLinkAccents">Õ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ö'); return false;" class="dropdownLinkAccents">Ö</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ő'); return false;" class="dropdownLinkAccents">Ő</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ø'); return false;" class="dropdownLinkAccents">Ø</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ō'); return false;" class="dropdownLinkAccents">ō</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ò'); return false;" class="dropdownLinkAccents">ò</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ó'); return false;" class="dropdownLinkAccents">ó</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ô'); return false;" class="dropdownLinkAccents">ô</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǒ'); return false;" class="dropdownLinkAccents">ǒ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('õ'); return false;" class="dropdownLinkAccents">õ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ö'); return false;" class="dropdownLinkAccents">ö</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ő'); return false;" class="dropdownLinkAccents">ő</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ø'); return false;" class="dropdownLinkAccents">ø</a>
+        </td>  
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ū'); return false;" class="dropdownLinkAccents">Ū</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ù'); return false;" class="dropdownLinkAccents">Ù</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ú'); return false;" class="dropdownLinkAccents">Ú</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Û'); return false;" class="dropdownLinkAccents">Û</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǔ'); return false;" class="dropdownLinkAccents">Ǔ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ů'); return false;" class="dropdownLinkAccents">Ů</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ü'); return false;" class="dropdownLinkAccents">Ü</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ű'); return false;" class="dropdownLinkAccents">Ű</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǖ'); return false;" class="dropdownLinkAccents">Ǖ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǜ'); return false;" class="dropdownLinkAccents">Ǚ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǘ'); return false;" class="dropdownLinkAccents">Ǘ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ǚ'); return false;" class="dropdownLinkAccents">Ǚ</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ū'); return false;" class="dropdownLinkAccents">ū</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ù'); return false;" class="dropdownLinkAccents">ù</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ú'); return false;" class="dropdownLinkAccents">ú</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('û'); return false;" class="dropdownLinkAccents">û</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǔ'); return false;" class="dropdownLinkAccents">ǔ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ů'); return false;" class="dropdownLinkAccents">ů</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ü'); return false;" class="dropdownLinkAccents">ü</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ű'); return false;" class="dropdownLinkAccents">ű</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǖ'); return false;" class="dropdownLinkAccents">ǖ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǜ'); return false;" class="dropdownLinkAccents">ǚ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǘ'); return false;" class="dropdownLinkAccents">ǘ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ǚ'); return false;" class="dropdownLinkAccents">ǚ</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ÿ'); return false;" class="dropdownLinkAccents">Ÿ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ÿ'); return false;" class="dropdownLinkAccents">ÿ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ý'); return false;" class="dropdownLinkAccents">ý</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ß'); return false;" class="dropdownLinkAccents">ß</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Č'); return false;" class="dropdownLinkAccents">Č</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('č'); return false;" class="dropdownLinkAccents">č</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ç'); return false;" class="dropdownLinkAccents">Ç</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ç'); return false;" class="dropdownLinkAccents">ç</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ğ'); return false;" class="dropdownLinkAccents">Ğ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ğ'); return false;" class="dropdownLinkAccents">ğ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ñ'); return false;" class="dropdownLinkAccents">Ñ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ñ'); return false;" class="dropdownLinkAccents">ñ</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ř'); return false;" class="dropdownLinkAccents">Ř</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ř'); return false;" class="dropdownLinkAccents">ř</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Š'); return false;" class="dropdownLinkAccents">Š</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('š'); return false;" class="dropdownLinkAccents">š</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ş'); return false;" class="dropdownLinkAccents">ş</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ţ'); return false;" class="dropdownLinkAccents">ţ</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('Ž'); return false;" class="dropdownLinkAccents">Ž</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('ž'); return false;" class="dropdownLinkAccents">ž</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('æ'); return false;" class="dropdownLinkAccents">æ</a> 
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('œ'); return false;" class="dropdownLinkAccents">œ</a> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" onclick="InsertAccentsMail('¿'); return false;" class="dropdownLinkAccents">¿</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('¡'); return false;" class="dropdownLinkAccents">¡</a>
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('«'); return false;" class="dropdownLinkAccents">«</a> 
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('»'); return false;" class="dropdownLinkAccents">»</a> 
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('¹'); return false;" class="dropdownLinkAccents">¹</a> 
+        </td>
+        <td>
+            <a href="" onclick="InsertAccentsMail('³'); return false;" class="dropdownLinkAccents">³</a> 
+        </td>
+    </tr>
+</tbody></table>      
+
+		  </div>
+		</div>
+		&nbsp;			   
+             </td>
+           </tr>
+
+           <tr>
+             <td nowrap="">Age</td>
+             <td>
+               From: <%=form.number_field "txtAgeMin", style: "width: 65px", min:"0", max:"130", step:"1", placeholder: "Optional"%>
+               To: <%=form.number_field "txtAgeMax", style: "width: 65px", min:"0", max:"130", step:"1", placeholder: "Optional"%>
+             </td>
+           </tr>
+
+           <tr>
+             <td nowrap="">Gender</td>
+			 
+             <td> 
+                 <%=form.select "selGender", ["Female","Male","Other"].map.with_index {|x,i|[x,i]},{include_blank: "-- All --  "}%>
+  
+  </td>
+           </tr>
+
+           <tr>
+             <td nowrap="">Is a classroom</td>
+             <td> 
+                   <%=form.select "selIsCLass", [["Yes","true"],["No","false"]],{include_blank: "-- All --  "}%>
+
+  </td>
+           </tr>
+
+           
+            <tr>
+              <td nowrap="">Seeking a penpal exchange (via email)</td>
+              <td> 
+  <%=form.select "selX4", [["Yes","true"],["No","false"]],{include_blank: "-- All --  "}%>
+  </td>
+            </tr>
+           
+
+           <tr>
+             <td nowrap="">Seeking a live text chat exchange</td>
+             <td> 
+ <%=form.select "selTxtChat", [["Yes","true"],["No","false"]],{include_blank: "-- All --  "}%>
+  </td>
+           </tr>
+
+           <tr>
+             <td nowrap="">Seeking a live voice chat exchange</td>
+             <td> 
+ <%=form.select "selX13", [["Yes","true"],["No","false"]],{include_blank: "-- All --  "}%> 
+  </td>
+           </tr>
+
+           <tr>
+             <td nowrap="">Seeking a live exchange in person</td>
+             <td> 
+<%=form.select "selFace", [["Yes","true"],["No","false"]],{include_blank: "-- All --  "}%>
+  </td>
+           </tr>
+
+           <tr>
+             <td nowrap="">First Name</td>
+             <td>
+               <%=form.search_field "txtFName",placeholder:"Optional"%>
+             </td>
+           </tr>
+
+			
+           <tr>
+             <td nowrap="">Description contains:</td>
+             <td>
+               <%=form.search_field "txtDesc",placeholder:"Optional"%>
+             </td>
+           </tr>
+			
+
+           <tr>
+             <td>Sort results by:</td>
+             <td>
+                             
+             
+                 <%=form.select "selOrder", ["Login Date","Profile Date","Games Index","First Name","Photos"].zip([0,3,2,1,4])%>
+		   </td>
+	   </tr>
+	   <tr>
+		 <td colspan="2" align="center">
+			<br>
+			Save this search as:<br>
+			<%=form.search_field "txtSrchName", style: "width: 200px;", placeholder: "Optional"%><br>
+			<input type="hidden" name="nRows" value="">
+			<input type="submit" value="Search" class="formSub-btn" id="BtnSubSrch" name="BtnSubSrch">
+		 </td>
+	   </tr> 
+	   </tbody></table>
+      <%end%>

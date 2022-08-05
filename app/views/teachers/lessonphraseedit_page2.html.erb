@@ -1,0 +1,1129 @@
+<tr>
+          <td colspan="2" valign="top" bgcolor="#FFFFFF" align="left">
+          <hr width="100%" size="1">
+        <!-- Page Begin --> 
+<h2>Lesson/Quiz Generator - Phrases</h2>
+
+
+ 
+ <table width="100%" cellspacing="0" cellpadding="0" border="0">
+   <tbody><tr>
+     <td bgcolor="ForestGreen">
+       <font color="#FFFFFF"><b>&nbsp;Page 2/2</b></font>
+     </td>
+   </tr>
+   <tr>
+     <td bgcolor="Ivory">  
+       <form method="post" action="/Teachers/rte/rte/LessonPhraseEdit.asp" name="LessonForm" id="LessonForm">
+         <table width="100%" cellspacing="1" cellpadding="1" border="0">
+
+           <tbody><tr>
+             <td colspan="2">
+                <font color="red"><b>*</b></font>Red asterisk indicates required field.<br>
+               <small><font color="gray">
+               Do not upload anything that 
+               infringes on the copyrights of others or is illegal or harmful in anyway.
+               </font></small>
+             </td>
+           </tr>
+
+           <tr valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Introduction</b>
+             </td>
+           </tr>
+           
+           <tr valign="top">
+             <td colspan="2">
+               Introduction text: <br>
+               <textarea id="txaIntro" name="txaIntro" style="width: 100%" rows="8"></textarea>
+             </td>
+           </tr>
+           
+                        
+                        <tr id="IntroPic" style="">
+                            <td>Introduction picture: 
+                            </td>
+                            <td>
+                                <textarea id="hidIntroPic" name="hidIntroPic" style="display: none"></textarea>
+                                <input type="button" value="Browse/upload" onclick="IntroPicInsertPopUp();" id="submit" name="submit">
+                                <span name="FNameIntroPic" id="FNameIntroPic"></span>
+                                <span name="FNameIntroPicOp" id="FNameIntroPicOp"><small><font color="gray">Optional</font></small></span>
+                            </td>
+                        </tr>
+           
+
+           
+           <!-- Start Phrase 1 -->
+           
+           <tr id="P1Label" style="" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 1</b>
+             </td>
+           </tr>
+           
+           <tr id="P1Ref" style="" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             <small><font color="gray">(e.g., Hello)</font></small>
+             <!-- a href="" onclick="HelpRefPopUp(); return false;"><small>Help</small></a-->
+             </td>
+             <td>
+                             <input type="text" id="txtRef1" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase1" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P1Learn" style="" valign="top">
+             <td>French text: 
+             <small><font color="gray">(e.g., 你好 if teaching mandarin)</font></small>
+             </td>
+             <td>
+                             <input type="text" id="txtLearn1" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P1Script" style="">
+             <td>French text, image version: 
+             <a href="" class="FadeLink" title="Pop up help" onclick="ScriptHelpPopUp(); return false;"><small>What is this?</small></a>
+             </td>
+             <td>
+               <textarea id="hidScript1" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(1);" id="submit1" name="submit1">
+               <span name="FNameScript" id="FNameScript1"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp1"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P1Phonetic" style="" valign="top">
+             <td>Pronounce like: 
+             <small><font color="gray">(e.g., nǐ hǎo or ni hao)</font></small>
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic1" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P1Audio" style="">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio1" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(1);" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio1"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp1"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P1Pic" style="">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic1" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(1);" id="submit1" name="submit1">
+               <span name="FNamePic" id="FNamePic1"></span>
+               <span name="FNamePicOp" id="FNamePicOp1"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P2Add" style="" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 2" onclick="UnHidePhrase(2); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 1 -->
+
+
+
+           <!-- Start Phrase 2 -->
+           
+           <tr id="P2Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 2</b> <span id="P2LabelDel"><a href="" onclick="DeletePhrase(2); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P2Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef2" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase2" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P2Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn2" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P2Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript2" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(2);" id="submit2" name="submit2">
+               <span name="FNameScript" id="FNameScript2"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp2"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P2Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic2" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P2Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio2" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(2);" id="submit2" name="submit2">
+               <span name="FNameAudio" id="FNameAudio2"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp2"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P2Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic2" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(2);" id="submit2" name="submit2">
+               <span name="FNamePic" id="FNamePic2"></span>
+               <span name="FNamePicOp" id="FNamePicOp2"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P3Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 3" onclick="UnHidePhrase(3); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 2 -->
+
+
+           <!-- Start Phrase 3 -->
+           
+           <tr id="P3Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 3</b> <span id="P3LabelDel"><a href="" onclick="DeletePhrase(3); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P3Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef3" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase3" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P3Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn3" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P3Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript3" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(3);" id="submit3" name="submit3">
+               <span name="FNameScript" id="FNameScript3"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp3"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P3Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic3" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P3Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio3" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(3);" id="submit3" name="submit3">
+               <span name="FNameAudio" id="FNameAudio3"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp3"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P3Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic3" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(3);" id="submit3" name="submit3">
+               <span name="FNamePic" id="FNamePic3"></span>
+               <span name="FNamePicOp" id="FNamePicOp3"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P4Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 4" onclick="UnHidePhrase(4); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 3 -->
+
+
+
+           <!-- Start Phrase 4 -->
+           
+           <tr id="P4Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 4</b> <span id="P4LabelDel"><a href="" onclick="DeletePhrase(4); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P4Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef4" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase4" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P4Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn4" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P4Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript4" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(4);" id="submit4" name="submit4">
+               <span name="FNameScript" id="FNameScript4"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp4"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P4Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic4" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P4Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio4" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(4);" id="submit4" name="submit4">
+               <span name="FNameAudio" id="FNameAudio4"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp4"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P4Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic4" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(4);" id="submit4" name="submit4">
+               <span name="FNamePic" id="FNamePic4"></span>
+               <span name="FNamePicOp" id="FNamePicOp4"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P5Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 5" onclick="UnHidePhrase(5); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 4 -->
+
+
+
+           <!-- Start Phrase 5 -->
+           
+           <tr id="P5Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 5</b> <span id="P5LabelDel"><a href="" onclick="DeletePhrase(5); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P5Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef5" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase5" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P5Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn5" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P5Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript5" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(5);" id="submit5" name="submit5">
+               <span name="FNameScript" id="FNameScript5"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp5"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P5Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic5" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P5Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio5" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(5);" id="submit5" name="submit5">
+               <span name="FNameAudio" id="FNameAudio5"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp5"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P5Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic5" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(5);" id="submit5" name="submit5">
+               <span name="FNamePic" id="FNamePic5"></span>
+               <span name="FNamePicOp" id="FNamePicOp5"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P6Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 6" onclick="UnHidePhrase(6); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 5 -->
+
+
+
+           <!-- Start Phrase 6 -->
+           
+           <tr id="P6Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 6</b> <span id="P6LabelDel"><a href="" onclick="DeletePhrase(6); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P6Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef6" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase6" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P6Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn6" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P6Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript6" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(6);" id="submit6" name="submit6">
+               <span name="FNameScript" id="FNameScript6"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp6"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P6Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic6" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P6Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio6" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(6);" id="submit6" name="submit6">
+               <span name="FNameAudio" id="FNameAudio6"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp6"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P6Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic6" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(6);" id="submit6" name="submit6">
+               <span name="FNamePic" id="FNamePic6"></span>
+               <span name="FNamePicOp" id="FNamePicOp6"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P7Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 7" onclick="UnHidePhrase(7); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 6 -->
+
+
+
+           <!-- Start Phrase 7 -->
+           
+           <tr id="P7Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 7</b> <span id="P7LabelDel"><a href="" onclick="DeletePhrase(7); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P7Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef7" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase7" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P7Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn7" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P7Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript7" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(7);" id="submit7" name="submit7">
+               <span name="FNameScript" id="FNameScript7"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp7"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P7Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic7" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P7Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio7" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(7);" id="submit7" name="submit7">
+               <span name="FNameAudio" id="FNameAudio7"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp7"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P7Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic7" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(7);" id="submit7" name="submit7">
+               <span name="FNamePic" id="FNamePic7"></span>
+               <span name="FNamePicOp" id="FNamePicOp7"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P8Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 8" onclick="UnHidePhrase(8); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 7 -->
+
+
+
+           <!-- Start Phrase 8 -->
+           
+           <tr id="P8Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 8</b> <span id="P8LabelDel"><a href="" onclick="DeletePhrase(8); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P8Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef8" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase8" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P8Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn8" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P8Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript8" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(8);" id="submit8" name="submit8">
+               <span name="FNameScript" id="FNameScript8"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp8"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P8Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic8" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P8Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio8" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(8);" id="submit8" name="submit8">
+               <span name="FNameAudio" id="FNameAudio8"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp8"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P8Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic8" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(8);" id="submit8" name="submit8">
+               <span name="FNamePic" id="FNamePic8"></span>
+               <span name="FNamePicOp" id="FNamePicOp8"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P9Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 9" onclick="UnHidePhrase(9); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 8 -->
+
+
+
+           <!-- Start Phrase 9 -->
+           
+           <tr id="P9Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 9</b> <span id="P9LabelDel"><a href="" onclick="DeletePhrase(9); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P9Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef9" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase9" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P9Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn9" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P9Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript9" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(9);" id="submit9" name="submit9">
+               <span name="FNameScript" id="FNameScript9"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp9"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P9Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic9" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P9Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio9" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(9);" id="submit9" name="submit9">
+               <span name="FNameAudio" id="FNameAudio9"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp9"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P9Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic9" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(9);" id="submit9" name="submit9">
+               <span name="FNamePic" id="FNamePic9"></span>
+               <span name="FNamePicOp" id="FNamePicOp9"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P10Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 10" onclick="UnHidePhrase(10); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 9 -->
+
+
+
+           <!-- Start Phrase 10 -->
+           
+           <tr id="P10Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 10</b> <span id="P10LabelDel"><a href="" onclick="DeletePhrase(10); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P10Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef10" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase10" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P10Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn10" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P10Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript10" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(10);" id="submit10" name="submit10">
+               <span name="FNameScript" id="FNameScript10"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp10"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P10Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic10" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P10Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio10" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(10);" id="submit10" name="submit10">
+               <span name="FNameAudio" id="FNameAudio10"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp10"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P10Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic10" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(10);" id="submit10" name="submit10">
+               <span name="FNamePic" id="FNamePic10"></span>
+               <span name="FNamePicOp" id="FNamePicOp10"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P11Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 11" onclick="UnHidePhrase(11); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 10 -->
+
+
+
+           <!-- Start Phrase 11 -->
+           
+           <tr id="P11Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 11</b> <span id="P11LabelDel"><a href="" onclick="DeletePhrase(11); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P11Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef11" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase11" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P11Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn11" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P11Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript11" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(11);" id="submit11" name="submit11">
+               <span name="FNameScript" id="FNameScript11"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp11"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P11Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic11" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P11Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio11" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(11);" id="submit11" name="submit11">
+               <span name="FNameAudio" id="FNameAudio11"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp11"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P11Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic11" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(11);" id="submit11" name="submit11">
+               <span name="FNamePic" id="FNamePic11"></span>
+               <span name="FNamePicOp" id="FNamePicOp11"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P12Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 12" onclick="UnHidePhrase(12); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 11 -->
+
+
+
+           <!-- Start Phrase 12 -->
+           
+           <tr id="P12Label" style="display: none;" valign="top" bgcolor="#dfe7df">
+             <td colspan="2"><b>Phrase 12</b> <span id="P12LabelDel"><a href="" onclick="DeletePhrase(12); return false;">Delete</a>
+             </span></td>
+           </tr>
+           
+           <tr id="P12Ref" style="display: none;" valign="top">
+             <td><font color="red"><b>*</b></font>Meaning in English: 
+             </td>
+             <td>
+                             <input type="text" id="txtRef12" name="txtRef" value="" style="max-width: 440px; width:100%;">
+               <input type="hidden" value="" id="hidIdPhrase12" name="hidIdPhrase">
+             </td>
+           </tr>
+           
+           <tr id="P12Learn" style="display: none;" valign="top">
+             <td>French text: 
+             </td>
+             <td>
+                             <input type="text" id="txtLearn12" name="txtLearn" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+           <tr id="P12Script" style="display: none;">
+             <td>French text, image version: 
+             </td>
+             <td>
+               <textarea id="hidScript12" name="hidScript" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="ScriptInsertPopUp(12);" id="submit12" name="submit12">
+               <span name="FNameScript" id="FNameScript12"></span>
+               <span name="FNameScriptOp" id="FNameScriptOp12"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+
+           <tr id="P12Phonetic" style="display: none;" valign="top">
+             <td>Pronounce like: 
+             </td>
+             <td>
+                             <input type="text" id="txtPhonetic12" name="txtPhonetic" value="" style="max-width: 440px; width:100%;">
+             </td>
+           </tr>
+           
+           
+
+           <tr id="P12Audio" style="display: none;">
+             <td>Audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio12" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp(12);" id="submit12" name="submit12">
+               <span name="FNameAudio" id="FNameAudio12"></span>
+               <span name="FNameAudioOp" id="FNameAudioOp12"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P12Pic" style="display: none;">
+             <td>Illustration:
+             </td>
+             <td>
+               <textarea id="hidPic12" name="hidPic" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(12);" id="submit12" name="submit12">
+               <span name="FNamePic" id="FNamePic12"></span>
+               <span name="FNamePicOp" id="FNamePicOp12"><small><font color="gray">Optional</font></small></span>
+             </td>
+           </tr>
+           
+           <tr id="P13Add" style="display: none;" valign="top">
+             <td colspan="2"><a href="/Teachers/rte/rte/LessonPhraseEdit.asp" title="Add Phrase 13" onclick="UnHidePhrase(13); return false;">Add a Phrase</a>
+             </td>
+           </tr>
+           <!-- End Phrase 12 -->
+
+
+
+
+
+
+
+
+         <!-- Character Encoding section -->
+           <tr bgcolor="#dfe7df">
+             <td colspan="2">&nbsp;<br>
+             </td>
+           </tr>
+
+           <!-- tr>
+             <td width="35%" valign=top>
+               Character Encoding: 
+             </td>
+             <td>
+               <script>$(document).ready(function() {    $('.select-suggestselEncoding').select2();});</script><select name="selEncoding" id="selEncoding" size="1"   class='select-suggestselEncoding'><option value="null" > - Choose encoding - <option value="1" >Arabic (ASMO 708)                       <option value="2" >Arabic (DOS)                            <option value="3" >Arabic (ISO)                            <option value="35" >Arabic (Mac)                            <option value="4" >Arabic (Windows)                        <option value="5" >Baltic (ISO)                            <option value="6" >Baltic (Windows)                        <option value="7" >Central European (DOS)                  <option value="8" >Central European (ISO)                  <option value="36" >Central European (Mac)                  <option value="9" >Central European (Windows)              <option value="26" >Chinese Simplfied (GB2312)              <option value="10" >Chinese Simplified (GB18030)            <option value="11" >Chinese Simplified (HZ)                 <option value="37" >Chinese Simplified (Mac)                <option value="12" >Chinese Traditional (Big5)              <option value="38" >Chinese Traditional (Mac)               <option value="13" >Cyrillic (DOS)                          <option value="14" >Cyrillic (ISO)                          <option value="15" >Cyrillic (KOI8-R)                       <option value="16" >Cyrillic (KOI8-U)                       <option value="39" >Cyrillic (Mac)                          <option value="17" >Cyrillic (Windows)                      <option value="18" >Greek (ISO)                             <option value="40" >Greek (Mac)                             <option value="19" >Greek (Windows)                         <option value="20" >Hebrew (DOS)                            <option value="21" >Hebrew (ISO-logical)                    <option value="22" >Hebrew (ISO-Visual)                     <option value="41" >Hebrew (Mac)                            <option value="23" >Hebrew (Windows)                        <option value="24" >Japanese (EUC)                          <option value="42" >Japanese (Mac)                          <option value="25" >Japanese (Shift-JIS)                    <option value="27" >Korean                                  <option value="43" >Korean (Mac)                            <option value="28" >Thai (Windows)                          <option value="29" >Turkish (ISO)                           <option value="44" >Turkish (Mac)                           <option value="30" >Turkish (Windows)                       <option value="31" >Unicode (UTF-8)                         <option value="32" >Vietnamese (Windows)                    <option value="34" >Western European (ISO)                  <option value="45" >Western European (Mac)                  <option value="33" SELECTED>Western European (Windows)              </select><br>
+             </td>
+           </tr-->
+           <input type="hidden" id="selEncoding" name="selEncoding" value="31">  <!-- utf8 -->
+           
+           
+
+           <tr>
+             <td colspan="2">
+                <input type="hidden" value="22" name="hidX3Learn" id="hidX3Learn">  
+                <input type="hidden" value="1" name="hidX3Inst" id="hidX3Inst">  
+                <input type="hidden" value="learn alphabet" name="hidTitle" id="hidTitle">
+                <input type="hidden" value="1" name="hidLevel" id="hidLevel">  
+                <input type="hidden" value="1" name="hidCat1" id="hidCat1">  
+                <input type="hidden" value="1" name="hidCat2" id="hidCat2">  
+
+                <input type="hidden" value="2" name="hidPNum" id="hidPNum">  
+                <input type="hidden" value="1" name="hidProc" id="hidProc">
+                <!-- input type="submit" value="Preview & Test" onclick="OpenNew('LessonForm','LessonPhrasePreview.asp')" id="submit" name="submit">
+                <small><font color=black>Opens in new window</font><small>
+                <br-->
+             </td>
+           </tr>
+
+           <tr bgcolor="#dfe7df">
+             <td colspan="2"><b>&nbsp;Finishing</b><br>
+             </td>
+           </tr>
+            
+            
+            <tr>
+              <td><font color="red"><b></b></font><b>I agree to the <a href="" onclick="PopUpAgree(); return false;">Terms of Use</a></b></td>
+              <td colspan="5" valign="top"><input type="checkbox" name="selLessonsAgree" id="selLessonsAgree" value="true">Yes</td>
+            </tr>
+            
+
+           <tr>
+             <td colspan="2">
+                <input type="submit" value="Save" onclick="OpenSelf('LessonForm','/Teachers/rte/rte/LessonPhraseEdit.asp')" id="submit" name="submit">
+                &nbsp;
+                <input type="submit" value="Save and Publish" onclick="OpenSelf('LessonForm','/Teachers/rte/rte/LessonPhraseEdit.asp')" id="submit" name="submit"><br>
+                To preview, press <i>Save</i>. Click on <i>Edit My Lessons</i>. Then click on <i>View</i> under the lesson title. 
+             </td>
+           </tr>
+
+
+         </tbody></table>
+       </form>
+     </td>
+   </tr>     
+ </tbody></table>     
+
+ 
+
+<script language="JavaScript">
+<!--//
+
+window.setInterval("renewSession();", 300000); 
+function renewSession()
+{document.images("renewSession").src = "../../RenewSession.asp?par=" + Math.random();}
+
+function IntroPicInsertPopUp(QNum) {
+  var newWnd, h;
+  h=450;
+  newWnd=window.open("PhraseBody_Popup_Pic.asp", "PhraseBody_Popup_Pic", "toolbar=0, directories=0, menubar=0,scrollbars=1,resizable=1,width=840,height=" + h);
+}
+function PicInsertPopUp(QNum) {
+  var newWnd, h;
+  h=450;
+  newWnd=window.open("MChoice_Popup_Pic.asp?QNum="+QNum, "Phrase_Popup_Pic", "toolbar=0, directories=0, menubar=0,scrollbars=1,resizable=1,width=840,height=" + h);
+}
+function AudioInsertPopUp(QNum) {
+  var newWnd, h;
+  h=450;
+  newWnd=window.open("MChoice_Popup_Audio.asp?QNum="+QNum, "Phrase_Popup_Audio", "toolbar=0, directories=0, menubar=0,scrollbars=1,resizable=1,width=840,height=" + h);
+}
+function ScriptInsertPopUp(QNum) {
+  var newWnd, h;
+  h=450;
+  newWnd=window.open("PhraseScript_Popup_Pic.asp?QNum="+QNum, "PhraseScript_Popup_Pic", "toolbar=0, directories=0, menubar=0,scrollbars=1,resizable=1,width=840,height=" + h);
+}
+function HelpRefPopUp() {
+  var newWnd, h;
+  h=450;
+  newWnd=window.open("LessonPhraseHelp_Popup.asp", "HelpRef_Popup", "toolbar=0, directories=0, menubar=0,scrollbars=1,resizable=1,width=540,height=" + h);
+}
+function ScriptHelpPopUp() {
+  var newWnd, h;
+  h=250;
+  newWnd=window.open("LessonHelpScript_Popup.asp", "PhraseHelpScript_Popup", "toolbar=0, directories=0, menubar=0,scrollbars=1,resizable=1,width=340,height=" + h);
+}
+
+function UnHidePhrase(PNum) {
+  document.getElementById('P'+PNum+'Add').style.display = "none";
+  document.getElementById('P'+PNum+'Label').style.display = "";  // Use display='' because table-row is rePuired by FF but not supported by IE.
+  document.getElementById('P'+PNum+'Ref').style.display = "";
+  document.getElementById('P'+PNum+'Learn').style.display = "";
+  document.getElementById('P'+PNum+'Script').style.display = "";
+  document.getElementById('P'+PNum+'Phonetic').style.display = "";
+  document.getElementById('P'+PNum+'Audio').style.display = "";
+  document.getElementById('P'+PNum+'Pic').style.display = "";
+  if (PNum<12) {
+    document.getElementById('P'+(PNum+1)+'Add').style.display = "";
+  }
+}
+
+function DeletePhrase(PNum) {
+
+  document.getElementById('hidIdPhrase'+PNum).value = "";
+  document.getElementById('txtRef'+PNum).value = "";
+  document.getElementById('txtLearn'+PNum).value = "";
+  document.getElementById('hidScript'+PNum).value = "";
+  document.getElementById('txtPhonetic'+PNum).value = "";
+  document.getElementById('hidAudio'+PNum).value = "";
+  document.getElementById('hidPic'+PNum).value = "";
+  document.getElementById('P'+PNum+'LabelDel').innerHTML="&nbsp;<small>This Phrase will be deleted when you save this page.</small>";
+  document.getElementById('P'+PNum+'Label').style.display = "";
+  document.getElementById('P'+PNum+'Ref').style.display = "none";
+  document.getElementById('P'+PNum+'Learn').style.display = "none";
+  document.getElementById('P'+PNum+'Script').style.display = "none";
+  document.getElementById('P'+PNum+'Phonetic').style.display = "none";
+  document.getElementById('P'+PNum+'Audio').style.display = "none";
+  document.getElementById('P'+PNum+'Pic').style.display = "none";
+}
+//-->
+</script>
+
+<br>
+<br>
+<a href="../../LessonList.asp"><b>Lessons Home</b></a><br>
+<a href="../../LessonListMine.asp"><b>Edit My Lessons</b></a> - Edit your existing lessons, quizzes, etc.<br>
+
+            <!-- End of Page contents -->
+              <!-- Facebook Like, etc. -->
+              <br>
+              <br>
+              <br>
+              <br>
+              <fb:like href="http://www.mylanguageexchange.com/Teachers/rte/rte/LessonPhraseEdit.asp" send="true" width="310px" show_faces="true" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=254680024583689&amp;container_width=0&amp;href=http%3A%2F%2Fwww.mylanguageexchange.com%2FTeachers%2Frte%2Frte%2FLessonPhraseEdit.asp&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=true&amp;width=310px"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f1ff0f1bc826d84" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/plugins/like.php?app_id=254680024583689&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df4b44e0de69ba4%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff3b1b1f2e030908%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fwww.mylanguageexchange.com%2FTeachers%2Frte%2Frte%2FLessonPhraseEdit.asp&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=true&amp;width=310px" height="1000px" frameborder="0"></iframe></span></fb:like>
+              <br>
+            </td>
+        </tr>

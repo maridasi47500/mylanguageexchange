@@ -1,0 +1,101 @@
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+  <h2>Job Center - Add Your Job Description</h2>
+
+	<b>Step 2 - Preview your Job Ad</b><br>
+	<br>
+	Click on <font color="DarkGreen"><b>Edit Job Description</b></font> to edit your job ad. <br>
+	Click on <font color="DarkGreen"><b>Continue</b></font> to save and activate your ad.<br>
+	<br>
+	<hr>
+	
+<table class="WidthMaxLim" cellspacing="2" cellpadding="1" border="0">
+	<tbody><tr>
+		<td width="20%" valign="baseline" align="left"><b>Title:</b> </td>
+		<td valign="top"><font style="font-family: serif; color: DarkGreen; font-size: 16pt; font-weight: bold;"><%=@employer.hidTitle%></font></td>
+	</tr>
+	<tr>
+		<td valign="top" nowrap="" align="left"><b>Posted by:</b></td>
+		<td valign="top"><font color="DarkGreen"><b><%=@employer.hidEmpName%></b></font></td>
+	</tr>
+	<tr>
+		<td valign="top" align="left"><b>Location:</b></td>
+		<td valign="top"><%=@employer.hidCity%>, <%=@employer.country.try(:name)%></td>
+	</tr>
+	<tr>
+		<td valign="top" align="left"><b>Contact:</b></td>
+		<td valign="top"><a href="mailto:<%=params[:txtEmail]%>&amp;subject=developer"><%=params[:txtEmail]%></a></td>
+	</tr>
+	<tr>
+		<td valign="top" align="left"><b>Date:</b></td>
+		<td valign="top"><%=l(@employer.created_at,format: :emailsent)%></td>
+	</tr>
+	<tr>
+		<td colspan="2" width="570" valign="top" align="left">
+		  <br>
+		  <br>
+		  <b>Job Description:</b><br>
+		  <br>
+		  <%=simple_format(@employer.hidDescr)%>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+<br>
+<br>
+<br>
+
+	<hr>
+	<table width="45%" cellspacing="1" cellpadding="1" border="0">
+		<tbody><tr>
+			<td>
+	<%=form_with scope:"",model: @employer, url: jobadd_path(Id: @employer.try(:id)),html:{id: "form1", name: "form1"} do |form|%>
+<%=form.hidden_field "hidProc", id: "hidProc",value: "2"%>  
+<%=form.hidden_field "hidTitle"%>
+	<%=form.hidden_field "hidEmpName"%>
+	<%=form.hidden_field "hidEmail"%>
+	<%=form.hidden_field "hidPassword",value:params[:pasPassword1]%>
+	<%=form.hidden_field "hidCity"%>
+	<%=form.hidden_field "hidCountry"%>
+	<%=form.hidden_field "hidDescr"%>
+	<%=form.hidden_field "hidProdID"%>
+	<%=form.hidden_field "hidActURL"%>
+	<%=form.hidden_field "hidCancelURL"%>
+	<%=form.hidden_field "hidExpDTime"%>
+	<%=form.submit "Edit Job Description", id: "Submit1", name: "submit1"%>
+	<%end%>
+			</td>
+			<td>
+	<%=form_with scope:"", model: @employer, url: jobadd_path(Id: @employer.try(:id)),html:{id: "form1", name: "form1"} do |form|%>
+    <%=form.hidden_field "hidProc", id: "hidProc",value: "3"%>  
+<%=form.hidden_field "hidTitle"%>
+	<%=form.hidden_field "hidEmpName"%>
+	<%=form.hidden_field "hidEmail"%>
+	<%=form.hidden_field "hidPassword",value:params[:pasPassword1]%>
+	<%=form.hidden_field "hidCity"%>
+	<%=form.hidden_field "hidCountry"%>
+	<%=form.hidden_field "hidDescr"%>
+	<%=form.hidden_field "hidProdID"%>
+	<%=form.hidden_field "hidActURL"%>
+	<%=form.hidden_field "hidCancelURL"%>
+	<%=form.hidden_field "hidExpDTime"%>
+	<%=form.submit "Continue", id: "Submit2", name: "submit2"%>
+	
+	<%end%>
+			</td>
+		</tr>
+	</tbody></table>
+
+	 
+    
+<br>
+<br>
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/JobsAdd.asp" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FJobsAdd.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f865fcebc6f97a" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df238626b95a59be%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff163c4c750cbb88%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FJobsAdd.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

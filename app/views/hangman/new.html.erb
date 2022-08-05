@@ -1,19 +1,41 @@
 
-<h2>Hangman Game Builder</h2>
+				
 
-<table class="WidthMaxLim TblUserForm" border="0" cellpadding="0" cellspacing="0">
-   <tr class="table-heading"><td>Step 1 - Create Your Hangman Game</td></tr>
+                <!-- Page Begin -->
+
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Créateur de jeux du pendu</font></font></h2>
+
+
+<%if params[:hidPGid]%>
+
+
+  Reply to "<%=@hangman.hidPTitle%> : 
+  
+    <b><%=@hangman.hidPGuess%></b><!-- comment -->
+    with a game in your native language.
+    <br><br><!-- comment -->
+    <%end%>
+
+<table class="WidthMaxLim TblUserForm" cellspacing="0" cellpadding="0" border="0">
+   <tbody><tr class="table-heading"><td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Étape 1 - Créez votre jeu du pendu</font></font></td></tr>
    <tr>
      <td>  
 	   
-         <%=render 'hangman/form'%>
+         <%=render "hangman/form",hangman:@hangman%>
      </td>
    </tr>     
- </table>      
+ </tbody></table>      
 
 
 				<br>
 				<br>
 				<!-- FB Like -->
-				<div class="fb-like" data-href="https://www.mylanguageexchange.com/HManBuilder.asp?x3=22&Cat1=&Cat2=" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>				
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/HManBuilder.asp?lang=fr" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHManBuilder.asp%3Flang%3Dfr&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f2edb04a2e71574" data-testid="fb:like Facebook Social Plugin" title="fb:comme le plugin social Facebook" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3192296096482%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff121bf683728bde%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHManBuilder.asp%3Flang%3Dfr&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
 				&nbsp;&nbsp;
+               
+                                
+                                
+                                <script>
+                                  
+
+                               </script>

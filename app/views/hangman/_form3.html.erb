@@ -1,0 +1,197 @@
+<%=form_with model: hangman,url:"HManPlay.asp",scope:"",html: {name: "HManBuilder"} do |form|%>
+	   
+
+         <table class="WidthMaxLim" border="0" cellpadding="0" cellspacing="0">
+ 		   
+				<tr class="table-seprow">
+				  <td>
+				    <h6>Hints</h6>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    Hint 1
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    For example, An animal that can fly.
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					<%=form.text_field "txtHint1", id: "txtHint1", style: "width: 96%;", maxlength: "120"%>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    Hint 2
+				  </td>
+				</tr>
+
+				<tr>
+				  <td>
+					<%=form.text_field "txtHint2", id: "txtHint3", style: "width: 96%;", maxlength: "120"%>
+				  </td>
+				</tr>
+
+				<tr>
+				  <td>
+				    Hint 3
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					<%=form.text_field "txtHint3", id: "txtHint3", style: "width: 96%;", maxlength: "120"%>
+				  </td>
+				</tr>
+
+				<tr>
+				  <td><br></td>
+				</tr>
+
+				<tr class="table-seprow">
+				  <td>
+				    <h6>Explanation</h6>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    For example, I guess this expression comes from the fact that bats don't fly straight. Interesting expression because bats are not actually blind.<br>
+				    <br>
+               <small>Do not write your email address or other contact information.
+               Others can follow a link to your profile and send you a private email message.
+               Public forums are monitored.</small><br>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					<%=form.text_area "txaDesc", wrap: "VIRTUAL", id: "txaDesc", rows:"8", style: "width: 99%"%>
+				  </td>
+				</tr>
+
+				<tr>
+				  <td><br></td>
+				</tr>
+
+				<tr class="table-seprow">
+				  <td>
+				    <h6>Other Expressions that Say the Same Thing</h6>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    Equivalent Expression 1
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    For example, Can't see worth a damn.
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					<%=form.text_field "txtEquiv1", id: "txtEquiv1", style: "width: 96%;", maxlength: "120"%>
+				  </td>
+				</tr>
+
+				<tr>
+				  <td>
+				    Equivalent Expression 2
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					<%=form.text_field "txtEquiv2", id: "txtEquiv2", style: "width: 96%;", maxlength: "120"%>
+				  </td>
+				</tr>
+
+				<tr>
+				  <td>
+				    Equivalent Expression 3
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					<%=form.text_field "txtEquiv3", id: "txtEquiv3", style: "width: 96%;", maxlength: "120"%>
+				  </td>
+				</tr>
+
+				<tr>
+				  <td><br></td>
+				</tr>
+
+				<tr class="table-seprow">
+				  <td>
+				    <h6>Fun Messages</h6>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    Message when player wins
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    For example, Congratulations!
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					<%=form.text_field "txtWinMsg", id: "txtWinMsg", style: "width: 96%;", maxlength: "80"%>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    Message when player loses
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    For example, Sorry! Better luck next time...
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+					<%=form.text_field "txtLoseMsg", id: "txtLoseMsg", style: "width: 96%;", maxlength: "80"%>
+				  </td>
+				</tr>
+		   
+
+
+	     </table>
+
+         <table width="100%" border="0" cellpadding="0" cellspacing="0">
+	       <tr>
+	         <td>
+				 <br>
+				 
+				<%=form.hidden_field "hidEditMode", id: "hidEditMode"%>  
+				<%=form.hidden_field "hidGId", id: "hidGId"%>  
+				<%=form.hidden_field "hidGuess", id: "hidGuess"%>  
+				<%=form.hidden_field "hidHide", id: "hidHide"%>  
+				<%=form.hidden_field "hidTitle", id: "hidTitle"%>  
+				<%=form.hidden_field "hidX3", id: "hidX3"%>  
+				<%=form.hidden_field "hidCat1", id: "hidCat1"%>  
+				<%=form.hidden_field "hidCat2", id: "hidCat2"%>  
+				<%=form.hidden_field "hidHint1", id: "hidHint1"%>  
+				<%=form.hidden_field "hidHint2", id: "hidHint2"%>  
+				<%=form.hidden_field "hidHint3", id: "hidHint3"%>
+				<%=form.hidden_field "hidEquiv1", id: "hidEquiv1"%>  
+				<%=form.hidden_field "hidEquiv2", id: "hidEquiv2"%>  
+				<%=form.hidden_field "hidEquiv3", id: "hidEquiv3"%>  
+				<%=form.hidden_field "hidDesc", id: "hidDesc"%>  
+				<%=form.hidden_field "hidWinMsg", id: "hidWinMsg"%>  
+				<%=form.hidden_field "hidLoseMsg", id: "hidLoseMsg"%>  
+				<%=form.hidden_field "hidPTitle", id: "hidPTitle"%>
+				<%=form.hidden_field "hidPGuess", id: "hidPGuess"%>
+				<%=form.hidden_field "hidPGId", id: "hidPGId"%>
+						   
+		          <input type="hidden" value="3" name="hidPnum", id: "hidPnum">  
+				
+ 		        <input type="submit" value="Next", id: "submit1" name="submit1">
+			 </td>
+		   </tr>
+         </table>
+         
+       <%end%>

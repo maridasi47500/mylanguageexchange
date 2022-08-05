@@ -1,0 +1,156 @@
+<tr data-select2-id="7">
+     <td data-select2-id="6" bgcolor="Ivory">  
+       <form method="post" action="/Teachers/rte/rte/LessonFCardEdit.asp" name="LessonForm" id="LessonForm" data-select2-id="LessonForm">
+         <table class="TblInputForm" data-select2-id="5" width="100%" cellspacing="1" cellpadding="1" border="0">
+
+           <tbody data-select2-id="4"><tr>
+             <td colspan="2">
+               <b>Audio Flash Card</b><br>
+        Insert an audio and 4 pictures. 
+        Press Preview to test the quiz.<br>
+               <small><font color="gray">
+               Do not upload anything that 
+               infringes on the copyrights of others or is illegal or harmful in anyway.
+               </font></small>
+             </td>
+           </tr>
+
+           
+
+           <tr>
+             <td>Insert audio: 
+             </td>
+             <td>
+               <textarea id="hidAudio" name="hidAudio" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="AudioInsertPopUp();" id="submit1" name="submit1">
+               <span name="FNameAudio" id="FNameAudio"></span>
+             </td>
+           </tr>
+           
+           <tr>
+             <td>Insert picture 1:
+             </td>
+             <td>
+               <textarea id="hidPic1" name="hidPic1" style="display: none"></textarea>
+               <textarea id="hidLabel1" name="hidLabel1" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(1);" id="submit1" name="submit1">
+               <span name="FNamePic1" id="FNamePic1"></span>
+               <span name="FNamePicOp" id="FNamePicOp1" style="display: none;">&nbsp;<a href="" onclick="FNamePic1.innerHTML=&quot;&quot;; hidPic1.innerHTML=&quot;&quot;; hidLabel1.innerHTML=&quot;&quot;; FNamePicOp1.style.display=&quot;none&quot;; document.getElementById(&quot;ifmBody&quot;).contentWindow.document.getElementById(&quot;Box1&quot;).innerHTML=&quot;&quot;; return false;"><small>Remove</small></a></span>
+             </td>
+           </tr>
+
+           <tr>
+             <td>Insert picture 2:
+             </td>
+             <td>
+               <textarea id="hidPic2" name="hidPic2" style="display: none"></textarea>
+               <textarea id="hidLabel2" name="hidLabel2" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(2);" id="submit1" name="submit1">
+               <span name="FNamePic2" id="FNamePic2"></span>
+               <span name="FNamePicOp" id="FNamePicOp2" style="display: none;">&nbsp;<a href="" onclick="FNamePic2.innerHTML=&quot;&quot;; hidPic2.innerHTML=&quot;&quot;; hidLabel2.innerHTML=&quot;&quot;; FNamePicOp2.style.display=&quot;none&quot;; document.getElementById(&quot;ifmBody&quot;).contentWindow.document.getElementById(&quot;Box2&quot;).innerHTML=&quot;&quot;; return false;"><small>Remove</small></a></span>
+             </td>
+           </tr>
+
+           <tr>
+             <td>Insert picture 3:
+             </td>
+             <td>
+               <textarea id="hidPic3" name="hidPic3" style="display: none"></textarea>
+               <textarea id="hidLabel3" name="hidLabel3" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(3);" id="submit1" name="submit1">
+               <span name="FNamePic3" id="FNamePic3"></span>
+               <span name="FNamePicOp" id="FNamePicOp3" style="display: none;">&nbsp;<a href="" onclick="FNamePic3.innerHTML=&quot;&quot;; hidPic3.innerHTML=&quot;&quot;; hidLabel3.innerHTML=&quot;&quot;; FNamePicOp3.style.display=&quot;none&quot;; document.getElementById(&quot;ifmBody&quot;).contentWindow.document.getElementById(&quot;Box3&quot;).innerHTML=&quot;&quot;; return false;"><small>Remove</small></a></span>
+             </td>
+           </tr>
+
+           <tr>
+             <td>Insert picture 4: 
+             </td>
+             <td>
+               <textarea id="hidPic4" name="hidPic4" style="display: none"></textarea>
+               <textarea id="hidLabel4" name="hidLabel4" style="display: none"></textarea>
+               <input type="button" value="Browse/upload" onclick="PicInsertPopUp(4);" id="submit1" name="submit1">
+               <span name="FNamePic4" id="FNamePic4"></span>
+               <span name="FNamePicOp" id="FNamePicOp4" style="display: none;">&nbsp;<a href="" onclick="FNamePic4.innerHTML=&quot;&quot;; hidPic4.innerHTML=&quot;&quot;; hidLabel4.innerHTML=&quot;&quot;; FNamePicOp4.style.display=&quot;none&quot;; document.getElementById(&quot;ifmBody&quot;).contentWindow.document.getElementById(&quot;Box4&quot;).innerHTML=&quot;&quot;; return false;"><small>Remove</small></a></span>
+             </td>
+           </tr>
+
+           <tr>
+             <td>&nbsp;
+             </td>
+           </tr>
+
+           <tr>
+             <td valign="top">
+               The correct answer is: 
+             </td>
+             <td>
+               <script>$(document).ready(function() {    $('.select-suggestselAnswer').select2();});</script><select name="selAnswer" id="selAnswer" size="1" class="select-suggestselAnswer select2-hidden-accessible" data-select2-id="selAnswer" tabindex="-1" aria-hidden="true"><option value="null" data-select2-id="2"> - Choose picture - </option><option value="1" data-select2-id="16">Picture 1</option><option value="2" data-select2-id="17">Picture 2</option><option value="3" data-select2-id="18">Picture 3</option><option value="4" data-select2-id="19">Picture 4</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" data-select2-id="1" style="width: 135.267px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-selAnswer-container"><span class="select2-selection__rendered" id="select2-selAnswer-container" role="textbox" aria-readonly="true" title=" - Choose picture - "> - Choose picture - </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><br>
+             </td>
+           </tr>
+           
+           <!--tr>
+             <td width="35%" valign=top>
+               Character Encoding: <font color=gray>(optional)</font>
+             </td>
+             <td>
+               <script>$(document).ready(function() {    $('.select-suggestselEncoding').select2();});</script><select name="selEncoding" id="selEncoding" size="1"   class='select-suggestselEncoding'><option value="null" > - Choose encoding - <option value="1" >Arabic (ASMO 708)                       <option value="2" >Arabic (DOS)                            <option value="3" >Arabic (ISO)                            <option value="35" >Arabic (Mac)                            <option value="4" >Arabic (Windows)                        <option value="5" >Baltic (ISO)                            <option value="6" >Baltic (Windows)                        <option value="7" >Central European (DOS)                  <option value="8" >Central European (ISO)                  <option value="36" >Central European (Mac)                  <option value="9" >Central European (Windows)              <option value="26" >Chinese Simplfied (GB2312)              <option value="10" >Chinese Simplified (GB18030)            <option value="11" >Chinese Simplified (HZ)                 <option value="37" >Chinese Simplified (Mac)                <option value="12" >Chinese Traditional (Big5)              <option value="38" >Chinese Traditional (Mac)               <option value="13" >Cyrillic (DOS)                          <option value="14" >Cyrillic (ISO)                          <option value="15" >Cyrillic (KOI8-R)                       <option value="16" >Cyrillic (KOI8-U)                       <option value="39" >Cyrillic (Mac)                          <option value="17" >Cyrillic (Windows)                      <option value="18" >Greek (ISO)                             <option value="40" >Greek (Mac)                             <option value="19" >Greek (Windows)                         <option value="20" >Hebrew (DOS)                            <option value="21" >Hebrew (ISO-logical)                    <option value="22" >Hebrew (ISO-Visual)                     <option value="41" >Hebrew (Mac)                            <option value="23" >Hebrew (Windows)                        <option value="24" >Japanese (EUC)                          <option value="42" >Japanese (Mac)                          <option value="25" >Japanese (Shift-JIS)                    <option value="27" >Korean                                  <option value="43" >Korean (Mac)                            <option value="28" >Thai (Windows)                          <option value="29" >Turkish (ISO)                           <option value="44" >Turkish (Mac)                           <option value="30" >Turkish (Windows)                       <option value="31" >Unicode (UTF-8)                         <option value="32" >Vietnamese (Windows)                    <option value="34" >Western European (ISO)                  <option value="45" >Western European (Mac)                  <option value="33" SELECTED>Western European (Windows)              </select><br>
+             </td>
+           </tr-->
+           <input type="hidden" id="selEncoding" name="selEncoding" value="31">  <!-- utf8 -->
+           
+           
+           
+           <tr>
+             <td colspan="2">
+               
+               <b>Preview:</b><br>
+                <iframe src="LessonFCardIFrame.asp?Pic1=%3Cbr%3E&amp;Pic2=%3Cbr%3E&amp;Pic3=%3Cbr%3E&amp;Pic4=%3Cbr%3E" name="ifmBody" id="ifmBody" width="100%" height="300px"></iframe>
+          <img name="renewSession" id="renewSession" src="../../RenewSession.asp" width="1" height="1">
+             </td>
+           </tr>
+
+
+         <tr>
+           <td colspan="2">
+          <input type="hidden" value="22" name="hidX3Learn" id="hidX3Learn">  
+          <input type="hidden" value="1" name="hidX3Inst" id="hidX3Inst">  
+          <input type="hidden" value="computer vocabulary" name="hidTitle" id="hidTitle">
+          <input type="hidden" value="1" name="hidLevel" id="hidLevel">  
+          <input type="hidden" value="1" name="hidCat1" id="hidCat1">  
+          <input type="hidden" value="1" name="hidCat2" id="hidCat2">  
+
+        <input type="hidden" value="2" name="hidPNum" id="hidPNum">  
+        <input type="hidden" value="1" name="hidProc" id="hidProc">
+        <input type="submit" value="Preview &amp; Test" onclick="OpenNew('LessonForm','LessonFCardPreview.asp')" id="submit" name="submit">
+        <small><font color="black">Opens in new window</font><small>
+        <br>
+        <br>
+       </small></small></td>
+       </tr>
+
+           <tr bgcolor="#dfe7df">
+             <td colspan="2">&nbsp;Finishing<br>
+             </td>
+           </tr>
+      
+      
+      <tr>
+        <td><font color="red"><b></b></font><b>I agree to the <a href="" onclick="PopUpAgree(); return false;">Terms of Use</a></b></td>
+        <td colspan="5" valign="top"><input type="checkbox" name="selLessonsAgree" id="selLessonsAgree" value="true">Yes</td>
+      </tr>
+      
+
+         <tr>
+           <td colspan="2">
+        <input type="submit" value="Save" onclick="OpenSelf('LessonForm','/Teachers/rte/rte/LessonFCardEdit.asp')" id="submit" name="submit">
+        &nbsp;
+        <input type="submit" value="Save and Publish" onclick="OpenSelf('LessonForm','/Teachers/rte/rte/LessonFCardEdit.asp')" id="submit" name="submit">
+       </td>
+       </tr>
+
+
+         </tbody></table>
+       </form>
+     </td>
+   </tr>

@@ -1,0 +1,457 @@
+
+                <!-- Page Begin -->
+  <h2>Test Your Hangman Game</h2>
+  Test your game by playing it. <br>
+  <br>
+  Click on <b>Edit Game</b> to make changes to your game.<br> 
+  Click on <b>Save Game</b> to save the game and play the world! You can edit or delete your game later.<br>
+  <br>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR>
+		<TD>
+  <%=render "hangman/editgame", hangman:@hangman%>
+  		</TD>
+		<TD width="3">
+  		</TD>
+		<TD>
+  <%=render "hangman/savegame", hangman: @hangman%>
+		</TD>
+	</TR>
+</TABLE>
+<br>
+<br>
+
+<table class="WidthMaxLim" border="0" cellpadding="0" cellspacing="0">
+   <tr class="table-heading">
+     <td>Complete the following English popular expression
+     </td>
+     <td align=right width=1%>
+       <a href="" class="circle-btn" onClick="TranslOpen(); return false;"><i class="material-icons">translate</i></a>
+     </td>
+   </tr>
+   <tr>
+     <td class="hmanGround" colspan=2>  
+         <table width="100%" border="0" cellpadding="0" cellspacing="0">
+             <%if @hangman.playing? && !@hangman.win? && !@hangman.lose?%>
+			<tr bgcolor="white">
+			  <td valign="top" class="userdata">
+					<br>
+					<big><%=@hangman.title%></big><br>
+					<br>
+					<font style="font-family: sans-serif; font-size: 12pt; font-weight: bold;">
+                                        <%@i=0%>
+                                        
+                                        
+                                        
+                                        <%@hangman.guess.split('').each do |f|%>
+                                        <%if f == " "%>
+                                        &nbsp;
+                                        <%else%>
+                                        <%if @hangman.hide[@i] == "0" || @hangman.useletter(f)%>
+				    <%=@hangman.guess[@i]%>
+                                          <%else%>
+								_
+							
+								<%end%>
+                                                                
+							<%end%>
+                                                                <%@i+=1%>
+                                                                <%end%>
+                                                           
+				    </font>
+				    <br><br>
+					
+			  </td>
+			  <td rowspan="2" valign="bottom" width="35%" align="center">
+
+<table WIDTH="1%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+	<tr>
+		<td width="160" height="10" colspan="4"><img src="images/spacer.gif" width="160" height="10"></td>
+	</tr>
+	<tr>
+		<td width="55" height="2"><img src="images/spacer.gif" width="55" height="2"></td>
+		<td bgcolor="black" width="85" height="2"><img src="images/spacer.gif" width="85" height="2"></td>
+		<td bgcolor="black" width="1" height="139" rowspan="2"><img src="images/spacer.gif" width="1" height="139"></td>
+		<td width="19" height="139" rowspan="2"><img src="images/spacer.gif" width="19" height="139"></td>
+	</tr>
+        <%case @hangman.hidnumWrongGuesses.to_i%>
+        <%when 0%>
+	<tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManStartT.gif" WIDTH="51" HEIGHT="136"><br>
+		</td>
+		
+	</tr>
+        <%when 1%>
+       
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManHATC.gif" WIDTH="40" HEIGHT="40"><br>
+		</td>
+		
+	</tr>
+         <tr>
+		<td bgcolor="black" colspan="4" width="160" height="11"><img src="images/spacer.gif" width="160" height="11"></td>
+	</tr>
+        <%when 2%>
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManHATC.gif" WIDTH="40" HEIGHT="40"><br>
+		</td>
+		
+	</tr>
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManB1T.gif" WIDTH="51" HEIGHT="136"><br>
+		</td>
+		
+	</tr>
+        <%when 3%>
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManHATC.gif" WIDTH="40" HEIGHT="40"><br>
+		</td>
+		
+	</tr>
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManB2T.gif" WIDTH="51" HEIGHT="136"><br>
+		</td>
+		
+	</tr>
+        <%when 4%>
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManHATC.gif" WIDTH="40" HEIGHT="40"><br>
+		</td>
+		
+	</tr>
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManB3T.gif" WIDTH="51" HEIGHT="136"><br>
+		</td>
+		
+	</tr>
+        <%when 5%>
+       <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManHATC.gif" WIDTH="40" HEIGHT="40"><br>
+		</td>
+		
+	</tr>
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/HManBLoseT.gif" WIDTH="51" HEIGHT="136"><br>
+		</td>
+		
+	</tr>
+        
+        <%end%>
+	<tr>
+		<td bgcolor="black" colspan="4" width="160" height="11"><img src="images/spacer.gif" width="160" height="11"></td>
+	</tr>
+</table>
+			  
+			  </td>
+			</tr>
+                        
+			<tr bgcolor="white">
+			  <td valign="top">
+				<table WIDTH="100%" BORDER="0" CELLSPACING="1" CELLPADDING="1">
+				    
+						<tr class="table-seprow">
+						  <td colspan="2" align="left">
+						    
+						      <%=I18n.with_locale(:fr) {@hangman.nbhints.to_words}%> hint available:
+						    
+						  </td>
+						</tr>
+                                                <%if @hangman.nbhints > 0%>
+                                                <%(0..@hangman.nbhints).each_with_index do |hint,i|%>
+						<tr>
+							<td width="1%" valign=top class="userdata"><b><%=i+1%>.</b></td>
+							<td align="left" class="userdata"><%=(@hangman.win? || @hangman.lose?) ? @hangman.send("hint#{i+1}") : ""%></td>
+						</tr>
+                                                <%end%>
+                                                <%end%>
+						
+				</table>
+				<br>
+			  </td>
+			</tr>
+                        
+                        <tr bgcolor="white">
+			  <td valign="top">
+				<table WIDTH="100%" BORDER="0" CELLSPACING="1" CELLPADDING="1">
+				    
+						<tr class="table-seprow">
+						  <td colspan="2" align="left">
+						    <%if @hangman.nbequiv > 0%>
+						      <%=I18n.with_locale(:fr) {@hangman.nbequiv.to_words}%> <%="equivalent".pluralize(@hangman.nbequiv)%> available:
+						    <%else%>
+                                                      
+                                                      No other expressions that mean the same thing
+                                                      <%end%>
+						  </td>
+						</tr>
+                                                <%if @hangman.nbequiv > 0%>
+                                                <%(0..@hangman.nbequiv).each_with_index do |hint,i|%>
+						<tr>
+							<td width="1%" valign=top class="userdata"><b><%=i+1%>.</b></td>
+							<td align="left" class="userdata"><%=@hangman.send("equiv#{i+1}")%></td>
+						</tr>
+                                                <%end%>
+                                                <%end%>
+						
+				</table>
+				<br>
+			  </td>
+			</tr>
+                        
+			<tr bgcolor="moccasin">
+			  <td>
+					
+						<tr class="table-seprow">
+						  <td colspan="2" align="left">
+							Your move. Choose a character or buy a hint:
+						  </td>
+						</tr>
+						<tr>
+						  <td colspan="2" align="left">
+						<center>
+						<%=render "hangman/formplay", hangman: @hangman%>
+	</td>
+   </tr>
+                                                      
+</table>
+<%else%>
+     <tr>
+     <td class="hmanGround" colspan="2">  
+         <table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr bgcolor="white">
+			  <td class="userdata" valign="top">
+					<br>
+					<big><%=@hangman.title%></big><br>
+					<br>
+					<font style="font-family: sans-serif; font-size: 12pt; font-weight: bold;">
+				    <%=@hangman.guess%>
+				    </font>
+				    <br><%=@hangman.win? ? @hangman.winmsg : @hangman.losemsg%><br>
+					<br>
+			  </td>
+			  <td rowspan="2" width="35%" valign="bottom" align="center">
+
+<table width="1%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td colspan="4" width="160" height="10"><img src="images/spacer.gif" width="160" height="10"></td>
+	</tr>
+	<tr>
+		<td width="55" height="2"><img src="images/spacer.gif" width="55" height="2"></td>
+		<td width="85" height="2" bgcolor="black"><img src="images/spacer.gif" width="85" height="2"></td>
+		<td rowspan="2" width="1" height="139" bgcolor="black"><img src="images/spacer.gif" width="1" height="139"></td>
+		<td rowspan="2" width="19" height="139"><img src="images/spacer.gif" width="19" height="139"></td>
+	</tr>
+        <%if @hangman.lose?%>
+        <tr>
+		
+		<td width="140" height="137" colspan="2" valign="bottom" align="left">
+			<img SRC="images/spacer.gif" width="10"><img SRC="images/spacer.gif" width="10"><img SRC="images/spacer.gif" width="10"><img SRC="images/HManHATC.gif" WIDTH="40" HEIGHT="40"><br>
+		</td>
+		
+	</tr>
+        <%end%>
+	<tr>
+		
+		<td colspan="2" width="140" valign="bottom" height="137" align="left">
+			<img src="images/spacer.gif" width="10"><img src="images/HManB<%=@hangman.win? ? "Win" : "Lose"%>T.gif" width="79" height="136"><br>
+		</td>
+		
+	</tr>
+	<tr>
+		<td colspan="4" width="160" height="11" bgcolor="black"><img src="images/spacer.gif" width="160" height="11"></td>
+	</tr>
+</tbody></table>
+			  
+			  </td>
+			</tr>
+			<tr bgcolor="white">
+			  <td valign="top">
+				<table width="100%" cellspacing="1" cellpadding="1" border="0">
+				    
+						<tbody>
+                                                    
+                                       <tr class="table-seprow">
+						  <td colspan="2" align="left">
+						    
+						     <%=I18n.with_locale(:fr) {@hangman.nbhints.to_words}%> hint available:
+						    
+						  </td>
+						</tr>
+                                                <%if @hangman.nbhints > 0%>
+                                                <%(0..@hangman.nbhints).each_with_index do |hint,i|%>
+						<tr>
+							<td width="1%" valign=top class="userdata"><b><%=i+1%>.</b></td>
+							<td align="left" class="userdata"><%=(@hangman.win? || @hangman.lose?) ? @hangman.send("hint#{i+1}") : ""%></td>
+						</tr>
+                                                <%end%>
+                                                <%end%>
+				</tbody></table>
+				<br>
+			  </td>
+			</tr>
+			<tr bgcolor="moccasin">
+			  <td>
+					
+						</td></tr>
+                        
+                        <%if @hangman.nbequiv  > 0%>
+                                            <tr class="table-seprow">
+						  <td colspan="2" align="left">
+						    Other expressions that mean the same thing
+						  </td>
+						</tr>
+					    <tr>
+					    <td colspan="2" bgcolor="white">
+						<table width="100%" cellspacing="1" cellpadding="1" border="0">
+						<tbody><tr>
+						  <td class="userdata" align="left">
+						    1. <b><%=@hangman.equiv1%></b>
+						  </td>
+						</tr>
+						<tr>
+						  <td class="userdata" align="left">
+						    2. <b><%=@hangman.equiv2%></b>
+						  </td>
+						</tr>
+						<tr>
+						  <td class="userdata" align="left">
+						    3. <b><%=@hangman.equiv3%></b>
+						  </td>
+						</tr>
+					  </tbody></table>
+					  </td>
+					  </tr>
+                                          <%else%>
+                                           <tr class="table-seprow">
+						  <td colspan="2" align="left">
+						    No other expressions that mean the same thing
+						  </td>
+						</tr>
+					    <tr>
+                                          <%end%>
+                                          
+						<tr class="table-seprow">
+						  <td colspan="2" align="left">
+						    Explanation / Comment
+						  </td>
+						</tr>
+						<tr>
+						  <td colspan="2" class="userdata" bgcolor="white" align="left">
+						    <%=@hangman.desc%><br>
+						    <br>
+						  </td>
+						</tr>
+						<tr class="table-seprow">
+						  <td colspan="2" align="left">
+						    Search the web to see examples of this proverb.
+						  </td>
+						</tr>
+						<tr>
+						  <td colspan="2" bgcolor="white" align="left">
+
+
+<table cellspacing="1" cellpadding="1" border="0">
+	<tbody>
+            <%[@hangman.guess].each do |guess|%>
+            <tr>
+		<td valign="middle"><a target="_blank" href="http://www.google.com/search?hl=en-GB,en;q=0.5&amp;q=%22<%=guess.gsub(' ','+')%>%22+-site%3Amylanguageexchange.com&amp;btnG=Search"><%=guess%></a>
+		</td>
+	</tr>
+        <%end%>
+	
+</tbody></table>
+						  </td>
+						</tr>
+					
+			  
+			
+		</tbody></table>
+                <%=form_with model: @hangman,scope:"",url:"" do |form|%>
+		<%=form.hidden_field "hidGId", id: "hidGId", value: @hangman.id%>  
+				<%=form.hidden_field "hidGuess", id: "hidGuess"%>  
+				<%=form.hidden_field "hidHide", id: "hidHide"%>  
+				<%=form.hidden_field "hidTitle", id: "hidTitle"%>  
+				<%=form.hidden_field "hidX3", id: "hidX3"%>  
+				<%=form.hidden_field "hidCat1", id: "hidCat1"%>  
+				<%=form.hidden_field "hidCat2", id: "hidCat2"%>  
+				<%=form.hidden_field "hidHint1", id: "hidHint1"%>  
+				<%=form.hidden_field "hidHint2", id: "hidHint2"%>  
+				<%=form.hidden_field "hidHint3", id: "hidHint3"%>
+				<%=form.hidden_field "hidEquiv1", id: "hidEquiv1"%>  
+				<%=form.hidden_field "hidEquiv2", id: "hidEquiv2"%>  
+				<%=form.hidden_field "hidEquiv3", id: "hidEquiv3"%>  
+				<%=form.hidden_field "hidDesc", id: "hidDesc"%>  
+				<%=form.hidden_field "hidWinMsg", id: "hidWinMsg"%>  
+				<%=form.hidden_field "hidLoseMsg", id: "hidLoseMsg"%>  
+				<%=form.hidden_field "hidPTitle", id: "hidPTitle"%>
+				<%=form.hidden_field "hidPGuess", id: "hidPGuess"%>
+				<%=form.hidden_field "hidPGId", id: "hidPGId"%>
+				<%=form.hidden_field "hidPlayerGuessAll", id: "hidPlayerGuessAll"%>
+				<%=form.hidden_field "hidnumWrongGuesses", id: "hidnumWrongGuesses"%>
+				<%=form.hidden_field "hidHintsAll", id: "hidHintsAll"%>
+                <%end%>
+  	  
+	</td>
+   </tr>
+         </tbody>
+         </table>
+         <br><br><br>
+         
+         
+         
+           <b>Submit this form to continue.</b><!-- comment -->
+           <%=render "hangman/formendgame",hangman: @hangman%>
+           
+           
+         <%end%>
+<br>
+
+
+<!-- Share on Facebook, etc. -->
+<textarea ID="txaEmbedThis" style="display: none;">
+<div style="font-size:10px; font-family: Helvetica, Arial, sans-serif; color:#990000">
+<center>
+<a href="http://www.mylanguageexchange.com/HManPlay.asp?GId=" title="for example, when you cannot see very well">for example, when you cannot see very well</a><br>
+<br>
+<a href="http://www.mylanguageexchange.com/Hangman.asp" title="More Hangman Word Games">More word games from MyLanguageExchange.com</a>
+</center>
+</div>
+</textarea>
+<div id="divWildfirePost"></div>
+<script>
+var pconf={
+  widgetTitle: 'Hangman Word Game for Language Learning', 
+  useFacebookMystuff: 'false', 
+  defaultContent: 'txaEmbedThis', 
+  UIConfig: '<config baseTheme="v2"><display showEmail="true" showBookmark="true"></display></config>'
+};
+Wildfire.initPost('1100381', 'divWildfirePost', 400, 300, pconf);
+</script>
+
+
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like" data-href="https://www.mylanguageexchange.com/HManPlay.asp" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>				
+				&nbsp;&nbsp;

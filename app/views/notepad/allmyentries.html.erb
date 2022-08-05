@@ -1,0 +1,133 @@
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+  
+<a name="_top"></a>
+
+
+  	<h2>Member Notepad</h2>
+
+  <a href="" onclick="NotePadHelpPopUp(); return false;">How do I use this?</a><br>
+
+	<a name="Lang1"></a>
+	<h3>Choose your Language Pair</h3>
+	<table class="TblListMenu" width="100%" cellspacing="0" cellpadding="0" border="0">
+	  <tbody><tr class="table-heading" valign="middle">
+		<td valign="middle">
+		  <span title="International Penpals">Select the First Language in your Language Pair</span>
+		</td>
+	  </tr>
+	  <tr>
+		<td>
+	
+	<%Language.all.each_slice(25).to_a.each do |languages|%>
+		<table class="TblListMenuCol" width="32%" cellspacing="1" cellpadding="1" align="left">
+		
+		  <tbody>
+                      <%languages.each do |language|%>
+                      <tr>
+			<td>
+			  
+				<a href="/Notepad.asp?lang1=&amp;lang2=&amp;hidProc=1&amp;srch=&amp;show=2&amp;bars=&amp;Lang1=<%=language.id%>" title="<%=language.name%>"><%=language.name%></a>
+			  
+			</td>
+		  </tr>
+	  
+                  <%end%>
+	  
+	  
+		</tbody></table>
+		<%end%>
+	<br clear="all">
+		</td>
+	  </tr>
+	</tbody></table>
+
+
+   <br>
+   
+	<div class="WrapTblScroll">
+   <table class="WidthMaxLim TblSrchResults" cellspacing="1" cellpadding="5" border="0">
+     <tbody>
+	 <tr class="table-heading">
+		
+			<td colspan="2">Word or Phrase
+			</td>
+		
+			<td align="center">Edit
+			</td>
+		
+       
+     </tr>
+       <%=render collection: @phrases,as: :phrase,partial:"notepad"%>
+		 
+			
+		 
+	   </tbody>
+     </table>
+	 </div>
+             
+   <br>
+   
+	<a href="LessonTableEdit.asp"><b>Create a Lesson</b></a><br>
+   
+	<a href="NotepadAdd.asp?lang1=&amp;lang2=&amp;show=2&amp;bars="><b>Add a record to your Member Notepad</b></a>
+   
+	<br>
+   <p>
+   <!--div align="center"><a href="#_top"><b>To top</b></a></div--> 
+   
+   
+   <br>
+   <br>
+   </p><form method="get" action="/Notepad.asp?lang1=&amp;lang2=&amp;hidProc=1&amp;srch=&amp;show=2&amp;bars=">
+   <table class="TblTranspose TblUserForm" cellspacing="1" cellpadding="5" border="0">
+   <thead>
+	 <tr class="table-heading">
+		<td colspan="2">
+		   <table width="100%" cellspacing="0" cellpadding="0" border="0">
+			 <tbody><tr class="table-heading">
+			   <td>
+				
+					Search your Member Notepad
+				
+			   </td>
+			   <td align="right">
+			   
+			   <input type="text" class="search_field" onfocus="if(this.value=='Search text') {this.value='';}" onblur="if(this.value=='') {this.value='Search text';}" value="Search text" name="srch" id="srch">
+			   </td>
+			 </tr>
+		   </tbody></table>	 
+       </td>
+     </tr>
+	 </thead>
+     <tbody>
+     <tr>
+         <td>
+         		<select name="lang1" id="lang1" size="1"><option value="" selected="">-- Choose language 1 --</option><option value="120">- Other -</option><option value="77">Afrikaans</option><option value="106">Akan</option><option value="60">Albanian</option><option value="94">Amharic (Ethiopian)</option><option value="18">Arabic, Egyptian</option><option value="3">Arabic, Middle Eastern</option><option value="2">Arabic, Moroccan</option><option value="4">Arabic, other</option><option value="168">Arabic, Palestinian</option><option value="82">Aramaic</option><option value="64">Armenian</option><option value="112">Assamese</option><option value="78">Assyrian</option><option value="72">Azerbaijani</option><option value="165">Bambara (Bamana)</option><option value="145">Baoulé (Baule, Bawule)</option><option value="7">Basque</option><option value="144">Bavarian (Austro-Bavarian)</option><option value="100">Belarusian</option><option value="153">Bemba (Chiwemba, Wemba)</option><option value="8">Bengali</option><option value="9">Berber (Tamazight)</option><option value="59">Bosnian</option><option value="116">Breton</option><option value="10">Bulgarian</option><option value="96">Burmese</option><option value="65">Cambodian (Khmer)</option><option value="55">Catalan</option><option value="136">Cebuano (Bisaya)</option><option value="95">Chichewa (Nyanja)</option><option value="11">Chinese, Cantonese</option><option value="12">Chinese, Mandarin</option><option value="13">Chinese, other</option><option value="167">Chinese, Taiwanese (Hokkien, Minnanhua)</option><option value="147">Chuvash (Bulgar)</option><option value="14">Creole</option><option value="83">Croatian</option><option value="15">Czech</option><option value="16">Danish</option><option value="17">Dutch</option><option value="1">English</option><option value="19">Esperanto</option><option value="63">Estonian</option><option value="146">Faroese</option><option value="88">Fijian</option><option value="20">Filipino (Tagalog)</option><option value="21">Finnish</option><option value="155">Fon (Dahomeen, Djedji, Fongbe)</option><option value="22">French</option><option value="68">Gaelic (Irish)</option><option value="170">Gaelic (Manx)</option><option value="69">Gaelic (Scottish)</option><option value="79">Galician</option><option value="71">Georgian</option><option value="23">German</option><option value="24">Greek</option><option value="74">Gujarati</option><option value="138">Hausa</option><option value="73">Hawaiian</option><option value="25">Hebrew</option><option value="26">Hindi</option><option value="117">Hmong</option><option value="27">Hungarian</option><option value="56">Icelandic</option><option value="109">Ido</option><option value="157">Igbo (Ibo)</option><option value="5">Indonesian (Bahasa)</option><option value="108">Interlingua</option><option value="29">Italian</option><option value="30">Japanese</option><option value="159">Kachchi</option><option value="67">Kannada</option><option value="91">Kazakh</option><option value="141">Kituba (Kikoongo, Munukutuba)</option><option value="123">Konkani</option><option value="143">Konkani (Kunabi, Cugani, Bankoti)</option><option value="31">Korean</option><option value="53">Kurdish</option><option value="135">Kyrgyz (Kara-Kirgiz, Kirghiz, Kirgiz)</option><option value="133">Ladino</option><option value="84">Lao</option><option value="57">Latin</option><option value="62">Latvian</option><option value="114">Ligurian</option><option value="142">Lingala (Ngala)</option><option value="61">Lithuanian</option><option value="66">Lombard</option><option value="148">Luxembourgeois (Luxemburgian)</option><option value="87">Macedonian</option><option value="115">Malagasy</option><option value="6">Malay (Bahasa Malaysia)</option><option value="93">Malayalam</option><option value="119">Maldivian (Dhivehi)</option><option value="101">Maltese</option><option value="160">Mandinka</option><option value="122">Maori (New Zealand Maori)</option><option value="85">Marathi</option><option value="105">Mongolian</option><option value="158">Montenegrin</option><option value="104">Native American (Ojibway, Cree...)</option><option value="81">Nepali</option><option value="102">Newari</option><option value="32">Norwegian</option><option value="151">Nyanja (Chewa, Chinyanja)</option><option value="154">Occitan (Occitani)</option><option value="90">Oriya</option><option value="152">Oromo (Oromoo , Oromiffa)</option><option value="161">Papiamento (or Papiamentu)</option><option value="124">Paraguayan Guarani</option><option value="33">Persian (Farsi, Dari)</option><option value="34">Polish</option><option value="35">Portuguese</option><option value="128">Pulaar</option><option value="36">Punjabi</option><option value="166">Purépecha (Tarascan)</option><option value="58">Pushto (Pashto)</option><option value="80">Quechua</option><option value="169">Rapa Nui</option><option value="37">Romanian</option><option value="89">Romansch</option><option value="150">Romany (Gypsy, Danubian)</option><option value="140">Rundi (Kirundi, Urundi)</option><option value="38">Russian</option><option value="139">Rwanda (Kinyarwanda)</option><option value="121">Saami (sami)</option><option value="132">Samoan</option><option value="111">Sanskrit</option><option value="39">Serbian</option><option value="98">Shona</option><option value="131">Sicilian</option><option value="40">Sign Language</option><option value="76">Sindhi</option><option value="86">Sinhalese</option><option value="41">Slovak</option><option value="54">Slovenian</option><option value="99">Somali</option><option value="42">Spanish</option><option value="43">Swahili</option><option value="44">Swedish</option><option value="163">Swiss German</option><option value="149">Tajiki (Tajiki, Tadzhik)</option><option value="45">Tamil</option><option value="126">Tatar (Tartar)</option><option value="75">Telugu</option><option value="103">Tetum</option><option value="46">Thai</option><option value="47">Tibetan</option><option value="137">Tigrigna (Tigray, Tigrinya)</option><option value="162">Tok Pisin</option><option value="107">Tongan</option><option value="92">Tswana</option><option value="134">Tumbuka</option><option value="48">Turkish</option><option value="49">Ukrainian</option><option value="50">Urdu</option><option value="127">Uyghur (Wighor)</option><option value="97">Uzbek</option><option value="113">Venetian</option><option value="51">Vietnamese</option><option value="70">Welsh</option><option value="129">Wolof</option><option value="118">Xhosa</option><option value="52">Yiddish</option><option value="130">Yoruba</option><option value="125">Zulu</option></select>
+		 </td>
+         <td>
+         		<select name="lang2" id="lang2" size="1"><option value="" selected="">-- Choose language 2 --</option><option value="120">- Other -</option><option value="77">Afrikaans</option><option value="106">Akan</option><option value="60">Albanian</option><option value="94">Amharic (Ethiopian)</option><option value="18">Arabic, Egyptian</option><option value="3">Arabic, Middle Eastern</option><option value="2">Arabic, Moroccan</option><option value="4">Arabic, other</option><option value="168">Arabic, Palestinian</option><option value="82">Aramaic</option><option value="64">Armenian</option><option value="112">Assamese</option><option value="78">Assyrian</option><option value="72">Azerbaijani</option><option value="165">Bambara (Bamana)</option><option value="145">Baoulé (Baule, Bawule)</option><option value="7">Basque</option><option value="144">Bavarian (Austro-Bavarian)</option><option value="100">Belarusian</option><option value="153">Bemba (Chiwemba, Wemba)</option><option value="8">Bengali</option><option value="9">Berber (Tamazight)</option><option value="59">Bosnian</option><option value="116">Breton</option><option value="10">Bulgarian</option><option value="96">Burmese</option><option value="65">Cambodian (Khmer)</option><option value="55">Catalan</option><option value="136">Cebuano (Bisaya)</option><option value="95">Chichewa (Nyanja)</option><option value="11">Chinese, Cantonese</option><option value="12">Chinese, Mandarin</option><option value="13">Chinese, other</option><option value="167">Chinese, Taiwanese (Hokkien, Minnanhua)</option><option value="147">Chuvash (Bulgar)</option><option value="14">Creole</option><option value="83">Croatian</option><option value="15">Czech</option><option value="16">Danish</option><option value="17">Dutch</option><option value="1">English</option><option value="19">Esperanto</option><option value="63">Estonian</option><option value="146">Faroese</option><option value="88">Fijian</option><option value="20">Filipino (Tagalog)</option><option value="21">Finnish</option><option value="155">Fon (Dahomeen, Djedji, Fongbe)</option><option value="22">French</option><option value="68">Gaelic (Irish)</option><option value="170">Gaelic (Manx)</option><option value="69">Gaelic (Scottish)</option><option value="79">Galician</option><option value="71">Georgian</option><option value="23">German</option><option value="24">Greek</option><option value="74">Gujarati</option><option value="138">Hausa</option><option value="73">Hawaiian</option><option value="25">Hebrew</option><option value="26">Hindi</option><option value="117">Hmong</option><option value="27">Hungarian</option><option value="56">Icelandic</option><option value="109">Ido</option><option value="157">Igbo (Ibo)</option><option value="5">Indonesian (Bahasa)</option><option value="108">Interlingua</option><option value="29">Italian</option><option value="30">Japanese</option><option value="159">Kachchi</option><option value="67">Kannada</option><option value="91">Kazakh</option><option value="141">Kituba (Kikoongo, Munukutuba)</option><option value="123">Konkani</option><option value="143">Konkani (Kunabi, Cugani, Bankoti)</option><option value="31">Korean</option><option value="53">Kurdish</option><option value="135">Kyrgyz (Kara-Kirgiz, Kirghiz, Kirgiz)</option><option value="133">Ladino</option><option value="84">Lao</option><option value="57">Latin</option><option value="62">Latvian</option><option value="114">Ligurian</option><option value="142">Lingala (Ngala)</option><option value="61">Lithuanian</option><option value="66">Lombard</option><option value="148">Luxembourgeois (Luxemburgian)</option><option value="87">Macedonian</option><option value="115">Malagasy</option><option value="6">Malay (Bahasa Malaysia)</option><option value="93">Malayalam</option><option value="119">Maldivian (Dhivehi)</option><option value="101">Maltese</option><option value="160">Mandinka</option><option value="122">Maori (New Zealand Maori)</option><option value="85">Marathi</option><option value="105">Mongolian</option><option value="158">Montenegrin</option><option value="104">Native American (Ojibway, Cree...)</option><option value="81">Nepali</option><option value="102">Newari</option><option value="32">Norwegian</option><option value="151">Nyanja (Chewa, Chinyanja)</option><option value="154">Occitan (Occitani)</option><option value="90">Oriya</option><option value="152">Oromo (Oromoo , Oromiffa)</option><option value="161">Papiamento (or Papiamentu)</option><option value="124">Paraguayan Guarani</option><option value="33">Persian (Farsi, Dari)</option><option value="34">Polish</option><option value="35">Portuguese</option><option value="128">Pulaar</option><option value="36">Punjabi</option><option value="166">Purépecha (Tarascan)</option><option value="58">Pushto (Pashto)</option><option value="80">Quechua</option><option value="169">Rapa Nui</option><option value="37">Romanian</option><option value="89">Romansch</option><option value="150">Romany (Gypsy, Danubian)</option><option value="140">Rundi (Kirundi, Urundi)</option><option value="38">Russian</option><option value="139">Rwanda (Kinyarwanda)</option><option value="121">Saami (sami)</option><option value="132">Samoan</option><option value="111">Sanskrit</option><option value="39">Serbian</option><option value="98">Shona</option><option value="131">Sicilian</option><option value="40">Sign Language</option><option value="76">Sindhi</option><option value="86">Sinhalese</option><option value="41">Slovak</option><option value="54">Slovenian</option><option value="99">Somali</option><option value="42">Spanish</option><option value="43">Swahili</option><option value="44">Swedish</option><option value="163">Swiss German</option><option value="149">Tajiki (Tajiki, Tadzhik)</option><option value="45">Tamil</option><option value="126">Tatar (Tartar)</option><option value="75">Telugu</option><option value="103">Tetum</option><option value="46">Thai</option><option value="47">Tibetan</option><option value="137">Tigrigna (Tigray, Tigrinya)</option><option value="162">Tok Pisin</option><option value="107">Tongan</option><option value="92">Tswana</option><option value="134">Tumbuka</option><option value="48">Turkish</option><option value="49">Ukrainian</option><option value="50">Urdu</option><option value="127">Uyghur (Wighor)</option><option value="97">Uzbek</option><option value="113">Venetian</option><option value="51">Vietnamese</option><option value="70">Welsh</option><option value="129">Wolof</option><option value="118">Xhosa</option><option value="52">Yiddish</option><option value="130">Yoruba</option><option value="125">Zulu</option></select>
+		 </td>
+     </tr>
+     <tr>
+        <td colspan="2">
+			<input type="hidden" name="hidProc" id="hidProc" value="1">
+			<input type="hidden" name="show" id="show" value="2">
+			<input type="hidden" name="bars" id="bars" value="">
+			<!--input type="hidden" name="srch" id="srch" value=""-->
+			<input type="submit" value="Search">  
+		</td>           
+     </tr>
+     </tbody>
+     </table> 
+     </form>
+  
+  
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/Notepad.asp?lang1=&amp;lang2=&amp;hidProc=1&amp;srch=&amp;show=2&amp;bars=" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FNotepad.asp%3Flang1%3D%26lang2%3D%26hidProc%3D1%26srch%3D%26show%3D2%26bars%3D&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f3017472d818efe" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df16e41b20319b7c%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff16c30ae151e592%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FNotepad.asp%3Flang1%3D%26lang2%3D%26hidProc%3D1%26srch%3D%26show%3D2%26bars%3D&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

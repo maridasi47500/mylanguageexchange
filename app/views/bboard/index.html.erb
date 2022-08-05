@@ -1,0 +1,85 @@
+
+				
+
+                <!-- Page Begin -->
+<h2>Bulletin Board</h2>
+
+Share your language learning with the community! 
+Ask native speakers questions about their language. 
+Answer questions about your native language. 
+Practice foreign languages by discussing subjects of interest.
+Free!<br>
+<br>
+<b>Search</b>: <a href="BBoardSearch.asp">Search messages</a> by language, category, message text, message ID or author name.<br>
+<!-- b>Newest messages</b>: <a href="BBoardAll.asp">View all messages</a> sorted by date of post.<br -->
+<b>Post a message</b>: Select a category below and click on Add New Message or click Reply when viewing any message.<br>
+<br>
+
+
+	<a name="Lang"></a>
+	<table class="TblListMenu" width="100%" cellspacing="0" cellpadding="0" border="0">
+	  <tbody><tr class="table-heading" valign="middle">
+		<td valign="middle">
+		  Bulletin Board Messages - Choose a Language
+		</td>
+	  </tr>
+	  <tr>
+		<td>
+	
+		<table class="TblListMenuCol" width="32%" cellspacing="1" cellpadding="1" align="left">
+		
+		  <tbody>
+                      <%Language.all.each do |language|%>
+                      <tr>
+			<td>
+				<a href="BBoard.asp?X3=<%=language.id%>" title="<%=language.name%> Messages"><%=language.name%></a>
+			</td>
+		  </tr>
+	  
+		  <%end%>
+	  
+	  </tbody></table>
+	
+	<br clear="all">
+		</td>
+	  </tr>
+	</tbody></table>
+	<br>
+ 
+
+
+<br>
+<br>
+<a name="Search"></a>
+
+<script language="javascript">
+<!--
+function ShowAll(formObj) {
+  //formObj.selX3.value = ""
+  //formObj.selX6.value = ""
+  //formObj.selCat.value = ""
+  //formObj.txtSrch.value = ""
+  location.href = "BBoard.asp"
+  //formObj.submit()
+}
+//-->
+</script>
+
+  <table class="TblUserForm" cellspacing="0" cellpadding="1" border="0">
+   <tbody><tr class="table-heading"><td>Search for messages where:</td></tr>
+   <tr>
+     <td>       
+		<%=render "form_bboard_search",:bboard=>@bboard%>
+     </td>
+   </tr>       
+  </tbody></table>
+
+
+
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/BBoard.asp" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FBBoard.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f169c202aa6d06c" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dffd0f429a1848c%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff331e3bcb835b76%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FBBoard.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+   

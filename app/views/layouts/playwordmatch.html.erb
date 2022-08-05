@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" style="height: 100%;" class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head>
+    <title>Word Match Game - Club Library</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<!--meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /-->
+<!--meta http-equiv="Pragma" content="no-cache" /-->
+<!--meta http-equiv="Expires" content="0" /-->
+<!-- Send full URL because we are checking in Psigate gateway -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+    <script src="/playwordmatch_files/sdk_002.js" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="/playwordmatch_files/sdk.js"></script><script async="" src="/playwordmatch_files/analytics.js"></script><script src="/playwordmatch_files/jquery.min.js"></script>
+	
+	<style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1em}.svg-inline--fa.fa-stack-2x{height:2em;width:2em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}</style><link rel="stylesheet" type="text/css" href="/playwordmatch_files/MyleStyle_Min205.css">
+	<script src="/playwordmatch_files/MyleJS_Min.js" defer="defer"></script>	
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://mylanguageexchange.com/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://mylanguageexchange.com/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://mylanguageexchange.com/favicon-16x16.png">
+	<link rel="manifest" href="https://mylanguageexchange.com/manifest.json">
+	<link href="/playwordmatch_files/featherlight.min.css" type="text/css" rel="stylesheet">	
+	<script src="/playwordmatch_files/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous" defer="defer">
+	</script>
+	<link href="/playwordmatch_files/css.css" rel="stylesheet">
+	<!-- Google Translate -->	
+	<script type="text/javascript">
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, autoDisplay: false, multilanguagePage: true}, 'google_translate_element');
+	}
+	function GTransBr(elmID){
+	// Translate element ID elmID to browser's viewing language 
+		var sTmp;
+		sTmp = $('#'+elmID).text();
+		sTmp = "http://translate.google.com/#auto|en|" + encodeURI(sTmp);
+		window.open(sTmp);
+	}
+	</script>
+	<script type="text/javascript" src="/playwordmatch_files/element.js" defer="defer"></script>
+		
+
+<!-- You can use Open Graph tags to customize link previews.
+Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+<meta property="og:url" content="http://www.mylanguageexchange.com/CLScatterPlay.asp?Lang1ID=74&amp;Lang2ID=85">
+<meta property="og:type" content="website">
+<meta property="og:title" content="My Language Exchange">
+<meta property="og:description" content="Language Learning Community for Safe Effective Practice">
+<meta property="og:image" content="http://www.mylanguageexchange.com/images/logoNew.gif">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-103187136-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Select with suggest -->
+<link href="/playwordmatch_files/select2.min.css" rel="stylesheet">
+<script src="/playwordmatch_files/select2.min.js"></script>
+<!--link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /-->
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script-->
+
+<!-- Push Notifications -->
+<script src="/playwordmatch_files/OneSignalSDK.js" async=""></script>
+<script>
+    var OneSignal = window.OneSignal || [];
+	// Do NOT call init() twice
+	OneSignal.push(["init", {
+		appId: "3655c02b-8d29-46b3-a392-b1c67d82cdc3",
+		autoRegister: false,
+		notifyButton: {
+			enable: false, /* Set to false to hide */
+			displayPredicate: function() {
+				return OneSignal.isPushNotificationsEnabled()
+					.then(function(isPushEnabled) {
+						/* The user is subscribed, so we want to return "false" to hide the notify button */
+						return !isPushEnabled;
+					});
+			}
+		},
+		welcomeNotification: {
+		"title": "Thanks for subscribing!",
+		"message": "Make friends, practice, learn!",
+		// "url": "" /* Leave commented for the notification to not open a window on Chrome and Firefox (on Safari, it opens to your webpage) */
+		},
+		promptOptions: {
+			/* These prompt options values configure both the HTTP prompt and the HTTP popup. */
+			/* actionMessage limited to 90 characters */
+			actionMessage: "We'd like to send a browser notification when someone wants to  language practice with you.",
+			/* acceptButtonText limited to 15 characters */
+			acceptButtonText: "Allow",
+			/* cancelButtonText limited to 15 characters */
+			cancelButtonText: "No thanks"
+		}
+	}]);
+
+
+//alert('hi');
+
+//alert('bPushPromptPermission=0');
+
+
+/* 
+	Work-around mobile safari label bug 
+	https://stackoverflow.com/questions/7358781/tapping-on-label-in-mobile-safari
+*/
+
+$('label').click(function() {});
+
+$(document).ready(function(){
+	// Add notranslate class to all icons
+	$(".material-icons-outlined").addClass("notranslate");
+	$(".material-icons").addClass("notranslate");
+	$(".material-icons").addClass("notranslate");
+	$(".fas").addClass("notranslate");
+	$(".far").addClass("notranslate");
+	$(".fa").addClass("notranslate");
+});
+</script>
+
+	
+	
+	<!-- These files must be included for a pages that displays the lessons -->
+	<!--script src="includes/common.js" language="JavaScript" type="text/javascript"></script-->
+	<!--script src="MP3Player/audio-player.js" language="JavaScript" type="text/javascript"></script-->
+	<!--script type="text/javascript" src="SWFObject/swfobject.js"></script-->
+
+    <link href="/playwordmatch_files/style.css" rel="stylesheet" type="text/css">
+    <link href="/playwordmatch_files/jquery-ui-1.8.22.custom.css" rel="stylesheet" type="text/css">
+	<!--link rel="stylesheet" href="css/popover.css" type="text/css" media="screen" /-->
+	<script type="text/javascript" src="/playwordmatch_files/jquery-1.7.1.min.js"></script><script src="/playwordmatch_files/OneSignalPageSDKES6.js" async=""></script>
+	<script src="/playwordmatch_files/responsivevoice.js"></script>
+	<script type="text/javascript" src="/playwordmatch_files/jquery.popover-1.1.2.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>	
+<!--script src="jquery.ui.touch-punch.min.js"></script-->
+
+<script>
+jQuery(document).ready(function($) {
+	$("#ex1a").popover({
+		title: "What's this",
+		content: "...",
+		classes: "wider"
+	});
+	$("#ex1b").click(function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		$("#ex1a").popover(
+			'ajax',
+			"LessonRevAdd.asp?Id=0&IdAuthor=&IPAuthor="
+		).popover('title', "Rate this Lesson/Game").popover('show');
+	});
+});
+</script>
+
+
+<script>
+function RVSpeak(TextToSay,Voice) {
+	if (Voice){
+		responsiveVoice.speak(TextToSay,Voice);
+	}
+	else{
+		alert('No voice available for this language.');
+	}
+};
+</script>
+
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="/playwordmatch_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="/playwordmatch_files/m=el_main"></script><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style><link rel="stylesheet" href="/playwordmatch_files/OneSignalSDKStyles.css"></head>
+
+  <body style="position: relative; min-height: 100%; top: 0px; cursor: auto;" bgcolor="white"> 
+
+
+<!-- Load Facebook SDK for JavaScript -->
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+      <tbody><tr>
+	  <td>
+	  
+	    <!-- Nav items common to widescreen and mobile -->
+		<div id="mySidenavLang" class="sidenavLang" style="width: 0px;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr><td width="80%" align="left">
+			  <img src="/playwordmatch_files/logoNew.gif" alt="Language exchange" style="margin: 12px;" height="46" border="0">
+			</td>
+			<td align="right">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeSideNavLang(); return false;">×</a>
+			</td></tr>
+			</tbody></table>
+		  	 
+	<br>
+	<script>
+	
+		if ($(window).width()<=699 || true){
+			document.write("<div id='google_translate_element' class='GTranMain scrollHide' style='max-width: 280px; width: 250px; overflow-wrap: anywhere; overflow: scroll;padding:4px 0px'></div>");
+		}
+	
+	</script><div id="google_translate_element" class="GTranMain scrollHide" style="max-width: 280px; width: 250px; overflow-wrap: anywhere; overflow: scroll;padding:4px 0px"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" style="display: inline;"><select class="goog-te-combo" aria-label="Widget de traduction"><option value="" selected="selected">Sélectionner une langue</option><option value="fr">Français</option><option value="af">Afrikaans</option><option value="sq">Albanais</option><option value="de">Allemand</option><option value="am">Amharique</option><option value="en">Anglais</option><option value="ar">Arabe</option><option value="hy">Arménien</option><option value="as">Assamais</option><option value="ay">Aymara</option><option value="az">Azéri</option><option value="bm">Bambara</option><option value="eu">Basque</option><option value="bn">Bengali</option><option value="bho">Bhodjpouri</option><option value="be">Biélorusse</option><option value="my">Birman</option><option value="bs">Bosniaque</option><option value="bg">Bulgare</option><option value="ca">Catalan</option><option value="ceb">Cebuano</option><option value="ny">Chichewa</option><option value="zh-CN">Chinois (simplifié)</option><option value="zh-TW">Chinois (traditionnel)</option><option value="si">Cingalais</option><option value="ko">Coréen</option><option value="co">Corse</option><option value="ht">Créole haïtien</option><option value="hr">Croate</option><option value="da">Danois</option><option value="dv">Divéhi</option><option value="doi">Dogri</option><option value="es">Espagnol</option><option value="eo">Espéranto</option><option value="et">Estonien</option><option value="ee">Ewe</option><option value="fi">Finnois</option><option value="fy">Frison</option><option value="gd">Gaélique (Écosse)</option><option value="gl">Galicien</option><option value="cy">Gallois</option><option value="ka">Géorgien</option><option value="el">Grec</option><option value="gn">Guarani</option><option value="gu">Gujarati</option><option value="ha">Haoussa</option><option value="haw">Hawaïen</option><option value="iw">Hébreu</option><option value="hi">Hindi</option><option value="hmn">Hmong</option><option value="hu">Hongrois</option><option value="ig">Igbo</option><option value="ilo">Ilocano</option><option value="id">Indonésien</option><option value="ga">Irlandais</option><option value="is">Islandais</option><option value="it">Italien</option><option value="ja">Japonais</option><option value="jw">Javanais</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="rw">Kinyarwanda</option><option value="ky">Kirghiz</option><option value="gom">Konkani</option><option value="kri">Krio</option><option value="ku">Kurde (Kurmandji)</option><option value="ckb">Kurde (Sorani)</option><option value="lo">Laotien</option><option value="la">Latin</option><option value="lv">Letton</option><option value="ln">Lingala</option><option value="lt">Lituanien</option><option value="lg">Luganda</option><option value="lb">Luxembourgeois</option><option value="mk">Macédonien</option><option value="mai">Maïthili</option><option value="ms">Malaisien</option><option value="ml">Malayalam</option><option value="mg">Malgache</option><option value="mt">Maltais</option><option value="mi">Maori</option><option value="mr">Marathi</option><option value="mni-Mtei">Meitei (Manipuri)</option><option value="lus">Mizo</option><option value="mn">Mongol</option><option value="nl">Néerlandais</option><option value="ne">Népalais</option><option value="no">Norvégien</option><option value="or">Odia (Oriya)</option><option value="om">Oromo</option><option value="ug">Ouïgour</option><option value="uz">Ouzbek</option><option value="ps">Pachtô</option><option value="pa">Panjabi</option><option value="fa">Persan</option><option value="tl">Philippin</option><option value="pl">Polonais</option><option value="pt">Portugais</option><option value="qu">Quechua</option><option value="ro">Roumain</option><option value="ru">Russe</option><option value="sm">Samoan</option><option value="sa">Sanscrit</option><option value="nso">Sepedi</option><option value="sr">Serbe</option><option value="st">Sesotho</option><option value="sn">Shona</option><option value="sd">Sindhî</option><option value="sk">Slovaque</option><option value="sl">Slovène</option><option value="so">Somali</option><option value="su">Soundanais</option><option value="sv">Suédois</option><option value="sw">Swahili</option><option value="tg">Tadjik</option><option value="ta">Tamoul</option><option value="tt">Tatar</option><option value="cs">Tchèque</option><option value="te">Telugu</option><option value="th">Thaï</option><option value="ti">Tigrigna</option><option value="ts">Tsonga</option><option value="tr">Turc</option><option value="tk">Turkmène</option><option value="ak">Twi</option><option value="uk">Ukrainien</option><option value="ur">Urdu</option><option value="vi">Vietnamien</option><option value="xh">Xhosa</option><option value="yi">Yiddish</option><option value="yo">Yorouba</option><option value="zu">Zoulou</option></select></div>&nbsp;&nbsp;Fourni par&nbsp;<span style="white-space:nowrap"><a class="goog-logo-link" href="https://translate.google.com/" target="_blank"><img src="/playwordmatch_files/googlelogo_color_42x16dp.png" style="padding-right: 3px" alt="Google Traduction" width="37px" height="14px">Traduction</a></span></div></div>	
+
+		  <br>
+		</div>
+	    <!-- End of Nav items common to widescreen and mobile -->
+
+		  <table class="topnavbar ScreenWide static" width="100%"><tbody><tr><td>
+		   <!-- Logo Begin -->
+			</td><td width="190px" valign="middle" nowrap="nowrap">
+				<a href="https://mylanguageexchange.com/" title="Language Exchange Home">
+				<img src="/playwordmatch_files/logoNew.gif" alt="Language Exchange" height="70">
+				</a>
+			</td>
+		   <!-- Logo End -->
+
+		   <td valign="top" align="center"><!-- R. of Swooped Logo -->
+			
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+      <td colspan="2" valign="top" align="right">&nbsp; 
+         
+          <img src="/playwordmatch_files/TopText_S.gif" alt="¿Â¶óÀÎ ¾ð¾î ÇÐ±³ ¹× ¾ð¾î ±³È¯ Ä¿¹Â´ÏÆ¼" width="12" height="12" border="0">
+         
+        
+        <font face="Arial"> 
+        
+			  <span class="ScreenWide">
+              <a href="https://mylanguageexchange.com/Member.asp" title="View contacts, Edit profile" class="topmenulinks rounded-btn-outline icon-text"><i class="material-icons-outlined notranslate">account_circle</i> Hi cleo!</a>
+				<a class="topmenulinks icon-text notranslate" href="https://mylanguageexchange.com/HiSearch.asp" title="View my Hi!s"><i class="material-icons-outlined notranslate">emoji_people</i>Hi!s</a>								
+				<a class="topmenulinks icon-text" href="https://mylanguageexchange.com/Inbox.asp" title="View emails received or sent"><i class="material-icons-outlined notranslate">email</i>Emails</a>
+				<a class="topmenulinks icon-text" href="https://mylanguageexchange.com/FavSearch.asp" title="View and search my favorites"><i class="material-icons-outlined notranslate">favorite_border</i>Favorites</a>
+			  </span>
+            
+		</font>
+      </td>
+    </tr>
+    <tr>
+      <td id="TopMenuMiddle" valign="top" align="center">
+
+    <img id="Banner" src="/playwordmatch_files/spacer.gif" alt="Over 3 million members" width="1" height="30" border="0">
+
+<br>
+				<div class="topMenuLangBtns hide">
+				
+        </div>
+
+		<script>
+		if ($(window).width()>699 && false){
+			document.write("<div id='google_translate_element' class='GTranMain scrollHide'><span class='GTranPre'>View site in:</span> </div>");
+		}
+		</script>
+		
+		</td>
+      <td id="TopMenuLogin" rowspan="2" valign="middle" align="right">
+					 
+          <a href="https://mylanguageexchange.com/LogOut.asp"><!--img id="LogInBtn" SRC="images/SignInButton.gif" width="40" height="39" border="0" alt="Language exchange and language school log in"--><div class="ring"><div id="cirOuter1" class="circleBig"><div id="cirInner1" class="circleBig"><div id="cirInner2" class="circleBig"><div id="cirInner3" class="circleBig"></div></div></div></div></div></a>
+         
+        <br>
+		
+		<a href="https://mylanguageexchange.com/" id="mysidenavLangbtn" class="sidenavLangbtn topmenulinks rounded-btn-outline icon-text " onclick="SideNavLangToggle(); return false;">
+			<i class="material-icons-outlined notranslate">language</i> Site language</a>
+		 
+            <a href="https://mylanguageexchange.com/LogOut.asp" class="topmenulinks" style="margin:0 5px 0 0;">Log Out</a>
+          
+      </td>
+    </tr>
+  </tbody></table>
+
+		   </td>                             <!-- Top menu End -->
+		  </tr></tbody></table>
+	  </td> 
+      </tr>
+
+	  <!-- Header Mobile Begin -->
+	  <tr>
+		<td colspan="2">
+		  
+<table id="myTopnav" class="topnavbar ScreenMobile" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+		<td rowspan="2" valign="middle">
+			<a href="https://mylanguageexchange.com/"><img id="Logo1" src="/playwordmatch_files/logoNew.gif" style="width:117px;height:auto;" alt="language exchange"></a>
+		</td>
+		<td align="right">
+			<font face="Arial"> 
+			
+				  <a href="https://mylanguageexchange.com/Member.asp" class="topmenulinks" title="View contacts, edit profile">Hi cleo!</a>
+				  <a href="#" id="mysidenavAccbtn" class="topmenulinks sidenavAccbtn ScreenMobile icon-text" onclick="SideNavAccToggle(); return false;" style="margin:1px 1px 0 0"><i class="material-icons-outlined notranslate">account_circle</i></a>
+				  <span style="display:inline;">
+				  
+<div id="mySidenavAcc" class="sidenavAcc" style="width: 0px;">
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr><td width="80%" align="left">
+	  <img src="/playwordmatch_files/logoNew.gif" alt="Language exchange" style="margin: 12px;" height="46" border="0">
+	</td>
+	<td align="right">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeSideNavAcc(); return false;">×</a>
+	</td></tr>
+	</tbody></table> 
+	
+	  <a href="https://mylanguageexchange.com/Member.asp" class="sidenavAccLink aDead">Account</a>
+	  <a href="https://mylanguageexchange.com/Inbox.asp" class="sidenavAccLink aDead">Emails</a>
+	  <a href="https://mylanguageexchange.com/HiSearch.asp" class="sidenavAccLink aDead">Hi!s</a>
+	  <a href="https://mylanguageexchange.com/FavSearch.asp" class="sidenavAccLink aDead">Favorites</a>
+	 
+  <br>
+</div>
+
+				  </span>
+			  
+			  <span class="ScreenWide">
+              <a href="https://mylanguageexchange.com/Member.asp" title="View contacts, Edit profile" class="topmenulinks rounded-btn-outline icon-text"><i class="material-icons-outlined notranslate">account_circle</i> Hi cleo!</a>
+				<a class="topmenulinks icon-text notranslate" href="https://mylanguageexchange.com/HiSearch.asp" title="View my Hi!s"><i class="material-icons-outlined notranslate">emoji_people</i>Hi!s</a>								
+				<a class="topmenulinks icon-text" href="https://mylanguageexchange.com/Inbox.asp" title="View emails received or sent"><i class="material-icons-outlined notranslate">email</i>Emails</a>
+				<a class="topmenulinks icon-text" href="https://mylanguageexchange.com/FavSearch.asp" title="View and search my favorites"><i class="material-icons-outlined notranslate">favorite_border</i>Favorites</a>
+			  </span>
+            
+			</font>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="bottom" align="right">
+			<a href="https://mylanguageexchange.com/" class="sidenavbtn topmenulinks" onclick="SideNavToggle(); return false;"><i class="material-icons-outlined notranslate" style="font-size:30px; padding:4px; margin:0px 10px;">menu</i></a><br>
+			
+			<a href="https://mylanguageexchange.com/" id="mysidenavLangbtn" class="sidenavLangbtn topmenulinks rounded-btn-outline icon-text " onclick="SideNavLangToggle(); return false;">
+			<i class="material-icons-outlined notranslate">language</i> Site language</a>
+		 
+            <a href="https://mylanguageexchange.com/LogOut.asp" class="topmenulinks" style="margin:0 5px 0 0;">Log Out</a>
+          
+		
+		<div id="mySidenav" class="sidenav" style="width: 0px;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr><td width="40%" align="left">
+			  <img src="/playwordmatch_files/logoNew.gif" alt="Language exchange" style="margin: 12px;" height="46" border="0">
+			</td>
+			<td align="right">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">×</a>
+			</td>
+			</tr>
+			<tr>
+			<!--td align=right><span style="color: white;">
+			  
+			</TD-->
+			<td colspan="2" width="40%" align="right"><span style="color: white; margin-right:13px;">
+			  <a href="https://mylanguageexchange.com/AddToHomeScreen.asp" style="color: white;">
+			  <svg class="svg-inline--fa fa-plus-square fa-w-14 fa-lg" style="margin: 3px;" aria-hidden="true" data-prefix="far" data-icon="plus-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M352 240v32c0 6.6-5.4 12-12 12h-88v88c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-88h-88c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h88v-88c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v88h88c6.6 0 12 5.4 12 12zm96-160v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg><!-- <i class="far fa-plus-square fa-lg notranslate" style="margin:3px;"></i> -->
+			  Add to Home screen
+			  </a>
+			</span></td>
+			</tr>
+			</tbody></table>
+			<br>
+			 <a href="https://mylanguageexchange.com/" class="sidenavLink aDead">Home</a>
+<a href="https://mylanguageexchange.com/penpals.asp" class="sidenavLink aDead">Penpals</a>
+<a href="https://mylanguageexchange.com/HowTo.asp" class="sidenavLink aDead">How to</a>
+<a href="https://mylanguageexchange.com/search.asp" class="sidenavLink aDead">Search</a>
+<a href="https://mylanguageexchange.com/Games.asp" class="sidenavLink aDead">Word Games</a>
+<a href="https://mylanguageexchange.com/Language-Lessons.asp" class="sidenavLink aDead">Lessons</a>
+<a href="https://mylanguageexchange.com/Teachers/" class="sidenavLink aDead">Teachers</a>
+<a href="https://mylanguageexchange.com/Member.asp" class="sidenavLink aDead">Edit Your Data</a>
+<a href="https://mylanguageexchange.com/Notepad.asp?show=2" class="sidenavLink aDead">Member Notepad</a>
+<a href="https://mylanguageexchange.com/Notepad.asp?show=1" class="sidenavLink aDead">Club Library</a>
+<a href="https://mylanguageexchange.com/BBoard.asp" class="sidenavLink aDead">Bulletin Board</a>
+<a href="" onclick="TranslOpen(); return false;" class="sidenavLink aDead">Translations</a>
+<a href="https://mylanguageexchange.com/TextChat.asp" class="sidenavLink aDead">Text Chat</a>
+<a href="https://mylanguageexchange.com/VoiceChat.asp" class="sidenavLink aDead">Voice Chat</a>
+<a href="https://mylanguageexchange.com/faq.asp" class="sidenavLink aDead">FAQs</a>
+<a href="https://mylanguageexchange.com/Jobs.asp" class="sidenavLink aDead">Jobs</a>
+<a href="https://mylanguageexchange.com/ContactUs.asp" class="sidenavLink aDead">Contact Us</a>
+<br>
+<br>
+
+		</div>
+		<div id="mySidenavLang" class="sidenavLang">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr><td width="80%" align="left">
+			  <img src="/playwordmatch_files/logoNew.gif" alt="Language exchange" style="margin: 12px;" height="46" border="0">
+			</td>
+			<td align="right">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeSideNavLang(); return false;">×</a>
+			</td></tr>
+			</tbody></table>
+		  	 
+	<br>
+	<script>
+	
+		if ($(window).width()<=699 || true){
+			document.write("<div id='google_translate_element' class='GTranMain scrollHide' style='max-width: 280px; width: 250px; overflow-wrap: anywhere; overflow: scroll;padding:4px 0px'></div>");
+		}
+	
+	</script><div id="google_translate_element" class="GTranMain scrollHide" style="max-width: 280px; width: 250px; overflow-wrap: anywhere; overflow: scroll;padding:4px 0px"></div>	
+
+		  <br>
+		</div>
+		
+		</td>
+	</tr>
+</tbody></table>
+
+	
+		</td>
+	  </tr>
+	  <!-- Header Mobile End -->
+	  
+		<!-- Left menu and page contents -->
+        <tr>
+          <td colspan="2" valign="top" align="left">
+		  
+		<!-- Left menu and page contents table -->
+          <table id="myMain" class="main" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody><tr>
+				<!-- Left Menu column -->
+                <td class="ScreenWide mainMenu" style="background-color:#efebe9; /*brown lt-5+1*/; padding-top:3px;" width="144" valign="top" align="left">
+
+      <!-- Left Menu table -->
+      <table width="144" cellspacing="0" cellpadding="0" border="0">
+         <tbody><tr>
+           <td style="line-height:2.2;">
+             <a href="https://mylanguageexchange.com/" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Language Exchange" style="margin:0px 6px 0px 9px;" width="15">Home&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/penpals.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="International penpals" style="margin:0px 6px 0px 9px;" width="15">Penpals&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/HowTo.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="How to learn a language via language exchange" style="margin:0px 6px 0px 9px;" width="15">How to&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/search.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Find a Language Exchange Partner to Learn a Language" style="margin:0px 6px 0px 9px;" width="15">Search&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/Games.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OnButton.gif" alt="Hangman word games: learn expressions, slang, idioms, proverbs" style="margin:0px 6px 0px 9px;" width="15" height="15" border="0" align="bottom">Word Games&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/Language-Lessons.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Lessons" style="margin:0px 6px 0px 9px;" width="15">Lessons&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/Teachers/" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Language Teachers" style="margin:0px 6px 0px 9px;" width="15">Teachers&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/Member.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Edit my profile" style="margin:0px 6px 0px 9px;" width="15">Edit Your Data&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/Notepad.asp?show=2" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Member notepad" style="margin:0px 6px 0px 9px;" width="15">Member Notepad&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/Notepad.asp?show=1" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Club library" style="margin:0px 6px 0px 9px;" width="15">Club Library&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/BBoard.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Bulletin board" style="margin:0px 6px 0px 9px;" width="15">Bulletin Board&nbsp;&nbsp;</a><br><a href="" onclick="TranslOpen(); return false;" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Machine translator" style="margin:0px 6px 0px 9px;" width="15">Translations&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/TextChat.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="International chat rooms, spanish chat, French chat, etc." style="margin:0px 6px 0px 9px;" width="15">Text Chat&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/VoiceChat.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Voice chat: free international voice chat rooms and programs" style="margin:0px 6px 0px 9px;" width="15">Voice Chat&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/faq.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="FAQs" style="margin:0px 6px 0px 9px;" width="15">FAQs&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/Jobs.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Interpreter jobs" style="margin:0px 6px 0px 9px;" width="15">Jobs&nbsp;&nbsp;</a><br><a href="https://mylanguageexchange.com/ContactUs.asp" class="leftlmenulinks"><img src="/playwordmatch_files/OffButtonGreen.png" alt="Contact Us" style="margin:0px 6px 0px 9px;" width="15">Contact Us&nbsp;&nbsp;</a><br>
+           </td>
+          </tr>
+      </tbody></table>
+      <!-- Left Menu table -->
+
+                </td>
+				<!-- Left Menu -->
+				
+				<!-- Page content column -->
+               <%=yield%>
+            </tr>
+		  </tbody>
+          </table>
+		  <!-- 3 Col Layout End -->	
+
+
+				<br>
+			</td>
+        </tr>
+
+		<!--Copyright Start -->
+        <tr>
+            <td colspan="2" align="center">
+				<br>
+				
+	  <hr width="100%" size="1" noshade="noshade" align="center">
+	  <font size="2" face="Arial">Copyright © 2000-2022   MyLanguageExchange.com</font><br>
+	
+            </td>
+        </tr>
+		<!--Copyright End -->
+
+        <!--Featured Languages and Bottom Links Row Start -->
+        <tr>
+            <td colspan="2" align="center">
+				<br>
+				<!--Languages Featured Start -->
+				
+	<center>
+
+	
+		<table cellspacing="1" cellpadding="1" border="0">
+			<tbody><tr>
+				<td align="center"><small class="small8">Featuring  languages, including...</small>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+		&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/English.asp"><img src="/playwordmatch_files/check.gif" alt="Learn English online: Learn to speak English free" width="13" height="12" border="0" align="absbottom">English</a>
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/ESL.asp">(ESL)</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Spanish.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Spanish online: Learn to speak Spanish free" width="13" height="12" border="0" align="absbottom">Spanish</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/French.asp"><img src="/playwordmatch_files/check.gif" alt="Learn French online: Learn to speak French free" width="13" height="12" border="0" align="absbottom">French</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Italian.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Italian online: Learn to speak Italian free" width="13" height="12" border="0" align="absbottom">Italian</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/German.asp"><img src="/playwordmatch_files/check.gif" alt="Learn German online: Learn to speak German free" width="13" height="12" border="0" align="absbottom">German</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Japanese.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Japanese online: Learn to speak Japanese free" width="13" height="12" border="0" align="absbottom">Japanese</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Korean.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Korean online: Learn to speak Korean free" width="13" height="12" border="0" align="absbottom">Korean</a>&nbsp;<br>
+		&nbsp;<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Chinese.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Chinese online: Learn to speak Chinese free" width="13" height="12" border="0" align="absbottom">Chinese</a>&nbsp;
+		<small>(</small><a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Chinese_Mandarin.asp"><!-- img SRC="images/check.gif" border="0" width="13" height="12" align=absbottom alt="Learn Mandarin online: Learn to speak Mandarin free" -->Mandarin</a>,&nbsp; 
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Chinese_Cantonese.asp"><!-- img SRC="images/check.gif" border="0" width="13" height="12" align=absbottom alt="Learn Cantonese online: Learn to speak Cantonese free" -->Cantonese</a><small>)</small> 
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Portuguese.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Portuguese online: Learn to speak Portuguese free" width="13" height="12" border="0" align="absbottom">Portuguese</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Russian.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Russian online: Learn to speak Russian free" width="13" height="12" border="0" align="absbottom">Russian</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Thai.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Thai online: Learn to speak Thai free" width="13" height="12" border="0" align="absbottom">Thai</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Swedish.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Swedish online: Learn to speak Swedish free" width="13" height="12" border="0" align="absbottom">Swedish</a>
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Greek.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Greek online: Learn to speak Greek free" width="13" height="12" border="0" align="absbottom">Greek</a>&nbsp;
+		<a class="btmmenulinks" href="https://mylanguageexchange.com/Learn/Arabic.asp"><img src="/playwordmatch_files/check.gif" alt="Learn Arabic online: Learn to speak Arabic free" width="13" height="12" border="0" align="absbottom">Arabic</a>&nbsp;<br>
+		<!-- • --><small>[</small> <a class="btmmenulinks" href="https://mylanguageexchange.com/Learn-Languages.asp"><!-- img SRC="images/ArrowRight.gif" border="0" width="13" height="12" align=absbottom alt="Learn how to speak a foreign language free online" -->View all languages</a> <small>]</small>&nbsp;
+				</td>
+			</tr>
+		</tbody></table>
+	
+	</center>
+
+				<!--Languages Featured End -->
+				<br>
+
+				<!--Bottom links Start -->
+				
+		<a href="" onclick="PrivacyPopUp(); return false"><small>Privacy</small></a>&nbsp;
+		<a href="" onclick="MemberAgreementPopUp(); return false;"><small>Terms of Use</small></a>&nbsp;
+		<a href="https://mylanguageexchange.com/scams.asp"><small>Beware of Scams</small></a>&nbsp;
+		<a href="https://mylanguageexchange.com/LinkToUs.asp" tabindex="-1"><small>Link to Us</small></a>&nbsp;&nbsp;
+		<a href="https://mylanguageexchange.com/FreeGold.asp" tabindex="-1"><small>Free Gold Membership</small></a>&nbsp;&nbsp;
+	
+				<!--Bottom links End -->
+				<br>
+				<br>
+
+            </td>
+        </tr>
+        <!--Featured Languages and Bottom Links Row End -->
+      </tbody></table>
+
+<!--script src="//code.jquery.com/jquery-latest.js"></script--><!-- This conflicts with jquery include in HeadInc.asp -->
+<script src="/playwordmatch_files/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+    <script language="javascript">
+    <!--
+    //newWnd=window.open("Music.asp", "Music", "toolbar=0, directories=0, status=0,menubar=0,scrollbars=0,resizable=1,width=240,height=25");
+    //window.location.reload(false);    // without this, the pop-up will reload if 'Back button' to first page
+    //-->
+    </script>
+  <div class="popover wider popover-bottom" style="display: none; z-index: 949; left: 170.5px; top: 317.15px; margin-top: 10px; margin-left: 0px;"><div class="arrow top-arrow"></div><div class="wrap"><div class="title">What's this</div><div class="content">...</div></div></div><div style="display: none; z-index: 1002; outline: currentcolor none 0px; position: absolute; height: auto; width: 300px; top: 138.5px; left: 651.5px;" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-startBanner"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-startBanner">Word Match Game</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="startBanner" style="display: block; width: auto; min-height: 106.693px; height: auto;" class="ui-dialog-content ui-widget-content" scrolltop="0" scrollleft="0">
+        Drag corresponding words on top of each other. Make all words disappear.<br>
+        <br>
+        Click on <img src="/playwordmatch_files/info.png"> for more information or to give rating. Poorly rated entries will be eliminated from future games.<br>
+        <br>
+        <div class="startNow">
+        Start now. </div>
+    </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1000;"></div></div><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="/playwordmatch_files/translate_24dp.png" alt="Google Traduction" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texte d'origine</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Proposer une meilleure traduction</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>

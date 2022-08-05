@@ -1,0 +1,143 @@
+
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+
+
+<h2>Related Hangman Games</h2>
+
+
+	<table cellspacing="1" cellpadding="1" border="0">
+		<tbody><tr>
+			<td align="left"><h5>Title:</h5>
+			</td>
+			<td align="left"><b><span class="userdata"><%=@hangman.title%></span></b>
+			</td>
+		</tr>
+		<tr>
+			<td align="left"><h5>Answer:</h5>
+			</td>
+			<td align="left"><b>
+                                
+                                <span class="userdata">
+                                    
+                                    
+                                      <%@i=0%>
+                                        
+                                        
+                                        
+                                        <%@hangman.guess.split('').each do |f|%>
+                                        <%if f == " "%>
+                                        &nbsp;
+                                        <%else%>
+                                        <%if @hangman.hide[@i] == "0" || @hangman.useletter(f)%>
+				    <%=@hangman.guess[@i]%>
+                                          <%else%>
+								<img src="images/spacer.gif" width="1">_
+							
+								<%end%>
+                                                                
+							<%end%>
+                                                                <%@i+=1%>
+                                                                <%end%>
+                                   </span></b>
+			</td>
+		</tr>
+		<tr>
+			<td align="left"><h5>Language:</h5>
+			</td>
+			<td align="left"><b><span class="userdata"><%=@hangman.mylanguage.try(:name)%></span></b>
+			</td>
+		</tr>
+	</tbody></table>
+	<br>
+	<br>
+	<img src="images/spacer.gif" width="2" border="0">Games related to the above are listed below.<br>
+	<br>
+	
+	<table width="100%" cellspacing="1" cellpadding="1" border="0">
+		<tbody><tr>
+			<td align="left">
+		 Click on a title to play the game.
+			</td>
+			<td align="right">
+	
+	    Sort games by <b><a href="HManRelG.asp?GId=<%=@hangman.id%>&amp;Sort=Rating">Rating</a></b>&nbsp;
+	  
+		 		</td>
+		</tr>
+	</tbody></table>
+		<div class="WrapTblScroll">
+		 <table brdercolor="gray" cellspacing="0" cellpadding="3" border="1">
+		 <tbody><tr class="table-heading">
+		   <td><strong>Game</strong></td>
+		   <td width="1%" valign="bottom" nowrap=""><strong>Language</strong></td>
+		   <td width="1%" valign="bottom" nowrap=""><strong>Type</strong></td>
+		   <td width="1%" valign="bottom" nowrap=""><strong>Category</strong></td>
+		   <td width="1%" valign="bottom" nowrap=""><strong>Created by</strong></td>
+		   <td width="1%" valign="bottom" nowrap=""><strong>Rating</strong></td>
+		 </tr>
+		
+			<tr bgcolor="Ivory">
+			  <td class="userdata" valign="top">
+			  <!-- small><span class="userdata"># <%=@hangman.id%></span></small><br-->
+			  <b><a href="HManPlay.asp?GId=<%=@hangman.id%>"><%=@hangman.title%></a></b><br>
+			 <%@i=0%>
+                                        
+                                        
+                                        
+                                        <%@hangman.guess.split('').each do |f|%>
+                                        <%if f == " "%>
+                                        &nbsp;
+                                        <%else%>
+                                        <%if @hangman.hide[@i] == "0" || @hangman.useletter(f)%>
+				    <%=@hangman.guess[@i]%>
+                                          <%else%>
+								<img src="images/spacer.gif" width="1">_
+							
+								<%end%>
+                                                                
+							<%end%>
+                                                                <%@i+=1%>
+                                                                <%end%>
+			  </td>
+			  
+			  <td class="userdata" valign="top"><%=@hangman.mylanguage.try(:name)%></td>
+			  <td class="userdata" valign="top"><small><%=@hangman.myhangmantype.try(:name)%></small></td>
+			  <td class="userdata" valign="top"><small><%=@hangman.myhangmancat.try(:name)%></small></td>
+			  <td class="userdata" valign="top"><a href="MemberInfo.asp?UId=<%=@hangman.member.try(:id)%>"><%=@hangman.member.try(:firstname)%></a><br>
+				<font color="slategray"><small><%=l(@hangman.created_at,format: :emailsent)%></small></font><br>
+				<a href="HManMember.asp?UId=<%=@hangman.member.try(:id)%>"><small><%=@hangman.member.hangmen.length%> games</small></a>
+			  </td>
+			  
+			  <td class="userdata" valign="top"><%=@hangman.moyratings%><br>
+				<font color="dimgray"><small><%=@hangman.ratings.length%> votes</small></font><br>
+			  </td>
+			</tr>
+		   
+		  
+		</tbody></table>
+		</div>
+		
+
+<br>
+<br>
+<table width="100%" cellspacing="1" cellpadding="1" border="0">
+	<tbody><tr>
+		<td>
+			<b><a href="hangman.asp">Hangman Home</a></b>
+		</td>
+		<td align="right">
+			<b><a href="HManBuilder.asp">Create a Game</a></b>
+		</td>
+	</tr>
+</tbody></table>
+
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/HManRelG.asp?GId=<%=@hangman.id%>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHManRelG.asp%3FGId%3D<%=@hangman.id%>&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f29b96de3148402" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3578eea74aa2%26domain%3Dwww.mylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.mylanguageexchange.com%252Ff199f83f9cae178%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FHManRelG.asp%3FGId%3D<%=@hangman.id%>&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

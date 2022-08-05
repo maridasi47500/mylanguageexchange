@@ -1,0 +1,109 @@
+<table class="WidthMaxLim TblUserFormLt" cellspacing="0" cellpadding="0" border="0">
+   <tbody><tr class="table-heading"><td>Votre Retour à l'Auteur - tous les champs optionnels</td></tr>
+   <tr>
+     <td>  
+       <%=form_with scope:"", url: "HManFBK.asp?GId=#{hangman.try(:id)}",html:{name: "FBKForm"} do |form|%>
+         <table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+           <tbody><tr>
+             <td>Aidez les autres à apprendre votre langue. 
+             </td>
+           </tr>
+
+           <tr>
+             <td>
+                <br>
+                Au lieu de "<b><%=hangman.guess%></b>", dans ma langue mternelle, on dit...<br>
+                <small>
+                (Ne remplissez pas si il n'y a pas d'expression équivalente dans votre langue.)</small>
+				<input type="text" id="txtGuess" name="txtGuess" style="width: 96%" maxlength="40">
+				<br>
+             </td>
+           </tr>
+           
+			<tr>
+			  <td>
+			    Ma langue maternelle est le : <br>
+				<small>(Important seulement si vous avez écrit une expression équivalente au-dessus.)</small>
+			  </td>
+                          <td colspan=2><script>$(document).ready(function() {    $(".select-suggestselX3").select2();});</script>
+                                      
+                                      <%=form.select "selX3", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX3", size:"1",class:"select-suggestselX3"}%>
+                                      
+                                  </td>
+			</tr>
+
+			 
+
+		
+           <tr>
+             <td>S'il-vous-plait notez le jeu auquel vous venez de jouer :
+             </td>
+           </tr>
+           
+           <tr>
+             <td>
+<table width="1%" cellspacing="1" cellpadding="1" border="0">
+	<tbody><tr>
+		<td align="center">Nul</td>
+		<td align="center"></td>
+		<td align="center"></td>
+		<td align="center"></td>
+		<td align="center">Excellent!</td>
+	</tr>
+	<tr>
+		<td align="center"><b>0</b></td>
+		<td align="center"><b>2</b></td>
+		<td align="center"><b>3</b></td>
+		<td align="center"><b>4</b></td>
+		<td align="center"><b>5</b></td>
+		
+	</tr>
+	<tr>
+		<td align="center"><input type="radio" id="radRate0" name="radRating" value="0"></td>
+		<td align="center"><input type="radio" id="radRate2" name="radRating" value="2"></td>
+		<td align="center"><input type="radio" id="radRate3" name="radRating" value="3"></td>
+		<td align="center"><input type="radio" id="radRate4" name="radRating" value="4"></td>
+		<td align="center"><input type="radio" id="radRate5" name="radRating" value="5"></td>
+	</tr>
+</tbody></table>
+
+             </td>
+           </tr>
+
+           <tr>
+             <td>
+				<table cellspacing="1" cellpadding="1" border="0">
+				<tbody><tr>
+				<td nowrap="">
+                  <input type="checkbox" id="chkSameX3" name="chkSameX3" value="1">&nbsp;Le <%=hangman.mylanguage.try(:name)%> est ma langue maternelle.
+				  <hr width="100%" size="1" color="black">
+				</td>
+				</tr>
+				</tbody></table>
+				<br>
+             </td>
+           </tr>
+           		
+           <tr>
+             <td>Commentaires et/ou questions au créateur du jeu auquel vous venez de jouer :<br>
+             <small>(N'écrivez pas d'info perso or d'adresses de sites web.)</small>
+             </td>
+           </tr>
+           
+           <tr>
+             <td>
+				<textarea id="txaFBKComments" name="txaFBKComments" rows="3" style="width: 98%"></textarea>
+             </td>
+           </tr>
+
+	       <tr>
+	         <td>
+         <input type="submit" value="Submit" id="submit1" name="submit1">
+			 </td>
+		   </tr>
+         </tbody></table>
+       <%end%>
+     </td>
+   </tr>     
+ </tbody></table>

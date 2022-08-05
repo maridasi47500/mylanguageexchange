@@ -1,0 +1,2 @@
+module TextchatHelper
+end

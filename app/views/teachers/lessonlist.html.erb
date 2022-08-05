@@ -1,0 +1,99 @@
+<td align="left" valign="top" bgcolor="#FFFFFF" colspan="2">
+          <hr width="100%" size="1">
+        <!-- Page Begin --> 
+<H2>Learn to Speak Foreign Languages Online - Free Language Lessons</H2>
+
+
+    Take a lesson provided by our language teachers.
+    Request a custom language course.<br>
+    <br>
+
+<br>
+
+
+    <table class="TblListMenu" border="0" cellpadding=2 cellspacing=0 width="99%" bordercolor=DarkMagenta bordercolorlight="Moccasin">
+      <tr align="left" valign="middle"  bgcolor=ForestGreen>
+        <td align="left" valign="middle" height=20>
+          <font color=ivory><strong><span title="Online Lessons">Free Online Lessons - Select the language you are learning</span></strong></font>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor=ivory align=left>
+    <%for languages in Language.all.each_slice(40).to_a%>
+        <table class="TblListMenuCol" width=33% align=left>
+        <%for language in languages%>
+          <TR>
+            <TD>
+              <a href="LessonList.asp?x3Id=<%=language.id%>" title="<%=language.name%> lessons"><%=language.name%></a> <small>2</small>
+            </TD>
+          </TR>
+ <%end%>
+      
+        </table>
+        
+        <%end%>
+    
+    <br clear=all>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <BR>
+
+  <small>
+  Sort results by:
+  
+    <font color=gray>Rating</font> |
+  
+    <a  class="FadeLinkSmall" href="/Teachers/LessonList.asp?Sort=Title">Title</a> |
+  
+    <a  class="FadeLinkSmall" href="/Teachers/LessonList.asp?Sort=CrDate">Creation date</a>
+  <br><br></small><small>Click on a title to view.</small><br>Total found: 428 !<br>Pages:&nbsp;&nbsp;<font class='PageCurr'>1</font>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=2'><font class='PageNums'>2</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=3'><font class='PageNums'>3</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=4'><font class='PageNums'>4</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=5'><font class='PageNums'>5</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=6'><font class='PageNums'>6</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=7'><font class='PageNums'>7</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=8'><font class='PageNums'>8</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=9'><font class='PageNums'>9</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=10'><font class='PageNums'>10</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=43'><font class='PageNums'>43</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=2'><font class='PageNums'>[Next&gt;&gt;]</font></a>&nbsp;&nbsp;<br>
+  <table class="TblDataRecs" width=100% border='1' cellpadding='1' cellspacing='0'  bordercolor='#d4e6d4' bordercolorlight='Ivory'>
+  
+  <thead>
+  <tr class="table-heading" bgcolor='#d4e6d4'>
+    <td width="65%">
+      <b><font color=DarkGreen>Title</font></b></a>
+    </td>
+    <td>
+      <b><font color=DarkGreen>Learn</font></b></a>
+    </td>
+    <!-- td>
+      <b><font color=DarkGreen>Type</font></b></a>
+    </td -->
+    <td>
+      <b><font color=DarkGreen# Views</font></b></a>
+    </td>
+  </tr>
+  </thead>
+<%=render collection: @lessons,as: :lesson,partial:"lesson"%>
+  
+    
+  </table>
+  Total found: 428 !<br>Pages:&nbsp;&nbsp;<font class='PageCurr'>1</font>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=2'><font class='PageNums'>2</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=3'><font class='PageNums'>3</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=4'><font class='PageNums'>4</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=5'><font class='PageNums'>5</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=6'><font class='PageNums'>6</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=7'><font class='PageNums'>7</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=8'><font class='PageNums'>8</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=9'><font class='PageNums'>9</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=10'><font class='PageNums'>10</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=43'><font class='PageNums'>43</font></a>&nbsp;&nbsp;<a href='/Teachers/LessonList.asp?Cnt=2'><font class='PageNums'>[Next&gt;&gt;]</font></a>&nbsp;&nbsp;<br>   
+    
+    
+<br>
+<br>
+
+
+<br>
+<b><font color=DarkGreen>Teachers and Tutors:</font></b><br>
+<a href="LessonCreate.asp">Create Lesson/quiz</a> - Create your own lessons and/or quizzes!<br>
+<!-- a href="rte/rte/LessonEdit.asp">Create a Lesson</a> - Publish your own language lessons and promote your services!<br>
+<a href="rte/rte/LessonFCardEdit.asp">Create a Quiz</a> - Publish your own language quiz!<br -->
+<a href="LessonListMine.asp">Edit My Lessons</a> - Update and improve your existing lessons or quizzes.<br>
+
+<br>
+<br>
+
+            <!-- End of Page contents -->
+              <!-- Facebook Like, etc. -->
+              <br>
+              <br>
+              <br>
+              <br>
+              <fb:like href="http://www.mylanguageexchange.com/Teachers/LessonList.asp" send="true" width="310px" show_faces="true"></fb:like>
+              <br>
+            </td>

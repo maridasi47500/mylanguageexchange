@@ -1,0 +1,205 @@
+﻿body
+{
+    margin: 0;
+}
+
+body, input, select
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: Black;
+}
+
+select
+{
+    height: 21px;
+    margin-top: 2px;
+    margin-left: -1px;
+}
+
+a
+{
+    //color: #325CCD;
+    //cursor: pointer;
+}
+
+.element
+{
+    border: 1px solid #5A5A5A;
+    margin: 5px;
+    background-color: #31579B;
+    color: white;
+    font-size: 12px;
+    text-shadow: 0px 1px 4px #071733;
+    position: absolute !important;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px 0px #464646;
+    cursor: move;
+    display: none;
+}
+
+.elementActive
+{
+    border: 3px solid !important;
+}
+
+.elementMaster
+{
+    display: none;
+}
+
+.startstoptime
+{
+
+    border: 1px solid #4D4D4D;
+    display: inline-block;
+    padding: 9px 23px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #575757;
+    color: white;
+    text-shadow: 0px 1px 0px #333131;
+//    margin: 8px;
+    //position: absolute;
+    //top: -3px;
+
+    //margin: 0 auto;
+//    box-shadow: 0px 0px 10px 0px #6D6D6D;
+    margin-top: 0px;
+}
+
+#topScoreContainer
+{
+    display: none;
+    width: 521px;
+    //margin: 0 auto;
+    //top: 25%;
+    //position: absolute;
+    left: 0%;
+
+    //margin: 0 auto;
+    //box-shadow: 0px 0px 10px 0px #6D6D6D;
+    margin-top: 50px;
+    //display: none;
+}
+
+.list
+{
+    width: 100%;
+    border: 1px solid gray;
+    margin-top: 10px;
+    border-width: 1px 0px 0px 1px;
+    font-size: 14px;
+}
+
+.list thead tr
+{
+    background-color: #696044;
+    color: white;
+    height: 26px;
+}
+
+.list thead a
+{
+    color: white;
+    text-decoration: underline;
+}
+
+.list tbody tr
+{
+    height: 25px;
+    background-color: White;
+}
+
+.list tbody tr td
+{
+    border-bottom: 1px solid gray;
+    padding-left: 2px;
+    border-right: 1px solid gray;
+}
+
+.list tbody tr:nth-child(even)
+{
+    background-color: #EEE;
+}
+
+
+.textCenter
+{
+    text-align: center;
+}
+
+#topScoreContainer .heading
+{
+//    color: #464646;
+//    font-size: 23px;
+    color: #cb6a1f;
+    font-size: 10pt;
+	font-weight: bold;
+    position: relative;
+    top: -10px;
+    margin-bottom: -7px;
+}
+
+#gameContainer
+{
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px 0px #6D6D6D;
+    margin-top: 10px;
+    display: none;
+}
+
+.lineHeading
+{
+    background-color: gray;
+    padding: 8px 5px 8px 8px;
+    color: white;
+    margin-top: 10px;
+}
+
+.lineValue
+{
+    padding: 8px 5px 8px 8px;
+}
+
+#divFooter
+{
+    padding: 5px 10px 5px 10px;
+    background-color: #D5D5D5;
+}
+
+#startBanner
+{
+    display: none;
+}
+
+.startNow
+{
+    font-size: 20px;
+    color: white;
+    background-color: green;
+    margin: 0px auto;
+    width: 100px;
+    padding: 10px 10px 10px 16px;
+    cursor: pointer;
+}
+
+.playAgainContainer {
+	background-color: #ECE5E6;
+padding: 8px 10px;
+margin-top: 6px;
+font-weight: normal;
+}
+
+
+.aPrev
+{
+    cursor: hand;
+    cursor: pointer;
+}
+
+.aNext
+{
+    cursor: hand;
+    cursor: pointer;
+}

@@ -1,0 +1,474 @@
+<!-- Page Begin -->
+
+<h2>Word Match Games - Lessons</h2>
+<h3><a href="Games.asp">Games</a> 
+  &gt; <a href="LessonScatter.asp">Word Match - Lessons</a>
+
+</h3>
+
+  
+    <table class="TblListMenu" width="100%" cellspacing="0" cellpadding="2" border="0">
+      <tbody><tr class="table-heading" valign="middle">
+        <td valign="middle">
+			  
+			<span title="Lessons">Word Match Lessons - Choose the Language you are Learning</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+    
+        <%for languages in Language.all.each_slice(50).to_a%>
+        
+        <table class="TblListMenuCol" width="33%" align="left">
+        
+          <tbody>
+              <%for language in languages%>
+              <tr>
+            <td>
+				
+					<a href="LessonScatter.asp?IdLang1=<%=language.id%>" title="<%=language.name%>"><%=language.name%></a> <small>0</small><br>
+				
+            </td>
+          </tr>
+          <%end%>
+      </tbody></table>
+    <%end%>
+    <br clear="all">
+        </td>
+      </tr>
+    </tbody></table>
+	<br>
+    <br>
+
+    <b>Play Games in this Category</b><br>
+    <br>
+  
+		Showing newest games. 
+		Sort games by <a href="/LessonScatter.asp?Sort=Title">title</a>.
+		Sort games by <a href="/LessonScatter.asp?Sort=Rating">rating</a>.<br>
+	  
+<style>
+.PageNumBig {
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: gray;/*#854514;*/
+	font-size: 12px;
+	background-color: #f5f2f0; /*#f2f2f2; */
+	border: 1px solid gray;/*#877364;*/
+}
+.PageNumBig:hover {
+	font-size: 12px;
+	background-color: #cccccc; /*#cccccc; */
+}
+.PageNumActive {
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: white;
+	border: 1px solid #cb6a1f;
+}
+.PageArrow {
+	display: inline-block;
+	padding: 6px 24px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: gray;/*#854514;*/
+	font-size: 12px;
+	background-color: #f5f2f0; /*#f2f2f2; */
+	border: 1px solid gray;/*#877364;*/
+}
+.PageArrow:hover {
+	font-size: 12px;
+	background-color: #cccccc; /*#cccccc;*/
+}
+.PageGoBtn{
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	font-size: 12px;
+	border: 1px outset slategray ;
+}
+</style>			
+Total found: 962 !<br><span class="PageNumActive">1</span> &nbsp;
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=2">2</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=2">2</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=3">3</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=3">3</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=4">4</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=4">4</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=5">5</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=5">5</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=6">6</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=6">6</a> &nbsp;
+			<a class="PageNumBig" href="/LessonScatter.asp?Cnt=97">97</a> &nbsp;<a class="PageArrow" style="margin-left: 3px;" href="/LessonScatter.asp?Cnt=2"><svg class="svg-inline--fa fa-arrow-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right notranslate"></i> --></a> &nbsp;<br>
+		<table class="TblDataRecs TblSrchResults" width="99.5%" cellspacing="0" cellpadding="3" border="1">
+		<tbody>
+		</tbody><thead>
+		<tr class="table-heading">
+			<td width="60%" valign="bottom" nowrap=""><b>Title</b></td>
+			<td width="10%" valign="bottom" nowrap=""><b>Languages</b></td>
+			<td width="10%" valign="bottom" nowrap=""><b>Level</b></td>
+			<td width="10%" valign="bottom" nowrap=""><b>Created by</b></td>
+		</tr>
+		</thead>
+		
+			<tbody><tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1102"><b>English</b></a><br>
+					Lets start learning<br><font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex10a">
+						<a title="Add your review" id="ex10b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1102">Play</a>
+					<a href="Notepad.asp?LessonID=1102">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					English - Punjabi
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					Advanced
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=4371133">Vicky</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=4371133"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					July 23, 2022
+				</td>
+			</tr>
+			
+			<tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1101"><b>Hello Arabic all levels</b></a><br>
+					<font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex11a">
+						<a title="Add your review" id="ex11b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1101">Play</a>
+					<a href="Notepad.asp?LessonID=1101">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					Arabic, Middle Eastern - English
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					All levels
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=4294335">Omar A.</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=4294335"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					July 20, 2022
+				</td>
+			</tr>
+			
+			<tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1100"><b>Hello</b></a><br>
+					Hello<br><font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex12a">
+						<a title="Add your review" id="ex12b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1100">Play</a>
+					<a href="Notepad.asp?LessonID=1100">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					Hindi - English
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					Beginner/Intermediate
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=4369386">Rajiv G.</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=4369386"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					July 15, 2022
+				</td>
+			</tr>
+			
+			<tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1095"><b>Palabras relacionadas con el banco</b></a><br>
+					<font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex13a">
+						<a title="Add your review" id="ex13b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1095">Play</a>
+					<a href="Notepad.asp?LessonID=1095">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					Chinese, Mandarin - Spanish
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					Intermediate
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=3206003">Azulag M.</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=3206003"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					May 26, 2022
+				</td>
+			</tr>
+			
+			<tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1094"><b>Japanese Spanish Language Exchange</b></a><br>
+					Cada miércoles y viernes, a partir de las 21, hacemos una reunión para aprender, practicar o enseñar japonés, castellano o catalán. Es gratis, por supuesto.<br><font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex14a">
+						<a title="Add your review" id="ex14b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1094">Play</a>
+					<a href="Notepad.asp?LessonID=1094">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					Japanese - Spanish
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					Beginner/Intermediate
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=2527989">Atsushi M.</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=2527989"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					May 26, 2022
+				</td>
+			</tr>
+			
+			<tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1093"><b>Common Phrases - in work or study</b></a><br>
+					Common phrases that are not word for work intuitive<br><font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex15a">
+						<a title="Add your review" id="ex15b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1093">Play</a>
+					<a href="Notepad.asp?LessonID=1093">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					English - Spanish
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					Beginner/Intermediate
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=4354681">FRANK F.</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=4354681"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					May 16, 2022
+				</td>
+			</tr>
+			
+			<tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1092"><b>English</b></a><br>
+					<font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex16a">
+						<a title="Add your review" id="ex16b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1092">Play</a>
+					<a href="Notepad.asp?LessonID=1092">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					Chinese, Mandarin - English
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					Beginner
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=4352219">Damien H.</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=4352219"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					April 27, 2022
+				</td>
+			</tr>
+			
+			<tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1091"><b>ready to teach Arabic and English well</b></a><br>
+					I am Arabic native speaker and speaker good Arabic and English
+Would like to learn French and Spanish for communication purpose.<br><font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex17a">
+						<a title="Add your review" id="ex17b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1091">Play</a>
+					<a href="Notepad.asp?LessonID=1091">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					Arabic, other - English
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					Advanced/Intermediate
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=2857824">Mohammed A.</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=2857824"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					April 26, 2022
+				</td>
+			</tr>
+			
+			<tr>
+				<td data-th="Title" class="userdata" valign="top">
+					<a href="CLScatterPlay.asp?LessonID=1089"><b>Kazakh phrases</b></a><br>
+					<font size="-1" color="gray">No reviews yet.</font>
+					<span id="ex18a">
+						<a title="Add your review" id="ex18b" href=""><img src="images/pencil.png" width="8" height="8" border="0/"></a><br>
+					</span>
+					<a href="CLScatterPlay.asp?LessonID=1089">Play</a>
+					<a href="Notepad.asp?LessonID=1089">View</a>
+				</td>
+				<td data-th="Languages" class="userdata" valign="top">
+					English - Kazakh
+				</td>
+				<td data-th="Level" class="userdata" valign="top">
+					Beginner
+				</td>
+				<td data-th="Created by" class="userdata" valign="top">
+					<a href="Minfo.asp?UId=4348460">NoorBibi O.</a>
+					<a title="View all from this member" href="/LessonScatter.asp?UId=4348460"><span class="userdata rounded-btn-outline btn-sm">
+					View all</span></a>
+					<br>
+					April 10, 2022
+				</td>
+			</tr>
+			
+		</tbody>
+		</table>
+		
+<style>
+.PageNumBig {
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: gray;/*#854514;*/
+	font-size: 12px;
+	background-color: #f5f2f0; /*#f2f2f2; */
+	border: 1px solid gray;/*#877364;*/
+}
+.PageNumBig:hover {
+	font-size: 12px;
+	background-color: #cccccc; /*#cccccc; */
+}
+.PageNumActive {
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: white;
+	border: 1px solid #cb6a1f;
+}
+.PageArrow {
+	display: inline-block;
+	padding: 6px 24px; 
+	margin: 1px 0px; 
+	border-radius: 4px; 
+	color: gray;/*#854514;*/
+	font-size: 12px;
+	background-color: #f5f2f0; /*#f2f2f2; */
+	border: 1px solid gray;/*#877364;*/
+}
+.PageArrow:hover {
+	font-size: 12px;
+	background-color: #cccccc; /*#cccccc;*/
+}
+.PageGoBtn{
+	display: inline-block;
+	padding: 6px 10px; 
+	margin: 1px 0px; 
+	font-size: 12px;
+	border: 1px outset slategray ;
+}
+</style>			
+Total found: 962 !<br><span class="PageNumActive">1</span> &nbsp;
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=2">2</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=2">2</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=3">3</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=3">3</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=4">4</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=4">4</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=5">5</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=5">5</a> &nbsp;
+			
+				<script>
+				if ($(window).width()>420){
+					document.write('<a class="PageNumBig" href="/LessonScatter.asp?Cnt=6">6</a> &nbsp;');
+				}
+				</script><a class="PageNumBig" href="/LessonScatter.asp?Cnt=6">6</a> &nbsp;
+			<a class="PageNumBig" href="/LessonScatter.asp?Cnt=97">97</a> &nbsp;<a class="PageArrow" style="margin-left: 3px;" href="/LessonScatter.asp?Cnt=2"><svg class="svg-inline--fa fa-arrow-right fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg><!-- <i class="fas fa-arrow-right notranslate"></i> --></a> &nbsp;<br>
+		<a href="login.asp?showmenu=1">Log in</a> or <a href="SignUp.asp?showmenu=1">sign up</a> 
+		to save your results, track your progress or access the words and phrases you entered before.  <br>
+		<br>
+	
+
+
+
+
+<br>
+<table width="100%" cellspacing="1" cellpadding="1" border="0">
+    <tbody><tr>
+        <td>
+            <b><a href="LessonTableEdit.asp">Create Word Match Lesson</a></b><br>
+            <b><a href="LessonListMine.asp">Edit my Word Match Lessons</a></b><br>
+        </td>
+        <td align="right">
+            <!--b><a href="LessonTableEdit.asp">Create a Lesson</a></b-->
+        </td>
+    </tr>
+</tbody></table>
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/LessonScatter.asp" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FLessonScatter.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f37e67e6777de6e" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="https://www.facebook.com/v2.9/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df10e736b73151d2%26domain%3Dmylanguageexchange.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmylanguageexchange.com%252Ff3d65d1b7df1cae%26relation%3Dparent.parent&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FLessonScatter.asp&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+               

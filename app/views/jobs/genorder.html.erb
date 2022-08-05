@@ -1,0 +1,199 @@
+<td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+<h2>Product Purchase - <%=@employer.hidProdType%></h2>
+
+
+
+             
+<table bordercolorlight="#e9f2f5" width="570" cellspacing="0" cellpadding="2" bordercolor="#81c6e2" border="0" bgcolor="Ivory">
+    <tbody><tr bgcolor="ForestGreen">
+      <td colspan="2" align="left">
+        <font color="ivory"><strong>Your Order</strong></font>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="30%" valign="top">Purchase:
+      </td>
+      <td valign="top">
+            
+        <b>
+        <%=@employer.hidProdType%>&nbsp; for $ <%=@employer.hidTotal%> U.S.<br>"<%=@employer.hidTitle%>"
+        
+        </b>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="30%" valign="top">Send my receipt to:
+      </td>
+      <td valign="top">
+        <b>
+        <%=@employer.hidEmail%>
+        </b>
+      </td>
+    </tr>
+        
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+
+</tbody></table>
+
+
+<br>
+<br>
+<b>Please choose a payment method:</b><br>
+<br>
+
+    <table bordercolorlight="#e9f2f5" width="640" cellspacing="0" cellpadding="3" bordercolor="#81c6e2" border="1" bgcolor="Ivory">
+    <tbody><tr bgcolor="ForestGreen">
+    <!-- tr bgcolor="Burlywood" -->
+      <td><b><font color="Ivory">&nbsp;</font></b></td>
+      <td valign="bottom"><b><font color="ivory">Online -<br>Credit Card</font></b></td>
+      <td valign="bottom"><b><font color="ivory">Online -<br>Paypal</font></b></td>
+      <td valign="bottom"><b><font color="ivory">Fax -<br>Credit Card</font></b></td>
+      <td valign="bottom"><b><font color="ivory">Telephone -<br>Credit Card</font></b></td>
+      <td valign="bottom"><b><font color="ivory">Postal Mail -<br>Credit Card</font></b></td>
+      <td valign="bottom"><b><font color="ivory">Postal Mail -<br>Check</font></b></td>
+    </tr>
+    <tr>
+      <td><font color="DarkGreen"><b>Funding Method</b></font></td>
+      <td bgcolor="Cornsilk">
+        Visa,<br>
+        Mastercard,<br>
+        <b><a href="x" onclick="OrderWebCreditSteps(); return false;"><small>Easiest &amp; fastest!</small></a></b>
+      </td>
+      <td bgcolor="Cornsilk">
+        Visa,<br>
+        Mastercard,<br>
+        Amex,<br>
+        Discover,<br>
+        Paypal
+      </td>
+      <td bgcolor="Cornsilk">
+        Visa,<br>
+        Mastercard,<br>
+      </td>
+      <td bgcolor="Cornsilk">
+        Visa,<br>
+        Mastercard,<br>
+      </td>
+      <td bgcolor="Cornsilk">
+        Visa,<br>
+        Mastercard,<br>
+      </td>
+      <td bgcolor="Cornsilk">Check,<br>Money Order </td>
+    </tr>
+    <tr>
+      <td><font color="DarkGreen"><b>Currency</b></font></td>
+      <td colspan="6" bgcolor="Cornsilk" align="center">Any <a href="http://www.xe.com/pca/input.php" target="_blank"><small>Convert</small></a></td>
+    </tr>
+    <tr>
+      <td><font color="DarkGreen"><b>Activation</b></font></td>
+      <td bgcolor="Cornsilk">Instant</td>
+      <td bgcolor="Cornsilk">Minutes</td>
+      <td bgcolor="Cornsilk">Up to 1<br> business day</td>
+      <td bgcolor="Cornsilk">Minutes after<br> receiving your<br> order</td>
+      <td bgcolor="Cornsilk">Minutes after<br> receiving your<br> order</td>
+      <td bgcolor="Cornsilk">2 / 21 business<br> days </td>
+    </tr>
+
+    <tr>
+      <td valign="top"><font color="DarkGreen"><b>More Info</b></font></td>
+      <td valign="top" bgcolor="Cornsilk">
+        <a href="x" onclick="OrderWebCredit(); return false;">More Info</a>
+      </td>
+      <td valign="top" bgcolor="Cornsilk"><a href="x" onclick="OrderWebPaypal(); return false;">More Info</a>
+      </td>
+      <td valign="top" bgcolor="Cornsilk"><a href="x" onclick="OrderFaxCredit(); return false;">More Info</a>
+      </td>
+      <td valign="top" bgcolor="Cornsilk"><a href="x" onclick="OrderPhoneCredit(); return false;">More Info</a><br>
+      </td>
+      <td valign="top" bgcolor="Cornsilk"><a href="x" onclick="OrderPostCredit(); return false;">More Info</a><br>
+      </td>
+      <td valign="top" bgcolor="Cornsilk"><a href="x" onclick="OrderPostCheck(); return false;">More Info</a><br>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top"><font color="DarkGreen"><b>Buy it</b></font></td>
+      <td valign="top" bgcolor="Cornsilk">
+        <!--form action=https://order.psigate.com/worldpay/wrapper.php method=POST name="form8">
+        <input type="hidden" name="instId" value="gMVCcuXBSn1011383DM011383">
+        <input type=hidden name=responseAddress value="https://www.mylanguageexchange.com/JobsOrderActivate.asp">
+        <input type="hidden" name="cartId" value="81-J">
+        <input type="hidden" name="amount" value="10">
+        <input type="hidden" name="currency" value="USD">
+        <input type="hidden" name="desc" value="<%=@employer.hidProdType%>: <%=@employer.hidTitle%>">
+        <input type="hidden" name="email" value="<%=@employer.hidEmail%>">
+        <input type="hidden" name="testMode" value="0">
+        <input type="hidden" name="MC_callback" value="https://www.mylanguageexchange.com/JobsOrderActivate.asp">
+        <input TYPE="SUBMIT" VALUE="Buy Now" id="SUBMIT1" name="SUBMIT1"><br>
+        </form-->
+		
+		<form action="https://checkout.psigate.com/HTMLPost/HTMLMessenger" method="post">
+		<input type="hidden" name="StoreKey" value="gMVCcuXBSn1011383DM011383">
+		<input type="HIDDEN" name="PaymentType" value="CC">
+		<input type="HIDDEN" name="CardAction" value="0">
+		<input type="HIDDEN" id="Email" name="Email" value="<%=@employer.hidEmail%>">
+		<input type="hidden" name="OrderID" value="81-J">
+		<input type="hidden" name="Description01" value="<%=@employer.hidProdType%>: <%=@employer.hidTitle%>">
+		<input type="HIDDEN" name="SubTotal" value="<%=@employer.hidTotal%>">
+		<input type="HIDDEN" name="CustomerIP" value="92.184.102.28">
+		<input type="hidden" name="ThanksURL" value="https://www.mylanguageexchange.com/JobsOrderActivate.asp">
+		<input type="hidden" name="NoThanksURL" value="https://www.mylanguageexchange.com/JobsOrderActivate.asp">
+		<input type="hidden" name="ResponseFormat" value="HTML1">
+		<input type="SUBMIT" value="Buy Now" id="SUBMIT1" name="SUBMIT1"><br>
+		</form>
+	</td>
+      <td valign="top" bgcolor="Cornsilk">
+        <form method="post" id="form2" name="form2" action="https://www.paypal.com/cgi-bin/webscr">
+        <!-- form method="post" id="form5" name="form5" action="OrderPPSim.asp" -->
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="webmaster@mylanguageexchange.com">
+        <input type="hidden" name="item_name" value="<%=@employer.hidProdType%>: <%=@employer.hidTitle%>">
+        <input type="hidden" name="item_number" value="81-J">
+        <input type="hidden" name="amount" value="<%=@employer.hidTotal%>">
+        <input type="hidden" name="no_shipping" value="1">
+        <input type="hidden" name="notify_url" value="https://www.mylanguageexchange.com/JobsOrderActivate.asp">
+        <input type="hidden" name="return" value="https://www.mylanguageexchange.com/JobsOrderActivate.asp">
+        <input type="hidden" name="cancel_return" value="https://www.mylanguageexchange.com/Jobs.asp">
+        <input type="hidden" name="no_note" value="1">
+        <input type="image" src="http://images.paypal.com/images/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" border="0">
+        </form>
+      </td>
+      <td valign="top" bgcolor="Cornsilk">
+        <!-- font color="Gray">Not yet available</font -->
+        <form method="POST" action="OrderFormFax.asp" id="form3" name="form3">      <input type="HIDDEN" name="ProdType" value="<%=@employer.hidProdType%>">        <input type="HIDDEN" name="OrderID" value="81-J">       <input type="SUBMIT" value="Buy Now" id="SUBMIT1" name="SUBMIT1"><br>       </form>
+      </td>
+      <td valign="top" bgcolor="Cornsilk">
+        <form method="POST" action="OrderFormPhone.asp" id="form4" name="form4">        <input type="HIDDEN" name="ProdType" value="<%=@employer.hidProdType%>">        <input type="HIDDEN" name="OrderID" value="81-J">       <input type="SUBMIT" value="Buy Now" id="SUBMIT1" name="SUBMIT1"><br>       </form>
+      </td>
+      <td valign="top" bgcolor="Cornsilk">
+        <form method="POST" action="OrderFormPostCredit.asp" id="form5" name="form5">       <input type="HIDDEN" name="ProdType" value="<%=@employer.hidProdType%>">        <input type="HIDDEN" name="OrderID" value="81-J">       <input type="SUBMIT" value="Buy Now" id="SUBMIT1" name="SUBMIT1"><br>       </form>
+      </td>
+      <td valign="top" bgcolor="Cornsilk">
+        <form method="POST" action="OrderFormPostCheck.asp" id="form6" name="form6">
+        <input type="HIDDEN" name="ProdType" value="<%=@employer.hidProdType%>">
+        <input type="HIDDEN" name="OrderID" value="81-J">
+        <input type="SUBMIT" value="Buy Now" id="SUBMIT1" name="SUBMIT1"><br>
+        </form>
+      </td>
+    </tr>
+        
+    </tbody></table>
+    <br>
+    <font color="black"><b>Residents of China:</b></font> Pay with Renminbi (RMB) in China. 
+    Please see details <a href="OrderChina.asp">here</a>.<br>
+    <br>
+    
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like" data-href="https://www.mylanguageexchange.com/GenOrder.asp" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>				
+				&nbsp;&nbsp;
+                </td>

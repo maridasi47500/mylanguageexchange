@@ -1,0 +1,22 @@
+<%=form_with model:hangman,scope:"", url: "HManPublish.asp", html: {name: "HManBuilder"} do |form|%>
+	<%=form.hidden_field "hidGId", id: "hidGId"%>  
+				<%=form.hidden_field "hidGuess", id: "hidGuess"%>  
+				<%=form.hidden_field "hidHide", id: "hidHide"%>  
+				<%=form.hidden_field "hidTitle", id: "hidTitle"%>  
+				<%=form.hidden_field "hidX3", id: "hidX3"%>  
+				<%=form.hidden_field "hidCat1", id: "hidCat1"%>  
+				<%=form.hidden_field "hidCat2", id: "hidCat2"%>  
+				<%=form.hidden_field "hidHint1", id: "hidHint1"%>  
+				<%=form.hidden_field "hidHint2", id: "hidHint2"%>  
+				<%=form.hidden_field "hidHint3", id: "hidHint3"%>
+				<%=form.hidden_field "hidEquiv1", id: "hidEquiv1"%>  
+				<%=form.hidden_field "hidEquiv2", id: "hidEquiv2"%>  
+				<%=form.hidden_field "hidEquiv3", id: "hidEquiv3"%>  
+				<%=form.hidden_field "hidDesc", id: "hidDesc"%>  
+				<%=form.hidden_field "hidWinMsg", id: "hidWinMsg"%>  
+				<%=form.hidden_field "hidLoseMsg", id: "hidLoseMsg"%>  
+				<%=form.hidden_field "hidPTitle", id: "hidPTitle"%>
+				<%=form.hidden_field "hidPGuess", id: "hidPGuess"%>
+				<%=form.hidden_field "hidPGId", id: "hidPGId"%>
+	<input type="submit" value="Save Game" id="butSubmit" name="butSubmit">
+  <%end%>

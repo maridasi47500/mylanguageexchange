@@ -1,0 +1,417 @@
+P
+{
+}
+H1
+{
+    LINE-HEIGHT: 100%;
+    FONT-FAMILY: serif,Arial,Book Antiqua,Garamond,Bodonni;
+    COLOR: #993333;
+    FONT-SIZE: 26pt;
+    FONT-WEIGHT: bold
+}
+H2
+{
+    LINE-HEIGHT: 100%;
+    FONT-FAMILY: Verdana, Arial, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: #993333;
+    FONT-SIZE: 16pt;
+    FONT-WEIGHT: bold
+}
+H3
+{
+    FONT-FAMILY: Verdana, Arial, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: darkgreen;
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: bold
+}
+A
+{
+    FONT-FAMILY: Verdana, Arial, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: #993333;
+    FONT-SIZE: 12pt
+}
+A:visited
+{
+    FONT-FAMILY: Verdana, Arial, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: #993333;
+    FONT-SIZE: 12pt
+}
+A:active
+{
+    FONT-FAMILY: Verdana, Arial, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: #993333;
+    FONT-SIZE: 12pt
+}
+A:hover
+{
+    FONT-FAMILY: Verdana, Arial, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: crimson;
+    FONT-SIZE: 12pt
+}
+BODY
+{
+    FONT-FAMILY: Verdana, Arial, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: #000000;
+    FONT-SIZE: 12pt
+}
+TD
+{
+    FONT-FAMILY: Verdana, Arial, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: #000000;
+    FONT-SIZE: 12pt
+}
+SMALL
+{
+    FONT-SIZE: 11pt
+}
+BIG
+{
+    FONT-SIZE: 13pt
+}
+#leftmenu
+{
+    Z-INDEX: 10;
+    POSITION: absolute;
+    TOP: 100px;
+    LEFT: 20px
+}
+.small8
+{
+    FONT-SIZE: 10pt
+}
+.PageCurr
+{
+    FONT-FAMILY: arial, sans-serif;
+    COLOR: #000000;
+    FONT-SIZE: 11pt;
+    FONT-WEIGHT: bolder
+}
+.PageNums
+{
+    FONT-FAMILY: arial, sans-serif;
+    COLOR: gray;
+    FONT-SIZE: 11pt;
+    FONT-WEIGHT: normal
+}
+.DirLinks
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: darkgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: normal
+}
+.DirLinks:active
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: darkgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: normal
+}
+.DirLinks:hover
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: crimson;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: underline
+}
+.DirLinks:visited
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: darkgreen;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal
+}
+.TopMenuLinks
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: forestgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.TopMenuLinks:active
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: forestgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold
+}
+.TopMenuLinks:hover
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: darkgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: underline
+}
+.TopMenuLinks:visited
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: forestgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold
+}
+.TopMenuLinks2
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: forestgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.TopMenuLinks2:active
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: forestgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.TopMenuLinks2:hover
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: darkgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: underline
+}
+.TopMenuLinks2:visited
+{
+    FONT-FAMILY: Verdana, Arial;
+    COLOR: forestgreen;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold
+}
+.btmmenulinks
+{
+    FONT-FAMILY: Arial, Verdana, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: darkgreen;
+    FONT-SIZE: 10pt;
+    TEXT-DECORATION: none
+}
+.btmmenulinks:visited
+{
+    FONT-FAMILY: Arial, Verdana, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: darkgreen;
+    FONT-SIZE: 10pt;
+    TEXT-DECORATION: none
+}
+.btmmenulinks:active
+{
+    FONT-FAMILY: Arial, Verdana, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: darkgreen;
+    FONT-SIZE: 10pt;
+    TEXT-DECORATION: none
+}
+.btmmenulinks:hover
+{
+    FONT-FAMILY: Arial, Verdana, 'Book Antiqua', Garamond, Bodonni;
+    COLOR: darkgreen;
+    FONT-SIZE: 10pt;
+    TEXT-DECORATION: none
+}
+H4
+{
+    PADDING-BOTTOM: 0px;
+    MARGIN-BOTTOM: 0px;
+    COLOR: #993333;
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: bold
+}
+.BoldLink
+{
+    COLOR: #993333;
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.BoldLink:hover
+{
+    COLOR: darksalmon;
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: underline
+}
+.BoldLink:visited
+{
+    COLOR: salmon;
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: bold
+}
+.FadeLink
+{
+    COLOR: darksalmon;
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+.FadeLink:hover
+{
+    COLOR: salmon;
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: underline
+}
+.FadeLink:visited
+{
+    COLOR: darksalmon;
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: normal
+}
+.FadeLinkSmall
+{
+    COLOR: darksalmon;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+.FadeLinkSmall:hover
+{
+    COLOR: salmon;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: underline
+}
+.FadeLinkSmall:visited
+{
+    COLOR: darksalmon;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: normal
+}.QuizFCardChoose
+{
+    PADDING-BOTTOM: 15px;
+    MARGIN-TOP: 0px;
+    FONT-FAMILY: 'Times New Roman';
+    MARGIN-BOTTOM: 0px;
+    COLOR: darkgreen;
+    FONT-SIZE: 30px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    PADDING-TOP: 15px;
+	width: 100%;
+	word-wrap: break-word;
+}
+.QuizFCardGiven
+{
+    PADDING-BOTTOM: 7px;
+    FONT-FAMILY: 'Times New Roman';
+    COLOR: darkgreen;
+    FONT-SIZE: 30px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    PADDING-TOP: 7px;
+	width: 100%;
+	word-wrap: break-word;
+}
+.LessonBody
+{
+    LINE-HEIGHT: 24px;
+    MARGIN-TOP: 0px;
+    FONT-FAMILY: Verdana;
+    MARGIN-BOTTOM: 0px;
+    FONT-SIZE: 12pt;
+    PADDING-TOP: 0px
+}
+.LessonNavLink:visited
+{
+    COLOR: darksalmon;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+.LessonNavLink:hover
+{
+    COLOR: darksalmon;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: underline
+}
+.LessonNavLink
+{
+    COLOR: darksalmon;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+.LessonH2
+{
+    MARGIN-BOTTOM: 1px;
+    FONT-SIZE: 14pt
+}
+.table-heading {
+//	background:url(images/table-heading-bg.png) repeat-x;
+//	background-color: #7A3D00;
+	background-color: ForestGreen;
+	height: 23px;
+}
+TR.table-heading  TD {
+	color: #FFFFFF;
+}
+TR.table-heading > TD > A{
+	color: #FFFFFF;
+}
+TR.table-heading > TD > A:hover{
+	COLOR: #999999;
+}
+.table-seprow
+{
+    background-color: #dfe7df;
+}
+
+
+/* List Menus - the large table of links by language, country, etc. */
+@media screen and (max-width: 580px) {
+table.TblListMenu {width: 100%;}
+table.TblListMenuCol {border-spacing: 0px;} /* Cell padding */
+table.TblListMenuCol > tbody > tr > td > a {display: inline-block; padding: 3px 0px; margin:3px 0px} 
+}
+
+/* Bottom menu links - need spacing on narrow screens */
+@media screen and (max-width: 580px) {
+.btmmenulinks {display: inline-block; margin-bottom: 5px; margin-left:5  px; }
+}
+
+
+/* Disappear (into hamburger) on narrow screen */
+@media screen and (max-width: 580px) {
+.NarrowGone {display: none;}
+}
+
+@media screen and (min-width: 581px) {
+.NarrowShow {display: none;}	/* mobile header */
+}
+
+/* Input Form Tables - Wide tables due to left column labels and wide pull-down menus 
+   - no column headings */
+@media screen and (max-width: 580px) {
+table.TblInputForm > tbody > tr > td { display: block; padding: 0.6rem;}
+table.TblInputForm > tbody > tr:not(.SectionHead):not(.table-heading) > td { background: white;}
+table.TblInputForm > tbody > tr:not(.SectionHead):not(.table-heading) > td { background: white;}
+table.TblInputForm > tbody > tr:not(.SectionHead):not(.table-heading) > td:first-child { background: #FAF0E9; color: black; }
+tr.SectionHead {background-color: #BEBEBE;}
+table.TblInputForm > tbody > tr > td {border: 0px solid gray;}
+table.TblInputForm  {border-collapse: collapse;}
+}
+
+/* Transpose table on narrow screen */
+@media screen and (max-width: 580px) {
+table.TblNarrowBlock > tbody > tr > td { display: block; padding: .6rem; }
+table.TblNarrowBlock > tbody > tr > td { width: 100%; }
+}
+
+/* Width:100% on narrow screen */
+@media screen and (max-width: 580px) {
+.Narrow100Pct { float: none; }
+.Narrow100Pct { width: 100%; }
+}
+
+/* Transpose Wide Data Tables */
+@media screen and (max-width: 580px) {
+table.TblDataRecs > thead { display: none; }
+table.TblDataRecs > tbody > tr > td { display: block; padding: .6rem; }
+table.TblDataRecs > tbody > tr > td { background: white;}
+table.TblDataRecs > tbody > tr > td:first-child { background: #FAF0E9; color: black; }
+table.TblDataRecs > tbody > tr > td:before {
+	content: attr(data-th); font-weight: bold;
+	display: inline-block; /*width: 6rem;*/
+	}
+}
+

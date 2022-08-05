@@ -1,0 +1,184 @@
+ <td style="padding: 5px;" width="100%" valign="top">
+				
+
+                <!-- Page Begin -->
+	<h2>Club Library: Gujarati-Marathi Random Selections</h2>
+	
+    <form id="form1" runat="server">
+    <div id="gameContainer" style="display: none; width: 100%; height: 400px; background-color: lavender;">
+        <input type="hidden" class="PlayURL" value="CLScatterFn.asp">
+        <input type="hidden" class="ScoreURL" value="CLScatterScoresFn.asp">
+        <input type="hidden" class="ScorePageSize" value="5">
+        <input type="hidden" class="GameAreaWidth" value="100%">
+        <input type="hidden" class="GameAreaHeight" value="400px">
+        <input type="hidden" class="GameAreaBgColor" value="Lavender">
+        <input type="hidden" class="GameTextFont" value="Verdana">
+        <input type="hidden" class="GameTextWeight" value="Normal">
+        <input type="hidden" class="GameTextSize" value="10pts">
+        <input type="hidden" class="GameTextColor" value="White">
+        <input type="hidden" class="ElementBgColor" value="#cb6a1f">
+        <input type="hidden" class="ElementPadding" value="2px 2px">
+        <input type="hidden" class="SessionID" value="1021585987">
+        <input type="hidden" class="LearnerID" value="4356365">
+        <input type="hidden" class="LessonID" value="0">
+        <input type="hidden" class="Lang1ID" value="74">
+        <input type="hidden" class="Lang2ID" value="85">
+        <input type="hidden" class="LearnerPreviousRecord" value="">
+		
+			<input type="hidden" class="RecordID" value="36842">
+			<input type="hidden" class="ColNum" value="1">
+			<!--input type="hidden" class="DisplayHTML" value="&lt;a target=&quot;_blank&quot; rel=&quot;nofollow&quot; title=&quot;More info&quot; href=&quot;Notepad.asp?msgid=36842&quot;&gt;&lt;img src=&quot;images/info.png&quot; width=&quot;19&quot; alt=&quot;More info&quot; align=&quot;top&quot; border=0&gt;&lt;/a&gt;gujrati" /-->
+			<input type="hidden" class="DisplayHTML" value="&lt;a onclick=&quot;RVSpeak('gujrati',''); return false;&quot; title=&quot;Play Audio&quot;href=&quot;/CLScatterPlay.asp&quot;&gt;&lt;font color=#e6e6e6&gt;&lt;i class=&quot;fa fa-play-circle&quot; style=&quot;padding-right: 0px;&quot; &gt;&lt;/i&gt;&lt;/font&gt; &lt;/a&gt;gujrati">
+			
+			<input type="hidden" class="RecordID" value="36842">
+			<input type="hidden" class="ColNum" value="2">
+			<!--input type="hidden" class="DisplayHTML" value="&lt;a target=&quot;_blank&quot; rel=&quot;nofollow&quot; title=&quot;More info&quot; href=&quot;Notepad.asp?msgid=36842&quot;&gt;&lt;img src=&quot;images/info.png&quot; width=&quot;19&quot; alt=&quot;More info&quot; align=&quot;top&quot; border=0&gt;&lt;/a&gt;gujrati" /-->
+			<input type="hidden" class="DisplayHTML" value="&lt;a onclick=&quot;RVSpeak('gujrati',''); return false;&quot; href=&quot;/CLScatterPlay.asp&quot;&gt;&lt;font color=#e6e6e6&gt;&lt;i class=&quot;fa fa-play-circle&quot; style=&quot;padding-right: 0px;&quot; &gt;&lt;/i&gt;&lt;/font&gt; &lt;/a&gt;gujrati">
+			
+			
+        <div class="elementMaster">
+            <span>Testing Text</span>
+            <input type="hidden" class="elementRecordID">
+            <input type="hidden" class="elementColNum">
+        </div>
+        <div class="startstoptime">Elapsed Time: <span class="timeText">18.97</span></div>
+    </div>
+
+    <div id="reviewContainer" style="display:none;">
+		<button type="button" id="aSaveScore" onclick="ReviewThisGame(); return false;">Rate it and see your score.</button>
+	</div>
+    <div id="topScoreContainer" style="display: none;">
+        <table class="TblTranspose" cellspacing="0">
+            <tbody><tr>
+                <td colspan="2">
+					<div class="heading">
+							Reviews
+					</div>
+					<div class="lineValue">
+						<span id="Reviews"></span>
+						
+							 <font color="gray"><small>No feedback</small></font>
+						
+						<span id="ex1a" style="">
+							<a title="Add your review" id="ex1b" href=""><img src="/playwordmatch_files/pencil.png" width="8" height="8" border="0/"></a>
+							<!-- a href="/CLScatterPlay.asp?Lang1ID=74&Lang2ID=85" onclick='RateNoBelongAdd(,,"",4356365); return false;' title="Wrong"><small>[Does not belong here]</small></a-->
+							<br>
+							<br>
+							<br>
+						</span>
+						<br>
+						<br>
+					</div>
+				</td>
+			</tr>
+			<tr>
+
+                <td style="vertical-align: top">
+					<div class="heading">
+                        Your score
+					</div>
+                    <div class="lineHeading">
+                        This game:
+                    </div>
+                    <div class="lineValue">
+                        <span id="currentScore">18.97</span>
+                    </div>
+					
+						<div class="lineHeading">
+							Your previous record:
+						</div>
+						<div class="lineValue">
+							<span id="personalHighScore"></span>
+						</div>
+					
+						<div class="lineHeading">
+							Play again
+						</div>
+						<div class="lineValue">
+							
+								<a href="" id="aPlayAgain">Play same game</a><br>
+							
+								<a href="/CLScatterPlay.asp?Lang1ID=74&amp;Lang2ID=85">Play another random game</a><br>
+							
+						</div>
+						<div class="lineHeading">
+							Add to the quiz database
+						</div>
+						<div class="lineValue">
+							
+								<a href="/NotepadAdd.asp?lang1=74&amp;lang2=85">Add to the Club Library</a><br>
+							
+						</div>
+                </td>
+                <td style="vertical-align: top; padding-left: 23px;">
+                    <div class="heading">
+                        High Scores</div>
+                    <table id="tblScores" class="list" cellspacing="0" cellpadding="4">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Time to finish
+                                </th>
+                                <th>
+                                    Game Date
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody><tr>         <td>             <a href="/Minfo.asp?UId=4356365">cleo j.</a>         </td>         <td class="textCenter">             18.97 sec         </td>         <td class="textCenter">             8/1/2022 9:09:00 AM         </td>     </tr><tr>         <td>             <a href="/Minfo.asp?UId=4368560">Seema P.</a>         </td>         <td class="textCenter">             40.25 sec         </td>         <td class="textCenter">             7/12/2022 3:16:00 AM         </td>     </tr></tbody>
+                    </table>
+                    <div id="divFooter">
+                        <a class="aPrev" style="visibility: hidden;"><small>Prev</small></a>
+                        <!--<select id="ddlPage" class="dropdown dropdownPage">
+                        </select>-->
+                        <a class="aNext"><small>Next</small></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+    </form>
+
+<br>
+<!-- img src="info.png"> = More information -->
+<br>
+<br>
+<script src="/playwordmatch_files/jquery-1.7.1.min_002.js" type="text/javascript"></script>
+<script src="/playwordmatch_files/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
+<script src="/playwordmatch_files/jquery.cookie.js" type="text/javascript"></script>
+<script src="/playwordmatch_files/touch-punch.js" type="text/javascript"></script>
+<script src="/playwordmatch_files/ScatterClasses.js" type="text/javascript"></script>
+<script src="/playwordmatch_files/ScatterLogic.js" type="text/javascript"></script>
+<script src="/playwordmatch_files/jquery.timer.js" type="text/javascript"></script>
+<script src="/playwordmatch_files/json2.js" type="text/javascript"></script>
+<script src="/playwordmatch_files/jquery.tmpl.min.js" type="text/javascript"></script>
+<script id="topScoreTemplate" type="text/x-jQuery-tmpl">
+    <tr>
+        <td>
+            <a href="Minfo.asp?UId=${LearnerID}">${Name}</a>
+        </td>
+        <td class='textCenter'>
+            ${ElapsedTime} sec
+        </td>
+        <td class='textCenter'>
+            ${GameDateTime}
+        </td>
+    </tr>
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        ShowStartInfo();
+        //InitializeGame();
+    });
+</script>
+
+
+				<br>
+				<br>
+				<!-- FB Like -->
+				<div class="fb-like fb_iframe_widget" data-href="https://www.mylanguageexchange.com/CLScatterPlay.asp?Lang1ID=74&amp;Lang2ID=85" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=846&amp;href=https%3A%2F%2Fwww.mylanguageexchange.com%2FCLScatterPlay.asp%3FLang1ID%3D74%26Lang2ID%3D85&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f1a88b964f5e1a4" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: visible; width: 0px; height: 0px;" src="/playwordmatch_files/like.html" width="1000px" height="1000px" frameborder="0"></iframe></span></div>				
+				&nbsp;&nbsp;
+                </td>

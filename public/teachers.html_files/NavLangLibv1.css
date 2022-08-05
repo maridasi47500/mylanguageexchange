@@ -1,0 +1,181 @@
+
+.topnavbar {
+    z-index: 2;
+}
+.topnavbar.gtbar {
+	top: 40px;				/*Make room for google translate toolbar*/
+}
+
+.main {
+  padding: 0px 0px;
+  z-index: 0;
+}
+.main.gtbar {
+  margin-top: 50px;
+}
+
+
+.show {
+    display: block;
+}
+
+/* Original Sdie Nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color:  white;
+    overflow-x: hidden;
+    transition: 0.5s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sidenav.gtbar{
+    margin-top: 40px;
+}
+
+.sidenavLabel {
+    padding: 3px 75px 3px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: SeaGreen; /*#818181;*/
+    display: block;
+    transition: 0.3s;
+	text-align: right;
+}
+
+.sidenavLink {
+    padding: 3px 15px 3px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+	text-align: right;
+}
+
+.sidenavLink:visited {
+    padding: 3px 15px 3px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: gray; /*#818181;*/
+    display: block;
+    transition: 0.3s;
+	text-align: right;
+}
+
+.sidenavLink:hover {
+    color: gray; /*#cb6a1f;*/
+	font-size: 20px;
+}
+
+.sidenav .closebtn {
+    color: lightgray; /*#cb6a1f;*/
+	text-decoration: none;
+	font-size: 26px;
+	padding: 10px;
+}
+.sidenav .closebtn:hover {
+    color: gray; /*#f1f1f1;*/
+}
+
+
+/* Language Sdie Nav */
+.sidenavLang {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111; /*white; #f2f2f2;*/ 
+    overflow-x: hidden;
+    transition: 0.5s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sidenavLang.gtbar{
+    margin-top: 40px;
+}
+
+.sidenavLangLink {
+    padding: 3px 15px 3px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: lightgray; /*#818181;*/
+    display: block;
+    transition: 0.3s;
+
+}
+
+.sidenavLangLink:hover {
+    color: gray; /*#cb6a1f;*/
+	font-size: 20px;
+}
+
+.sidenavLang .closebtn {
+    color: lightgray; /*#cb6a1f;*/
+	font-size: 26px;
+	padding: 10px;
+}
+.sidenavLang .closebtn:hover {
+    color: gray; /*#f1f1f1;*/
+}
+
+
+
+/* Welcome Member Account  Side Nav */
+.sidenavAcc {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111; /*white; #f2f2f2;*/ 
+    overflow-x: hidden;
+    transition: 0.5s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sidenavAcc.gtbar{
+    margin-top: 40px;
+}
+
+.sidenavAccLink {
+    padding: 3px 15px 3px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: lightgray; /*#818181;*/
+    display: block;
+    transition: 0.3s;
+
+}
+
+.sidenavAccLink:hover {
+    color: gray; /*#cb6a1f;*/
+	font-size: 20px;
+}
+
+.sidenavAcc .closebtn {
+    color: lightgray; /*#cb6a1f;*/
+	font-size: 26px;
+	padding: 10px;
+}
+.sidenavAcc .closebtn:hover {
+    color: gray; /*#f1f1f1;*/
+}
+
+
+.aDead {
+	pointer-events:none;
+}
+
+/*
+@media screen and (max-height: 450px) {
+  .sidenavLang {padding-top: 15px;}
+  .sidenavLang a {font-size: 18px;}
+}*/

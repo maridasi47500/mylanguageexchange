@@ -1,0 +1,178 @@
+<%=form_with model:member,scope:"", url: "/SignUp.asp?showmenu=1", html: {name: "SignUpForm"} do |form|%>
+         <table class="TblInputForm" width="100%" border="0" cellpadding="1" cellspacing="1">
+
+           <tr class="SectionHead">
+             <td colspan=2>A propos de vous<br>
+             </td>
+           </tr>
+
+           <tr>
+             <td>
+               <font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("txtFN"),Member.human_attribute_name("txtFN"), highlighter: (member.errors[:txtFN][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%>
+               (Cela sera la première partie de votre pseudo.)
+             </td>
+             <td>
+<%=form.text_field "txtFN", id: "txtFN", width: "21", style: "width: 210px;", maxlength: "40"%></td>
+           </tr>
+
+           <tr>
+             <td>
+               Nom 
+               (Cela sera la deuxième partie de votre pseudo.)
+             </td>
+             <td>
+<%=form.text_field "txtLN", id: "txtLN", width: "21", style: "width: 210px;", maxlength: "40"%>
+             </td>
+           </tr>
+
+           <tr>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("selGender"),Member.human_attribute_name("selGender"), highlighter: (member.errors[:selGender][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
+             <td> 
+  <%=form.select "selGender", [["Female","0"],["Male","1"],["Other","2"]],{include_blank: ""}, {id: "selGender"}%>
+  
+  </td>
+           </tr>
+
+           <tr>
+             <td>Age </td>
+             <td>
+<%=form.number_field "txtAge", id: "txtAge", width: "4", style: "width: 80px;", maxlength:"3", min: "1", max: "110", step: "1"%>
+             </td>
+           </tr>
+
+           <tr>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("selCountry"),Member.human_attribute_name("selCountry"), highlighter: (member.errors[:selCountry][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
+			 <td><script>$(document).ready(function() {    $(".select-suggestselCountry").select2();});</script>
+                             
+                             <%=form.select "selCountry", Country.all.collect{|x|[x.name,x.id]}, {include_blank: ""},{id: "selCountry", size: "1", class: "select-suggestselCountry"}%>
+                         
+                         </td>
+           </tr>
+
+           <tr>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("txtLoc"),Member.human_attribute_name("txtLoc"), highlighter: (member.errors[:txtLoc][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
+             <td>
+<%=form.text_field "txtLoc", id: "txtLoc", width: "21", style: "width: 210px;", maxlength: "80"%></td>
+           </tr>
+
+           <!-- tr>
+             <td>
+               Usual time for chat (helpful if seeking live practice)</td>
+             <td valign="top">
+               <input type='text' name="txaUTime" id="txaUTime" value="" width="25.2" style="width: 252px;" maxlength="40">&nbsp;&nbsp;
+             </td>
+           </tr -->
+
+           <tr>
+             <td>Fuseau horaire local (ou votre heure locale) 
+                 - utile pour planifier votre pratique en live avec des partenaires dans d'autres fuseaux horaires.
+             </td>
+             <td valign="top">
+                 
+<%=form.select 'selTimeZ', (-12..12).to_a.collect{|x|[x,"GMT "+x.to_s+":00 ("+l((DateTime.now+x.hours), format: :fuseau)+")"]}, {include_blank: ""}, {id: 'selTimeZ'}%>             
+             </td>
+           </tr>
+
+           <!-- tr>
+             <td>Personal Home page</td>
+             <td><input type='text' name="txtHP" id="txtHP" value="" width="21" style="width: 210px;" maxlength="160"></td>
+           </tr>
+
+           <tr>
+             <td>Cool link 1</td>
+             <td><input type='text' name="txtCL1" id="txtCL1" value="" width="21" style="width: 210px;" maxlength="160"></td>
+           </tr>
+
+           <tr>
+             <td>Cool link 2</td>
+             <td><input type='text' name="txtCL2" id="txtCL2" value="" width="21" style="width: 210px;" maxlength="160"></td>
+           </tr>
+
+           <tr>
+             <td>Cool link 3</td>
+             <td><input type='text' name="txtCL3" id="txtCL3" value="" width="21" style="width: 210px;" maxlength="160"></td>
+           </tr -->
+
+           <tr class="SectionHead">
+             <td colspan=2>Pour finir
+             </td>
+           </tr>
+
+	     </table>
+
+
+         <table class="TblInputForm" width="100%" border="0" cellpadding="0" cellspacing="0">
+           <tr>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("selWantNews"),Member.human_attribute_name("selWantNews"), highlighter: (member.errors[:selWantNews][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
+
+             <td>
+                 <%=form.check_box 'selWantNews', {class:'Toggle', id:'selWantNews'}, 'true','false' %>
+                 <label for='selWantNews'></label></td>
+           </tr>
+           <tr>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("selWantAds"),Member.human_attribute_name("selWantAds"), highlighter: (member.errors[:selWantAds][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
+
+             <td>
+                 <%=form.check_box 'selWantAds', {class:'Toggle', id:'selWantAds'}, 'true','false' %>
+                 <label for='selWantAds'></label></td>
+           </tr>
+		       
+           <tr>
+             <td><font color="red"><b>*</b></font><%=highlight(Member.human_attribute_name("selMemberAgree"),Member.human_attribute_name("selMemberAgree"), highlighter: (member.errors[:selMemberAgree][0] ? '<font color="#FF0000"><b>\1</b> </font>'  : '<b>\1</b>'))%></td>
+
+             <td>
+                 <%=form.check_box 'selMemberAgree', {class:'Toggle', id:'selMemberAgree'}, 'true','false' %>
+                 <label>Oui</label></td>
+           </tr>
+
+           <tr class="SectionHead">
+             <td colspan=2>&nbsp;&nbsp;<br>
+             </td>
+           </tr>
+
+		   
+			   <tr>
+				<td colspan=2>
+					<font color="red"><b>*</b></font><b>Je ne suis pas un robot</b>
+					 <div class="g-recaptcha" data-sitekey="6Lcv_CITAAAAAD1tHlaLb0daK9Ew98tQSxObVGwX"></div>
+				</td>
+			   </tr>
+		   		 
+
+           <tr class="SectionHead">
+             <td colspan=2>&nbsp;&nbsp;<br>
+             </td>
+           </tr>
+
+	       <tr>
+	         <td colspan="2">
+         <%=form.hidden_field "hidTitle", id:"hidTitle"%>
+         <%=form.hidden_field "hidIsClass", id:"hidIsClass"%>
+         <%=form.hidden_field "hidNStudents", id:"hidNStudents"%>
+         <%=form.hidden_field "hidEmail", id:"hidEmail"%>
+         <%=form.hidden_field "hidEmail2", id:"hidEmail2"%>
+         <%=form.hidden_field "hidDescr", id:"hidDescr"%>
+         <%=form.hidden_field "hidX3", id:"hidX3"%>
+         <%=form.hidden_field "hidX3a", id:"hidX3a"%>
+         <%=form.hidden_field "hidX3b", id:"hidX3b"%>
+         <%=form.hidden_field "hidX3c", id:"hidX3c"%>
+         <%=form.hidden_field "hidX6", id:"hidX6"%>
+         <%=form.hidden_field "hidX6a", id:"hidX6a"%>
+         <%=form.hidden_field "hidX6b", id:"hidX6b"%>
+         <%=form.hidden_field "hidX6c", id:"hidX6c"%>
+         <%=form.hidden_field "hidX4", id:"hidX4"%>
+         <%=form.hidden_field "hidX13", id:"hidX13"%>
+         <%=form.hidden_field "hidIsWantTextChat", id:"hidIsWantTextChat"%>
+         <%=form.hidden_field "hidIsWantFace", id:"hidIsWantFace"%>
+         <%=form.hidden_field "hidsUID", id:"hidsUID"%>
+         <%=form.hidden_field "hidPassw", id:"hidPassw"%>
+         <%=form.hidden_field "hidPassw_2", id:"hidPassw_2"%>
+         <%=form.hidden_field "hidPasswRem", id:"hidPasswRem"%>
+         <%=form.hidden_field "hidEditPro", id:"hidEditPro"%>  
+         <%=form.hidden_field "hidProc", id:"hidProc",value:"2"%>  
+         <%=form.hidden_field "showmenu", id:"showmenu"%>
+         <input type="submit" value="Submit" id="submit1" name="submit1">
+			 </td>
+		   </tr>
+         </table>
+       <%end%>

@@ -1,0 +1,63 @@
+<%=form_with scope:"",model: bboard, method: :get, url: "BBoardSearch.asp",html:{id: "form1", name: "form1"} do |form|%>
+       <table cellspacing="0" cellpadding="1" border="0" align="center">
+         <tbody><tr>
+           <td nowrap="">Language 1:</td>
+<td><script>$(document).ready(function() {    $(".select-suggestselX3").select2();});</script>
+                                      
+                                      <%=form.select "selX3", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX3", size:"1",class:"select-suggestselX3"}%>
+                                      
+                                  </td>         </tr>   
+
+           <tr>
+             <td nowrap="">Language 2:</td>
+<td><script>$(document).ready(function() {    $(".select-suggestselX6").select2();});</script>
+                                      
+                                      <%=form.select "selX6", Language.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selX6", size:"1",class:"select-suggestselX6"}%>
+                                      
+                                  </td>           </tr>
+
+           <tr>
+             <td nowrap=""><b>Category:</b></td>
+<td><script>$(document).ready(function() {    $(".select-suggestselCat").select2();});</script>
+                                      
+                                      <%=form.select "selCat", Bboardcat.all.collect {|p| [ p.name, p.id ] }, {include_blank: ""}, {id:"selCat", size:"1",class:"select-suggestselCat"}%>
+                                      
+                                  </td>           </tr>
+
+           <tr>
+             <td nowrap="">Subject contains:</td>
+			 <td><%=form.text_field "txtSubj", id: "txtSubj", size: "6", maxlength: "300"%></td>
+           </tr>
+
+           <tr>
+             <td nowrap="">Body contains:</td>
+			 <td valign="top">
+			  <%=form.text_field "txtBody", id: "txtBody", size: "6", maxlength: "300"%>
+	   		  <!-- SELECT id='selLoc' name='selLoc' size='1'>
+		        <OPTION value="Subj" >Subject</OPTION>
+		        <OPTION value="Body" >Body</OPTION>
+	          </SELECT -->
+             </td>
+           </tr>
+
+           <tr>
+             <td nowrap="">Message ID:</td>
+			 <td><%=form.text_field "txtMsgID", id: "txtMsgID", size: "6", maxlength: "300" %></td>
+           </tr>
+
+           <tr>
+             <td nowrap="">Author first name:</td>
+			 <td><%=form.text_field "txtFName", id: "txtFName", size: "6", maxlength: "300" %></td>
+           </tr>
+
+           <tr>
+             <td align="left">
+             </td>
+             <td align="left">
+				<input type="submit" value="Search" id="submit2" name="submit2">
+				<input type="button" value=" Clear " id="submit3" name="submit3" onclick="ShowAll(form1)">
+			 </td>
+           </tr>
+
+       </tbody></table>
+		<%end%>
