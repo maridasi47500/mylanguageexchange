@@ -1,5 +1,9 @@
    <%=form_with model:hangman,scope:"", url: "HManBuilder.asp", html: {name: "HManBuilder"} do |form|%>
-	   
+       <%=form.fields_for :videos do |ff|%>
+       <%=ff.hidden_field :filename%> <video width=100 height=100 src="/uploads/<%=ff.object.filename%>" controls>
+  Your browser does not support the video tag.
+</video> 
+     <%end%>
 
          <table class="WidthMaxLim" border="0" cellpadding="0" cellspacing="0">
  		   
@@ -54,6 +58,15 @@
                                   </td>
 				</tr>
 
+				<tr>
+				  <td><br>
+				    <b><b>Videos (optional) :</b> 
+				  </td>
+				  <td><br>
+                                    <b><b><%=form.file_field "myvideos", multiple:"true", id:"videos"%></b> 
+
+				  </td>
+				</tr>
 				<tr>
 				  <td><br>
 				    <b><b>Type of game :</b> 
@@ -122,4 +135,15 @@
 		   </tr>
          </table>
          
+       <%end%>
+       <%=content_for :myjs do%>
+    <script>
+         $(function(){
+    $("input[type='submit']").click(function(){
+        var $fileUpload = $("input[type='file']");
+        if (parseInt($fileUpload.get(0).files.length)>3){
+         alert("You can only upload a maximum of 3 files");
+        }
+    });
+    });o</script>
        <%end%>

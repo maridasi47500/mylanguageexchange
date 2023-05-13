@@ -1,4 +1,6 @@
 class Hangman < ApplicationRecord
+  has_many :videos
+  accepts_nested_attributes_for :videos
   attr_accessor :hidPnum,:chkHide1, :chkHide2, :chkHide3, :chkHide4, :chkHide5, :chkHide6, :chkHide7, :chkHide8, :chkHide9, :chkHide10, :chkHide11, :chkHide12, :chkHide13, :chkHide14, :chkHide15, :chkHide16, :chkHide17, :chkHide18, :chkHide19, :chkHide20, :chkHide21, :chkHide22, :chkHide23, :chkHide24, :chkHide25, :chkHide26, :chkHide27, :chkHide28, :chkHide29, :chkHide30, :chkHide31, :chkHide32, :chkHide33, :chkHide34, :chkHide35, :chkHide36, :chkHide37, :chkHide38, :chkHide39, :chkHide40
   attr_accessor "txtTitle", "txtGuess", "selX3", "selCat1", "selCat2"
   attr_accessor :hidPGID,:txtWinMsg, :txtLoseMsg,:txaDesc, :txtEquiv1, :txtEquiv2, :txtEquiv3,:txtHint1, :txtHint2,:txtHint3,:txtWinMsg, :txtLoseMsg,:txaDesc,:hidTitle,:hidGuess,:hidPGuess,:hidPTitle,:hidPGid,:hidEditMode,:hidGId,:hidHide,:hidTitle,:hidX3,:hidCat1,:hidCat2,:hidHint1,:hidHint2,:hidHint3,:hidEquiv1,:hidEquiv2,:hidEquiv3,:hidDesc,:hidWinMsg,:hidLoseMsg,:hidGId,:hidPTitle,:hidPGuess,:hidPGId
@@ -13,6 +15,19 @@ class Hangman < ApplicationRecord
   def self.ratings(id)
         Hangman.where("hangmen.id" => id).joins(:ratings).select("hangmen.*, hmanratings.radRating as rating,count(distinct hmanratings.radRating) as countrating,sum(case when hmanratings.radRating = 0 then 1 else 0 end) as countgarbage,hmanratings.chkSameX3 as chkSameX3,sum(case when hmanratings.GId = '#{id}' and hmanratings.chkSameX3 is true and hmanratings.radRating = 0 then 1 else 0 end) as countgarbagenative, avg(hmanratings.radRating) as moyrating").having('rating is not null').group("hangmen.id")[0]
 
+  end
+  def myvideos=(files)
+    files.each do |f|
+      aa= Video.where(filename:f.original_filename,hangman_id: self.hidGId)
+      p aa
+      if aa.length == 0
+        self.videos.find_or_initialize_by(filename: f.original_filename)
+        File.open(Rails.root.join('public', 'uploads', f.original_filename), 'wb') do |file|
+          file.write(f.read)
+        end
+      end
+
+    end
   end
   def self.ratings2(id)
         Hangman.where("hangmen.id" => id).left_joins(:ratings).select("hangmen.*, hmanratings.radRating as rating,count(distinct hmanratings.radRating) as countrating,sum(case when hmanratings.radRating = 0 then 1 else 0 end) as countgarbage,hmanratings.chkSameX3 as chkSameX3,sum(case when hmanratings.chkSameX3 is true and hmanratings.radRating = 0 then 1 else 0 end) as countgarbagenative, avg(hmanratings.radRating) as moyrating").group("hangmen.id")
@@ -147,6 +162,7 @@ class Hangman < ApplicationRecord
       self.selCat1=other.types
       self.hidCat2 =other.category
         self.selCat2=other.category
+        self.videos=other.videos.map {|x|Video.new(filename: x.filename)}
 
     when "1"
 (0..39).to_a.each do |x|
@@ -272,6 +288,7 @@ end
         self.winmsg=self.hidWinMsg
         self.losemsg=self.hidLoseMsg
     end
+    self.videos=self.videos.uniq{|h|h.filename}
   end
   after_update do
     if !self.PlayerGuess.nil? && !self.PlayerGuess.empty?

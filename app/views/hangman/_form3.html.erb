@@ -1,4 +1,9 @@
 <%=form_with model: hangman,url:"HManPlay.asp",scope:"",html: {name: "HManBuilder"} do |form|%>
+    <%=form.fields_for :videos do |ff|%>
+       <%=ff.hidden_field :filename%> <video width=100 height=100 src="/uploads/<%=ff.object.filename%>" controls>
+  Your browser does not support the video tag.
+</video> 
+     <%end%>
 	   
 
          <table class="WidthMaxLim" border="0" cellpadding="0" cellspacing="0">

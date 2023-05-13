@@ -1,4 +1,9 @@
 <%=form_with model: hangman,scope:"", url:"HManPlay.asp?GId=#{@hangman.try(:id)}", html:{name: "HManPlayer"} do |form| %>
+  <%hangman.videos.each do |h|%>
+    <video width=200 height=200 src="/uploads/<%=h.filename%>" controls>
+  Your browser does not support the video tag.
+</video> 
+<%end%>
 						<%("A".."Z").to_a.each do |letter|%>
     <%if hangman.hidPlayerGuessAll.to_s.include?(letter)%>
       <span class="PlayerGuess-used"> <%=letter%> </span><!-- comment -->
